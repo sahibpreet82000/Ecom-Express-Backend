@@ -1,0 +1,210 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  text-decoration: none;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif; 
+}
+
+.header{
+    transition: all 0.3s ease-in-out;
+    box-sizing: border-box;
+    margin: 12px;
+    padding: 12px;
+}
+.header a{
+    margin: -11px 0px;
+    color: black;
+    text-decoration: none;
+}
+.header a:hover{
+    color: orangered;
+}
+.icon{
+    margin: 0px 0px;
+    width:22px;
+    vertical-align: middle;
+}
+#media-icons{
+    float: right;
+    margin: 0px 5px;
+}
+@media (max-width: 800px){
+    #media-icon{
+        display: none;
+        overflow: hidden;
+    }
+    .icon{
+        display: none;
+        overflow: hidden;
+    }
+}
+/* #media-icons:hover{
+    border: none;
+    background-color: white;
+    filter: invert();
+} */
+#navbar{
+    transition: all 0.4s ease-in-out;
+    margin: -8px 28px;
+    padding:12px;
+    display: flex;
+    /* background-color: grey; */
+}
+#navbar ul{
+    transition: all 0.3s ease-in-out;
+    display: flex;
+}
+#navbar ul li{
+    margin-left: 12px;
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+#navbar ul li a{
+    color: black;
+    font-size: 20px;
+     margin: 12px;
+     text-decoration: none;
+     background-color: transparent;
+
+}
+#navbar ul li a:hover{
+    background-color: transparent;
+    color: rgb(63, 62, 62);
+    filter: invert();
+}
+.logo{
+    display: flex;
+}
+.logo img{
+    width: 122px;
+} 
+#heading{
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif ;
+    font-size: 40px;
+    align-items: center;
+    margin: 0px 12px;
+}
+#searchbar img {
+    margin: 30px 33px;
+    width: 62px;
+    position: absolute;
+}
+#searchbar img:hover{
+  background-color: transparent;
+  filter: invert();
+}
+.home-index{
+    margin: 12px 12px;
+    padding: 1.5em 0;
+    background: #f5f5f5;
+}
+#home-iconset{
+margin-left:60px;
+vertical-align: middle;
+}
+.home-index a{
+    color: black;
+     font-size: 15px;
+     vertical-align: middle;
+     /* margin-left: 60px; */
+}
+.home-index a:hover{
+    color: orangered;
+}
+.loginpage{
+    margin: 78px 70px;
+}
+.loginpage p{
+    margin: 12px;
+    display: flex;
+    justify-content: center;
+}
+#login-heading{
+transition: all 0.4s ease-in-out;
+font-size: 60px;
+display: flex;
+justify-content: center;
+}
+.form-box{
+    transition: all 1.4s ease-in-out;
+    background: #f5f5f5;
+    margin: 0px 200px;
+}
+.form-set{
+    display: flex;
+    justify-content: center;
+    margin-left: 322px;
+    width: 40%;
+    background: rgb(255, 255, 255);
+    border: 1px solid ;
+    /* height: 40px; */
+    font-size: 30px;
+}
+.forgot-pass-set{
+    margin-top: 15px;
+    margin-left: 322px;
+    margin-bottom: 42px;
+    font-size: 15px;
+}
+.forgot-pass-set:hover{
+    color:rgb(207, 52, 78) ;
+}
+.button-set{
+    width:40%;
+    height: 40px;
+    margin-left: 322px;
+    margin-bottom: 52px;
+    background-color:rgb(207, 52, 78);
+    font-size: 30px;
+}
+.signin-newuser {
+    display: flex;
+    justify-content: center;
+
+}
+.button-set:hover{
+    background-color:rgb(204, 21, 52) ;
+}
+.signin-newuser a{
+    color: rgb(207, 52, 78);
+    animation: animate 1.5s linear infinite;
+
+}
+#heading-newuser{
+    display: flex;
+    justify-content: center;
+    margin: 12px;
+    font-size: 30px;
+}   
+.footer-content{
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@keyframes animate {
+    0% {
+      opacity: 0.5;
+    }
+  
+    50% {
+      opacity: 1;
+    }
+  
+    100% {
+      opacity: 0.6;
+    }
+  }
+  
