@@ -96,6 +96,25 @@
   background-color: transparent;
   filter: invert();
 }
+.cart-total {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-left:132px;
+  margin-top:29px;
+}
+.cart-total a{
+  color: orange;
+}
+.cart-total img{
+  margin: 9px -1px;
+  width: 27px;
+  vertical-align: middle;
+}
+.cart-total p{
+  margin: -17px 0px;
+  vertical-align: middle;
+}
 .home-index {
   margin: 12px 12px;
   padding: 1.5em 0;
