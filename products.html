@@ -1,106 +1,344 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>E-COM EXPRESS | A Shopping Website</title>
-    <style>
-
-    </style>
+    <style></style>
     <link rel="stylesheet" href="index.css" />
-</head>
-<body>
-    <header> 
-        <div class= "header">
-       <a class="header" href="#">
-           <img class="icon" src="./images/icons8-mail-50.png" alt="">@ecomexpress.com </a> 
-       <a class="header" href="#" >
-           <img class="icon" src="./images/icons8-phone-30.png" alt="">+91 984666483 </a> 
-       <a class="header" href="#">
-           <img class="icon" src="./images/icons8-enter-30.png" alt=""> Login </a> 
-       <a class="header" href="#" >
-           <img class="icon" src="./images/icons8-book-30.png" alt=""> Register </a> 
-    <a class="icon" id="media-icons" href="#"><img src="./images/icons8-facebook-30.png" alt=""></a>
-    <a class="icon" id="media-icons" href="#"><img src="./images/icons8-google-30.png" alt=""></a>
-    <a class="icon" id="media-icons" href="#"><img src="./images/icons8-instagram-30.png" alt=""></a>
-    <a class="icon" id="media-icons" href="#"><img src="./images/icons8-twitter-30.png" alt=""></a>
-    
-        </div> 
+    <link rel="stylesheet" href="products.css" />
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <a class="header" href="#">
+          <img
+            class="icon"
+            src="./images/icons8-mail-50.png"
+            alt=""
+          />@ecomexpress.com
+        </a>
+        <a class="header" href="#">
+          <img class="icon" src="./images/icons8-phone-30.png" alt="" />+91
+          984666483
+        </a>
+        <a class="header" href="#">
+          <img class="icon" src="./images/icons8-enter-30.png" alt="" /> Login
+        </a>
+        <a class="header" href="#">
+          <img class="icon" src="./images/icons8-book-30.png" alt="" /> Register
+        </a>
+        <a class="icon" id="media-icons" href="#"
+          ><img src="./images/icons8-facebook-30.png" alt=""
+        /></a>
+        <a class="icon" id="media-icons" href="#"
+          ><img src="./images/icons8-google-30.png" alt=""
+        /></a>
+        <a class="icon" id="media-icons" href="#"
+          ><img src="./images/icons8-instagram-30.png" alt=""
+        /></a>
+        <a class="icon" id="media-icons" href="#"
+          ><img src="./images/icons8-twitter-30.png" alt=""
+        /></a>
+      </div>
+    </header>
+    <hr />
 
-
-</header>
-    <hr>
-    
     <!-- <div class="container"> -->
-           <nav id="navbar">
-           <div class="logo"> 
-               <img src="./images/logo11.jpg" alt="logo">
-            <span class="logo" id="heading">  E-COM EXPRESS <br></span>
-            </div>
-           <ul>
-                
-                <li><a href="#" target="blank">HOME</a></li>
-                <li><a href="#" target="blank">PRODUCTS</a></li>
-                <li><a href="" target="blank">SHOPPING</a></li>
-                <li><a href="" target="blank">CONTACT US</a></li>
-                <li><a href="" target="blank">MAIL US</a></li>
-            </ul>
-          <a id="searchbar" href="#">
-               <img src="./images/search1-removebg-preview.png" alt=""></a>
-               <div class="cart-total">
-                <a href="#"> $0.00 (0 items)
-                  <img src="./images/shopping-cart (1).png" alt="cart"> <p>shopping-cart</p></a> 
-                </div>
-        </nav>
-      <div class="home-index">
-          <img class="icon" id="home-iconset" src="./images/home.png" alt="home">
-          <a href="index.html">Home</a> /
-          <!-- <a href="index.html">Login page</a> -->
+    <nav id="navbar">
+      <div class="logo">
+        <img src="./images/logo11.jpg" alt="logo" />
+        <span class="logo" id="heading"> E-COM EXPRESS <br /></span>
+      </div>
+      <ul>
+        <li><a href="#" target="blank">HOME</a></li>
+        <li><a href="#" target="blank">PRODUCTS</a></li>
+        <li><a href="" target="blank">SHOPPING</a></li>
+        <li><a href="" target="blank">CONTACT US</a></li>
+        <li><a href="" target="blank">MAIL US</a></li>
+      </ul>
+      <a id="searchbar" href="#">
+        <img src="./images/search1-removebg-preview.png" alt=""
+      /></a>
+      <div class="cart-total">
+        <a href="#">
+          $0.00 (0 items)
+          <img src="./images/shopping-cart (1).png" alt="cart" />
+          <p>shopping-cart</p></a
+        >
+      </div>
+    </nav>
+    <div class="home-index">
+      <img class="icon" id="home-iconset" src="./images/home.png" alt="home" />
+      <a href="index.html">Home</a> /
+      <!-- <a href="index.html">Login page</a> -->
+    </div>
+    <div class="price-bar">FILTER BY PRICE</div>
+   
+    </div>
+    <div class="product-grid">
+      <div class="grid-box" id="category-border">
+        <p>CATEGORIES</p>
+        <div class="catelog-set">
+          <ul>
+            <li>
+              <img src="./images/next.png" alt="" /><a href="#">
+                Best Selling</a
+              >
+            </li>
+            <li>
+              <img src="./images/next.png" alt="" /><a href="#"> Man</a>
+              <ul>
+                <li>
+                  <img src="./images/next.png" alt="" />
+                  <a href="#"> Accessories</a>
+                </li>
+                <li>
+                  <img src="./images/next.png" alt="" />
+                  <a href="#"> Coats & Jackets </a>
+                </li>
+                <li>
+                  <img src="./images/next.png" alt="" /> <a href="#"> Jeans </a>
+                </li>
+                <li>
+                  <img src="./images/next.png" alt="" />
+                  <a href="#"> New Arrival</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <img src="./images/next.png" alt="" /><a href="#"> Sales</a>
+            </li>
+            <li>
+              <img src="./images/next.png" alt="" /><a href="#"> Woman</a>
+              <ul>
+                <li>
+                  <img src="./images/next.png" alt="" />
+                  <a href="#">Accessories </a>
+                </li>
+                <li>
+                  <img src="./images/next.png" alt="" />
+                  <a href="#"> Dresses </a>
+                </li>
+                <li>
+                  <img src="./images/next.png" alt="" />
+                  <a href="#"> Shorts </a>
+                </li>
+                <li>
+                  <img src="./images/next.png" alt="" />
+                  <a href="#"> New Arrival </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
       </div>
 
+      <div class="grid-box" id="section">
+        <img id="main-img" src="./images/18.jpg" alt="" />
+        <div class="section-box">
+          <p2>
+            2016 NEW COLLECTION <br />
+            <span class="section-line-set">______________ </span> <br />
+            <p3>
+              Temporibus autem quibusdam et aut officiis debitis aut rerum
+              necessitatibus saepe eveniet ut et voluptates repudiandae sint et
+              molestiae non recusandae.
+            </p3>
+          </p2>
+          <div class="dropdown">
+            <button class="dropbtn">Default Sorting</button>
+            <div class="dropdown-content">
+            <a href="#">Low to High</a>
+            <a href="#">High to Low</a>
+            <a href="#">Popularity</a>
+            </div>
+            </div>
+        </div>
+      </div>
+      <div class="grid-box" id="content-border">
+        <p>NEW ARRIVAL</p>
+        <div class="newitem-box">
+          <img src="./images/6.jpg" alt="" />
+          <span
+            >OCCAECAT CUPIDATA <br />$180
+            <button type="menu">ADD TO CART</button>
+          </span>
+        </div>
+        <div class="newitem-box">
+          <img src="./images/26.jpg" alt="" />
+          <span>
+            EMU FUGIAT QUO <br />$250 <button type="menu">ADD TO CART</button>
+          </span>
+        </div>
+        <div class="newitem-box">
+          <img src="./images/11.jpg" alt="" />
+          <span>
+            OFFICIA DESERUNT <br />$259 <button type="menu">ADD TO CART</button>
+          </span>
+          <span>
+          <img id="catelog-img" src="./images/27.jpg" alt="img" />
+          <div id="border-box">
+            <p2>SUMMER COLLECTION</p2>
+            </div>
+          </span>
+        </div>
+      </div>
+      <div class="grid-box">
+        <div class="section-background">
+          <div class="section-content">
+            <div class="product-images">
+              <img src="./images/19.jpg" alt="" />
+              <a href="#">
+                FORMAL SHIRT <br />
+                <div >$280</div>
+              </a>
+              <button type="submit">ADD TO CART</button>
+            </div>
+            <div class="product-images">
+              <img src="./images/7.jpg" alt="" />
+              <a href="#">
+                FORMAL SHIRT <br />
+                <div>$280</div></a
+              >
+              <button type="submit">ADD TO CART</button>
+            </div>
+            <div class="product-images">
+              <img src="./images/20.jpg" alt="" />
+              <a href="#">
+                FORMAL SHIRT <br />
+                <div>$380</div>
+              </a>
+              <button type="submit">ADD TO CART</button>
+            </div>
+            <div class="product-images">
+              <img src="./images/21.jpg" alt="" />
+              <a href="#">
+                CASUAL SHOES <br />
+                <div>$180</div>
+              </a>
+              <button type="submit">ADD TO CART</button>
+            </div>
+            <div class="product-images">
+              <img src="./images/22.jpg" alt="" />
+              <a href="#">
+                CASUAL SHOES <br />
+                <div>$200</div>
+              </a>
+              <button type="submit">ADD TO CART</button>
+            </div>
+            <div class="product-images">
+              <img src="./images/23.jpg" alt="" />
+              <a href="#">
+                CASUAL SHOES <br />
+                <div>$250</div>
+              </a>
+              <button type="submit">ADD TO CART</button>
+            </div>
+            <div class="product-images">
+              <img src="./images/24.jpg" alt="" /><a href="#">
+                BLAZER <br />
+                <div>$500</div></a
+              >
+              <button type="submit">ADD TO CART</button>
+            </div>
+            <div class="product-images">
+              <img src="./images/26.jpg" alt="" />
+             <div> <a href="#">
+                BLAZER <br />
+                <div> $450</div> </div>
+              </a>
+              <button type="submit">ADD TO CART</button>
+            </div>
+            <div class="product-images">
+              <img src="./images/34.jpg" alt="" />
+              <a href="#">
+                CLOCK <br />
+                <div>$150</div>
+              </a>
+              <button type="submit">ADD TO CART</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="grid">
+        <!-- <img id="catelog-img" src="./images/27.jpg" alt="img" />
+        <div id="border-box">
+          <p2>SUMMER COLLECTION</p2>
+        </div> -->
+      </div>
 
-      <footer>
-        <div class="footer-content">
-          <div class="footer-grid">
-            <div class="box">
-              <h1>About Us
-              <div class="line">_____</div> </h1>
-              <p>
-                Duis aute irure dolor in reprehenderit in voluptate velit esse. <br>
-                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-                officia deserunt mollit.
-              </p>
-            </div>
-            <div class="box">
-              <h1>
-                Contact Info
-              <div class="line">_____</div>
-              </h1>
-                <p>
-                  1234k Avenue, 4th block, New York City.<br />
-                  info@example.com <br />
-                  +1234 567 567
-                </p>
-              
-            </div>
-            <div class="box">
-              <h1>Flicker post 
-                  <div class="line">_____</div>
-              </h1>
-            </div>
-            <div class="box"> <h1>Join Us
+      <div class="product-catalog-content"></div>
+    </div>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-grid">
+          <div class="box">
+            <h1>
+              About Us
               <div class="line">_____</div>
             </h1>
-            <a href="#"><img class="footer-img"  src="./images/icons8-google-30.png" alt=""></a>
-                <a href="#"> <img class="footer-img"  src="./images/icons8-facebook-30.png" alt="fb"></a>
-                <a href="#"><img class="footer-img"  src="./images/icons8-twitter-30.png" alt="tw"></a>
-                <a href="#">
-                   <img class="footer-img" src="./images/icons8-instagram-30.png" alt="insta"></a>
+            <p>
+              Duis aute irure dolor in reprehenderit in voluptate velit esse.
+              <br />
+              Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+              officia deserunt mollit.
+            </p>
           </div>
+          <div class="box">
+            <h1>
+              Contact Info
+              <div class="line">_____</div>
+            </h1>
+            <p>
+              1234k Avenue, 4th block, New York City.<br />
+              info@example.com <br />
+              +1234 567 567
+            </p>
           </div>
-          <div class="footer-text">
-            &copy; 2021 All Rights Reserved | Designed By Sahibpreet Singh 
+          <div class="box">
+            <h1>
+              Flicker post
+              <div class="line">_____</div>
+            </h1>
+          </div>
+          <div class="box">
+            <h1>
+              Join Us
+              <div class="line">_____</div>
+            </h1>
+            <a href="#"
+              ><img
+                class="footer-img"
+                src="./images/icons8-google-30.png"
+                alt=""
+            /></a>
+            <a href="#">
+              <img
+                class="footer-img"
+                src="./images/icons8-facebook-30.png"
+                alt="fb"
+            /></a>
+            <a href="#"
+              ><img
+                class="footer-img"
+                src="./images/icons8-twitter-30.png"
+                alt="tw"
+            /></a>
+            <a href="#">
+              <img
+                class="footer-img"
+                src="./images/icons8-instagram-30.png"
+                alt="insta"
+            /></a>
+          </div>
         </div>
+        <div class="footer-text">
+          &copy; 2021 All Rights Reserved | Designed By Sahibpreet Singh
         </div>
-      </footer>
+      </div>
+    </footer>
+  </body>
+</html>
