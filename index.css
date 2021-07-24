@@ -29,31 +29,21 @@
   float: right;
   margin: 0px 5px;
 }
-@media (max-width: 800px) {
-  #media-icon {
-    display: none;
-    overflow: hidden;
-  }
-  .icon {
-    display: none;
-    overflow: hidden;
-  }
+h1{
+  color: black;
 }
-/* #media-icons:hover{
-    border: none;
-    background-color: white;
-    filter: invert();
-} */
+
 #navbar {
   transition: all 0.4s ease-in-out;
-  margin: -8px 28px;
-  padding: 12px;
+  margin: 0px 0px;
+  padding: 0px;
   display: flex;
-  /* background-color: grey; */
 }
+
 #navbar ul {
   transition: all 0.3s ease-in-out;
   display: flex;
+ 
 }
 #navbar ul li {
   margin-left: 12px;
@@ -154,36 +144,39 @@
   display: flex;
   justify-content: center;
   color: orange;
+
 }
 
 .form-box {
   transition: all 1.4s ease-in-out;
   background: #f5f5f5;
   margin: 0px 200px;
+  overflow: hidden;
 }
 .form-set {
   margin-top: 25px;
-  width: 40%;
+  width: 127%;
   border: 1px solid grey;
   background: rgb(255, 255, 255);
   border-radius: 12px;
   margin-bottom: 12px;
-  /* height: 40px; */
-  font-size: 30px;
-}
-.form-set {
-  padding-left: 35px;
+  font-size: 19px;
+  padding: 11px 0px;
 }
 #form-image-set1 {
-  background: url(./images/email.png) no-repeat 1px 6px;
+  background: url(./images/email.png) no-repeat 9px 9px;
+  padding-left: 45px;
 }
 #form-image-set2 {
-  background: url(./images/padlock.png) no-repeat 1px 2px;
+  background: url(./images/padlock.png) no-repeat 8px 6px;
+  padding-left: 45px;
 }
 .set-form {
-  display: block;
-  width: 100%;
-  margin-left: 350px;
+  display: flex;
+  width: 92%;
+  /* margin-left: 350px; */
+  justify-content: center;
+  align-items: center;
 }
 .forgot-pass-set {
   margin-top: 15px;
@@ -194,7 +187,7 @@
   color: rgb(207, 52, 78);
 }
 .button-set {
-  width: 40%;
+  width: 145%;
   height: 40px;
   margin-bottom: 52px;
   background-color: orange;
@@ -225,6 +218,8 @@
   width: 100%;
   height: 100%;
   overflow: hidden;
+  padding-bottom: 80px;
+  padding-top: 25px;
 }
 .footer-grid {
   display: grid;
@@ -243,6 +238,8 @@ h1 {
   /* font-size: 40px; */
 }
 p {
+  justify-content: center;
+  display: flex;
   color: #999;
   margin-right: 12px;
 }
@@ -255,13 +252,119 @@ p {
   filter: invert();
 }
 .footer-text {
-  margin-top: 12px;
+  margin-top: 32px;
   color: #999;
   text-align: center;
 }
 #footer-name {
   color: white;
 }
+.footer-logo{
+  color: #999;
+  text-align: center;
+  margin: 12px 12px;
+}
+#footer-heading{
+font-size: 42px;
+vertical-align: middle;
+}
+.footer-logo p0{
+font-size: 42px;
+
+}
+ #search-box{
+  position: absolute;
+  background-color: white;
+  display: none;
+  border: none;
+  color: black;
+  text-align: left;
+  width: 40%;
+  z-index: 1;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+.search-button:hover #search-box{
+  display: inline-block;
+  overflow: hidden;
+}
+.search-button input{
+  color: rgb(37, 37, 37);
+  padding: 4px 0px;
+  text-decoration: none;
+  display: block;
+  font-size: 19px;
+overflow: hidden;
+} 
+@media (max-width: 768px) {
+  #navbar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+      width:50%;
+      float: none;
+      text-align:center;
+  }
+  #navbar ul{
+    width:50%;
+    float: none;
+    text-align:center;
+  }
+  #navbar ul li a{
+    width:50%;
+    float: none;
+    text-align:center;
+  }
+  
+  #searchbar{
+    display: none;
+    overflow: hidden;
+  }
+  .cart-total{
+    
+  }
+}
+
+@media (max-width: 800px) {
+  .icon {
+    display: none;
+    overflow: hidden;
+  }
+
+ .set-form{
+  display:none;
+  transition: none;
+  margin: 0px;
+  width: 20%;
+ }
+ .footer-content{
+   position: relative;
+   width: 100%;
+   background: #2e2e2e;
+   overflow: hidden;
+ }
+ .footer-grid{
+  background: #2e2e2e;
+  } 
+ footer{
+   background: #2e2e2e;
+ }
+}
+
+@media (max-width: 1040px){
+ .footer-text{
+display: none;
+overflow: hidden;
+ }
+ .footer-logo{
+display: none;
+ }
+ #footer-heading{
+   display: none;
+   overflow: hidden;
+ }
+}
+
 @keyframes animate {
   0% {
     opacity: 0.5;
