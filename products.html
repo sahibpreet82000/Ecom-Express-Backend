@@ -8,39 +8,41 @@
     <style></style>
     <link rel="stylesheet" href="index.css" />
     <link rel="stylesheet" href="products.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hind:wght@300;500;600&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/f0ea9c1e03.js" crossorigin="anonymous"></script>
   </head>
   <body>
     <header>
       <div class="header">
         <a class="header" href="#">
-          <img
-            class="icon"
-            src="./images/icons8-mail-50.png"
-            alt=""
-          />@ecomexpress.com
+          <i id="remove-header-content" class="fas fa-envelope"></i>
+           <span id="remove-header-content">@ecomexpress.com</span> 
         </a>
         <a class="header" href="#">
-          <img class="icon" src="./images/icons8-phone-30.png" alt="" />+91
-          984666483
+          <i id="remove-header-content" class="fas fa-phone-alt"></i>
+          <span id="remove-header-content">+91
+            984666483</span> 
+        </a>
+        <a class="header" href="index.html">
+          <i class="fas fa-sign-in-alt"></i> Login
         </a>
         <a class="header" href="#">
-          <img class="icon" src="./images/icons8-enter-30.png" alt="" /> Login
-        </a>
-        <a class="header" href="#">
-          <img class="icon" src="./images/icons8-book-30.png" alt="" /> Register
+          <i class="fas fa-book"></i> Register
         </a>
         <a class="icon" id="media-icons" href="#"
-          ><img src="./images/icons8-facebook-30.png" alt=""
-        /></a>
+          ><i class="fab fa-facebook-f"></i>
+        </a>
+        <a class="icon" id="media-icons" href="#">
+        <i class="fab fa-google"></i>
+         </a>
+        <a class="icon" id="media-icons" href="#">
+          <i class="fab fa-instagram-square"></i>
+         </a>
         <a class="icon" id="media-icons" href="#"
-          ><img src="./images/icons8-google-30.png" alt=""
-        /></a>
-        <a class="icon" id="media-icons" href="#"
-          ><img src="./images/icons8-instagram-30.png" alt=""
-        /></a>
-        <a class="icon" id="media-icons" href="#"
-          ><img src="./images/icons8-twitter-30.png" alt=""
-        /></a>
+          ><i class="fab fa-twitter"></i>
+        </a>
       </div>
     </header>
     <hr />
@@ -51,32 +53,43 @@
         <img src="./images/logo11.jpg" alt="logo" />
         <span class="logo" id="heading"> E-COM EXPRESS <br /></span>
       </div>
-      <ul>
-        <li><a href="#" target="blank">HOME</a></li>
-        <li><a href="#" target="blank">PRODUCTS</a></li>
-        <li><a href="" target="blank">SHOPPING</a></li>
-        <li><a href="" target="blank">CONTACT US</a></li>
-        <li><a href="" target="blank">MAIL US</a></li>
-      </ul>
+      <div class="wapper">
+        <ul>
+          <li>
+            <a href="index.html" target="blank">HOME</a>
+          </li>
+          <li>
+            <a href="products.html" target="blank">PRODUCTS</a>
+          </li>
+          <li>
+            <a href="shopping.html" target="blank">SHOPPING</a>
+          </li>
+          <li><a href="Contact.html" target="blank">CONTACT US</a></li>
+          <li>
+            <a href="mail.html" target="blank">MAIL US</a>
+          </li>
+        </ul>
+      </div>
+      <div class="search-button">
       <a id="searchbar" href="#">
-        <img src="./images/search1-removebg-preview.png" alt=""
-      /></a>
+        <i class="fas fa-search"></i></a>
+      <input id="search-box" type="text" name="text" id="text" placeholder="search">
+  </div>
       <div class="cart-total">
         <a href="#">
           $0.00 (0 items)
-          <img src="./images/shopping-cart (1).png" alt="cart" />
+          <i class="fas fa-shopping-cart" id="cart"></i>
           <p>shopping-cart</p></a
         >
       </div>
     </nav>
-    <div class="home-index">
-      <img class="icon" id="home-iconset" src="./images/home.png" alt="home" />
+    <div class="home-index"> 
+      <i class="fas fa-home" id="home-iconset"></i>
       <a href="index.html">Home</a> /
       <!-- <a href="index.html">Login page</a> -->
     </div>
-    <div class="price-bar">FILTER BY PRICE</div>
+    <!-- <div class="price-bar">FILTER BY PRICE</div> -->
    
-    </div>
     <div class="product-grid">
       <div class="grid-box" id="category-border">
         <p>CATEGORIES</p>
@@ -149,6 +162,7 @@
           </p2>
           <div class="dropdown">
             <button class="dropbtn">Default Sorting</button>
+            <i class="fas fa-angle-down" id="dropbtn-arrow"></i>
             <div class="dropdown-content">
             <a href="#">Low to High</a>
             <a href="#">High to Low</a>
@@ -303,6 +317,21 @@
               Flicker post
               <div class="line">_____</div>
             </h1>
+            <div class="flicker-grid">
+              <div class="flicker-box" id="flicker-img-hide
+              "> <img src="/images/13.jpg" alt="">
+              </div>
+              <div class="flicker-box" id="flicker-img-hide
+              "><img src="./images/14.jpg" alt=""></div>
+              <div class="flicker-box" id="flicker-img-hide
+              "><img src="./images/15.jpg" alt=""></div>
+              <div class="flicker-box" id="flicker-img-hide
+              "><img src="./images/15.jpg" alt=""></div>
+              <div class="flicker-box" id="flicker-img-hide
+              "><img src="./images/13.jpg" alt=""></div>
+              <div class="flicker-box" id="flicker-img-hide
+              "><img src="./images/14.jpg" alt=""></div>
+            </div>
           </div>
           <div class="box">
             <h1>
@@ -335,9 +364,14 @@
             /></a>
           </div>
         </div>
-        <div class="footer-text">
-          &copy; 2021 All Rights Reserved | Designed By Sahibpreet Singh
-        </div>
+        
+        <div class="footer-logo"><p0>____________________</p0>
+          <span id="footer-heading">E-COM EXPRESS</span>
+           <p0>____________________</p0> </div>
+           <div class="footer-text">
+            &copy; 2021 All Rights Reserved | Designed By
+            <span id="footer-name">Sahibpreet Singh</span>
+          </div>
       </div>
     </footer>
   </body>

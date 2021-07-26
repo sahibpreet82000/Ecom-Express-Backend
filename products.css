@@ -2,9 +2,8 @@
   margin: 0px;
   padding: 0px;
   text-decoration: none;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-  box-sizing: border-box;
+  font-family: 'Hind', sans-serif; 
+   box-sizing: border-box;
 }
 .product-grid {
   display: grid;
@@ -121,6 +120,11 @@
   text-align: left;
   border-radius: 2px;
 }
+#dropbtn-arrow{
+  position:absolute;
+    top: 25%;
+    left: 89%;
+}
 
 .dropdown {
   position: relative;
@@ -152,6 +156,7 @@
 
 .dropdown:hover .dropdown-content {
   display: block;
+  padding: 4px 10px;
 }
 .dropdown-content a:hover {
   background: orange;
@@ -167,6 +172,8 @@
   font-size: 2.5rem;
 }
 .section-line-set {
+  font-family: -apple-system, BlinkMacSystemFont,
+   'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   position: absolute;
   margin: 0px;
   top: 25px;
@@ -181,6 +188,9 @@
 .section-background {
   background: #f5f5f5;
   width: 100%;
+  padding: 0px 0px;
+  margin: -52px 0px;
+  margin-bottom: 3px;
 }
 .section-content {
   display: grid;
@@ -217,7 +227,6 @@
   color: orange;
   animation: animate 1.5s linear infinite;
 }
-
 @keyframes animate {
   0% {
     opacity: 0.5;
