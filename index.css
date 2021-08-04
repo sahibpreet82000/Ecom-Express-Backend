@@ -2,7 +2,7 @@
   margin: 0px;
   padding: 0px;
   text-decoration: none;
-  font-family: 'Hind', sans-serif;
+  font-family: "Hind", sans-serif;
   /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif; */
 }
@@ -40,32 +40,34 @@ h1 {
   margin: 0px 0px;
   padding: 0px;
   display: flex;
+  align-items: center;
 }
 
-#navbar ul {
+.dropdown-content2 ul {
   position: relative;
   transition: all 0.3s ease-in-out;
   display: flex;
 }
-#navbar ul li {
+.dropdown-content2 ul li {
   position: relative;
   margin-left: 12px;
   display: flex;
   list-style: none;
   align-items: center;
 }
-#navbar ul li a {
+.dropdown-content2 ul li a {
   position: relative;
   color: black;
   font-size: 20px;
   margin: 45px 12px;
   text-decoration: none;
   background-color: transparent;
+  transition: all 0.3s ease-in-out;
 }
-#navbar ul li a:hover {
+.dropdown-content2 ul li a:hover {
   background-color: transparent;
-  color: rgb(63, 62, 62);
-  filter: invert();
+  color: orange;
+  /* filter: invert(); */
 }
 .logo {
   display: flex;
@@ -76,14 +78,15 @@ h1 {
   width: 122px;
 }
 #heading {
-  font-family: 'hind';
+  font-family: "hind";
   font-size: 45px;
   align-items: center;
   margin: 0px 12px;
   color: orange;
+  cursor: pointer;
 }
 
-#searchbar{
+#searchbar {
   position: relative;
   top: 16%;
   left: 120%;
@@ -91,11 +94,12 @@ h1 {
   vertical-align: middle;
   display: flow-root;
   color: #6b6b6b;
+  transition: all 0.4s ease-in-out;
+  
 }
 #searchbar:hover {
   color: orange;
   animation: animate 1.5s linear infinite;
-  
 }
 #search-box {
   position: absolute;
@@ -123,14 +127,13 @@ h1 {
   overflow: hidden;
 }
 .cart-total {
+  transition: all 0.4s ease-in-out;
   position: relative;
   left: 6%;
-  display: flex;
-  justify-content: center;
-  margin-left: 30px;
-  margin-top: 29px;
+  bottom: 13px;
 }
 .cart-total a {
+  transition: all 0.4s ease-in-out;
   color: orange;
 }
 .cart-total #cart {
@@ -143,11 +146,15 @@ h1 {
   vertical-align: middle;
 }
 .cart-total a:hover {
-  color:orangered;
+  color: orangered;
 }
 .cart-total p:hover {
   color: black;
 }
+.dropbtn2 {
+  display: none;
+}
+
 .home-index {
   margin: 12px 12px;
   padding: 1.5em 0;
@@ -160,6 +167,7 @@ h1 {
   color: orange;
 }
 .home-index a {
+  transition: all 0.4s ease-in-out;
   color: black;
   font-size: 18px;
   vertical-align: baseline;
@@ -184,21 +192,21 @@ h1 {
   justify-content: center;
   color: orange;
 }
-#login-heading1{
+#login-heading1 {
   color: orange;
   font-size: 62px;
-  vertical-align:-webkit-baseline-middle;
+  vertical-align: -webkit-baseline-middle;
 }
-.login-logo{
+.login-logo {
   color: rgb(216, 151, 31);
   text-align: center;
   margin: 12px 12px;
 }
-.login-logo p6{
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 
-  Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-/* font-size: 22px; */
-vertical-align: super;
+.login-logo p6 {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  /* font-size: 22px; */
+  vertical-align: super;
 }
 
 .form-box {
@@ -218,10 +226,12 @@ vertical-align: super;
   padding: 11px 0px;
 }
 #form-image-set1 {
+  outline: none;
   background: url(./images/email.png) no-repeat 9px 9px;
   padding-left: 45px;
 }
 #form-image-set2 {
+  outline: none;
   background: url(./images/padlock.png) no-repeat 8px 6px;
   padding-left: 45px;
 }
@@ -298,8 +308,8 @@ p {
   margin-right: 12px;
 }
 .line {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
-   Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   /* position: absolute; */
   margin-top: -12px;
   margin-bottom: 12px;
@@ -322,67 +332,110 @@ p {
 }
 #footer-heading {
   font-size: 42px;
-  vertical-align:-webkit-baseline-middle;
+  vertical-align: -webkit-baseline-middle;
 }
 .footer-logo p0 {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, 
-  Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-size: 42px;
   vertical-align: super;
 }
-.flicker-grid{
+.flicker-grid {
   display: grid;
   grid-template-columns: 6rem 6rem 6rem;
-  }
-  .flicker-box{
-  
-  }
-  .flicker-box img{
+}
+.flicker-box {
+}
+.flicker-box img {
   width: 82px;
-  }
+}
 
 /* media queries */
 
 
-@media (max-width: 1090px) {
-  #navbar {
+@media (max-width: 1080px) {
+  .dropbtn2 {
+    display: flex;
+    border: 1px solid black;
+    background-color: white;
+    color: #999;
+    padding: 4px 6px;
+    /* width: 50px; */
+    font-size: 25px;
+    cursor: pointer;
+    border-radius: 2px;
+  }
+
+  .dropdown2 {
+    position: relative;
+    right: 0px;
+  }
+  .dropdown-content2{
+    display: flex;
+    justify-content: flex-end;
+    width: 115px;
+  }
+.dropdown-content2 ul{
+  position: absolute;
+  display: none;
+  /* display: flex;
+  flex-direction: column; */
+ 
+}
+  .dropdown-content2 ul li {
+    /* position: absolute; */
+    background-color: white;
+    display: none;
+    border: none;
+    color: black;
+    width: 5rem;
+    z-index: 1;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  }
+
+  .dropdown-content2 ul li a {
+    margin: 0px;
+    padding: 0px;
+    color: rgb(37, 37, 37);
+    text-decoration: none;
+    display: block;
+    font-size: 19px;
+  }
+
+  .dropdown2:hover .dropdown-content2 ul {
+    padding: 0px;
+    margin: 0px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    width: 100%;
-    float: none;
-    text-align: center;
   }
-  #navbar ul {
-    display: flex;
-    justify-content: center;
-    /* margin: 0px; */
-    width: 100%;
-    float: none;
-    text-align: center;
-  }
-  #navbar ul li a {
+  .dropdown2:hover .dropdown-content2 ul li{
+    padding: 25px;
     margin: 0px;
-    width: 100%;
-    float: none;
+    display: flex;
+    width: 500px;
+    flex-direction: column;
+  }
+  .dropdown-content2 ul li a:hover {
+    background: orange;
+  }
+}
+
+@media (max-width: 1090px) {
+   #navbar {
+    display: flex;
     text-align: center;
   }
-  .logo {
-    display: flex;
-    justify-content: center;
-  }
-  #searchbar{
-    font-size: 20px;
-    display: contents;
-  }
+  #searchbar {
+    font-size: 44px;
+    left: 0%;
+  } 
   .cart-total {
     left: 0%;
   }
-  .cart-total p{
-
-  }
+  .cart-total p {
+  } 
 }
-@media (max-width: 912px) {
+@media (max-width: 812px) {
   #searchbar {
     display: none;
     overflow: hidden;
@@ -391,8 +444,12 @@ p {
     display: none;
     overflow: hidden;
   }
-
 }
+@media (max-width: 500px){
+  .dropdown-content2{
+    width: 0px;
+  }
+  }
 @media (max-width: 912px) {
   .form-box {
     margin: 0px;
@@ -463,7 +520,7 @@ p {
   footer {
     background: #2e2e2e;
   }
-  #flicker-img-hide{
+  #flicker-img-hide {
     display: none;
     overflow: hidden;
   }
@@ -482,6 +539,17 @@ p {
     overflow: hidden;
   }
 }
+@media (max-width: 610px) {
+  .login-logo{
+   font-size: 0px;
+  }
+  #login-heading1{
+font-size: 55px;
+  }
+}
+
+/* Animation Content */
+
 
 @keyframes animate {
   0% {
