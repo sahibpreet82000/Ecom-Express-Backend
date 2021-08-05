@@ -299,7 +299,6 @@
     padding: 46px 11px;
     padding-right: 123px;
   }
-
 }
 @media (max-width: 805px) {
   .section-content {
@@ -314,14 +313,14 @@
     bottom: 11%;
     font-size: 30px;
   }
-  .section-box p3{
+  .section-box p3 {
     display: none;
     overflow: hidden;
   }
-  .section-line-set{
+  .section-line-set {
     display: none;
   }
-  .dropdown{
+  .dropdown {
     right: 0%;
   }
 }
