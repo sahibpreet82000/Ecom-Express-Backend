@@ -205,7 +205,6 @@
 }
 .product-images img {
   width: 200px;
-
   background: white;
   margin: 12px 25px;
 }
@@ -248,6 +247,7 @@
     margin: 0px;
   }
   .product-images {
+margin: auto;
   }
   .product-grid {
     display: contents;
@@ -298,6 +298,9 @@
     margin: 0px 0px;
     padding: 46px 11px;
     padding-right: 123px;
+  }
+  .product-images{
+    margin: auto;
   }
 }
 @media (max-width: 805px) {
