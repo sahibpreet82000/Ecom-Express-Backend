@@ -203,6 +203,9 @@
   width: 100%;
   padding: 15px;
 }
+.product-images{
+  margin: auto;
+}
 .product-images img {
   width: 200px;
   background: white;

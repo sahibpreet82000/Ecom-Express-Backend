@@ -7,6 +7,7 @@
     <title>E-COM EXPRESS | A Shopping Website</title>
     <style></style>
     <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="register.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -18,10 +19,10 @@
       crossorigin="anonymous"
     ></script>
     <link
-    rel="shortcut icon"
-    type="image/png"
-    href="./images/shopping-bag.png"
-  />
+      rel="shortcut icon"
+      type="image/png"
+      href="./images/shopping-bag.png"
+    />
   </head>
   <body>
     <header>
@@ -166,19 +167,19 @@
     <div class="form-box">
       <div class="set-form">
         <form>
-          <div>
-            <input
-              class="form-set"
-              id="form-image-set1"
-              type="email"
-              placeholder="Enter your e-mail"
-            />
-          </div>
+          <i class="fas fa-envelope-open" id="register-icons"></i>
           <input
             class="form-set"
-            id="form-image-set2"
+            id="register-icon-set"
+            type="email"
+            placeholder="Enter your e-mail"
+          />
+          <i class="fas fa-user-lock" id="register-icons"></i>
+          <input
+            class="form-set"
+            id="register-icon-set2"
             type="text"
-            placeholder="Enter your password"
+            placeholder="New password"
           />
           <div class="forgot-pass-set"><a href="#"> Forgot Password?</a></div>
           <div>
@@ -313,31 +314,17 @@
           <span id="footer-name">Sahibpreet Singh</span>
         </div>
       </div>
-      <div id="content"></div>
+      <div id="content">
+        <span id="time"></span>
+      </div>
     </footer>
-
-   
-   
   </body>
-
-   <!-- JAVA SCRIPT -->
-
+  <!-- JAVA SCRIPT -->
+  <script src="scriptfile.js"></script>
   <script>
-    function greet(name){
-      console.log(name + " is a good boy");
-    }
-    var name= "Sahib";
-    var age ="20";
-    var temp= `My name is ${name} and i am ${age} years old.`; 
-    var len = name.length;
-    console.log(`length of name is ${len}`);
-    document.getElementById('content').innerHTML = ' <h3> this is a heading </h3> '
-    let name1 = "mehak";
-    let name2 = "mithi";
-    let name3  = "jesse";
-    greet(name);
-    greet(name1);
-    greet(name2);
-    greet(name3);
-      </script>
+    // let navbar = document.getElementById('navbar');
+    // navbar.addEventListener('mouseover' , function run(){
+    //   console.log("you are on navbar")
+    // });
+  </script>
 </html>

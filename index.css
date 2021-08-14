@@ -246,41 +246,40 @@ h1 {
   /* font-size: 22px; */
   vertical-align: super;
 }
-
+form {
+  padding: 25px 0px;
+}
 .form-box {
   transition: all 1.4s ease-in-out;
   background: #f5f5f5;
-  margin: 0px 200px;
+  margin: 0px 250px;
   overflow: hidden;
+}
+.set-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .form-set {
   margin-top: 25px;
-  width: 127%;
+  width: 100%;
   border: 1px solid grey;
-  background: rgb(255, 255, 255);
+  background: transparent;
   border-radius: 12px;
   margin-bottom: 12px;
   font-size: 19px;
   padding: 11px 0px;
-}
-#form-image-set1 {
   outline: none;
-  background: url(./images/email.png) no-repeat 9px 9px;
+}
+#register-icon-set {
   padding-left: 45px;
 }
-#form-image-set2 {
-  outline: none;
-  background: url(./images/padlock.png) no-repeat 8px 6px;
+#register-icon-set2 {
   padding-left: 45px;
-}
-.set-form {
-  display: flex;
-  width: 92%;
-  /* margin-left: 350px; */
-  justify-content: center;
-  align-items: center;
+  -webkit-text-security: square;
 }
 .forgot-pass-set {
+  text-align: left;
   margin-top: 15px;
   margin-bottom: 42px;
   font-size: 15px;
@@ -289,7 +288,8 @@ h1 {
   color: rgb(207, 52, 78);
 }
 .button-set {
-  width: 145%;
+  cursor: pointer;
+  width: 100%;
   height: 40px;
   margin-bottom: 52px;
   background-color: orange;
@@ -356,7 +356,7 @@ p {
   filter: invert();
 }
 .footer-text {
-  margin-top: 32px;
+  /* margin-top: 32px; */
   color: #999;
   text-align: center;
 }
@@ -375,7 +375,7 @@ p {
 .footer-logo p0 {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  font-size: 42px;
+  font-size: 30px;
   vertical-align: super;
 }
 .flicker-grid {
@@ -512,13 +512,14 @@ p {
   .form-set {
     position: relative;
     width: 100%;
-    margin: 12px 7px;
+    /* margin: 12px 7px; */
   }
+
   #form-image-set1 {
-    width: 82%;
+    width: 92%;
   }
   #form-image-set2 {
-    width: 82%;
+    width: 92%;
   }
   .button-set {
     width: 100%;
@@ -605,6 +606,12 @@ p {
   }
   .box {
     margin-left: 60px;
+  }
+  #form-image-set1 {
+    width: 86%;
+  }
+  #form-image-set2 {
+    width: 86%;
   }
 }
 
