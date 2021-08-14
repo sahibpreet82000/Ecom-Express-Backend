@@ -60,7 +60,7 @@ h1 {
   position: relative;
   color: black;
   font-size: 20px;
-  margin: 45px 12px;
+  padding: 13px;
   text-decoration: none;
   background-color: transparent;
   transition: all 0.3s ease-in-out;
@@ -276,7 +276,20 @@ form {
 }
 #register-icon-set2 {
   padding-left: 45px;
-  -webkit-text-security: square;
+}
+#set-eye-button{
+  position:absolute;
+  margin: 40px -39px;
+  overflow: hidden;
+  color: orange;
+  font-size: 21px;
+}
+#set-eye-button2{
+  position:absolute;
+  margin: 40px -39px;
+  overflow: hidden;
+  color: orange;
+  font-size: 21px;
 }
 .forgot-pass-set {
   text-align: left;
@@ -579,6 +592,9 @@ p {
   .box {
     margin-left: 0px;
   }
+  form{
+    padding: 23px 42px;
+  }
 }
 
 @media (max-width: 1040px) {
@@ -607,12 +623,9 @@ p {
   .box {
     margin-left: 60px;
   }
-  #form-image-set1 {
-    width: 86%;
-  }
-  #form-image-set2 {
-    width: 86%;
-  }
+form{
+  padding: 19px 4px;
+}
 }
 
 /* Animation Content */
