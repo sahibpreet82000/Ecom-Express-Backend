@@ -279,14 +279,14 @@ form {
 }
 #set-eye-button{
   position:absolute;
-  margin: 40px -39px;
+  margin: 40px -38.7px;
   overflow: hidden;
   color: orange;
   font-size: 21px;
 }
 #set-eye-button2{
   position:absolute;
-  margin: 40px -39px;
+  margin: 40px -40px;
   overflow: hidden;
   color: orange;
   font-size: 21px;
@@ -401,6 +401,23 @@ p {
 
 /* media queries */
 
+@media (min-width:1496px){
+  body{
+    margin: auto;
+    width: 1538px;
+  }
+}
+@media (max-width: 1320px){
+  .dropdown-content2 ul li a{
+    padding: 1px;
+    margin: 0px 9px;
+    font-size: 14px;
+  }
+  .dropdown-content2 ul li {
+    margin: 0px;
+  }
+}
+
 @media (max-width: 1080px) {
   .dropbtn2 {
     display: flex;
@@ -431,6 +448,7 @@ p {
   }
   .dropdown-content2 ul li {
     /* position: absolute; */
+    margin: 2px;
     background-color: white;
     display: none;
     border: none;

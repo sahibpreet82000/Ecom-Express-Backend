@@ -66,7 +66,8 @@
 #border-box p2 {
   color: white;
   position: absolute;
-  top: 600px;
+  top: 629px;
+  left: 20px;
   margin: 3px;
   padding: 12px;
   font-size: 50px;
@@ -88,6 +89,11 @@
 .catelog-set li {
   color: rgb(63, 62, 62);
   margin: 8px 30px;
+}
+.newitem-box{
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
 }
 .newitem-box img {
   vertical-align: middle;
@@ -203,7 +209,7 @@
   width: 100%;
   padding: 15px;
 }
-.product-images{
+.product-images {
   margin: auto;
 }
 .product-images img {
@@ -237,6 +243,49 @@
   color: orange;
   animation: animate 1.5s linear infinite;
 }
+.next-page {
+  float: right;
+  font-size: 20px;
+  padding: 20px 4px;
+}
+.next-page a {
+  color: #999;
+  text-decoration: none;
+  padding: 1px 20px;
+}
+.next-page a:hover {
+  color: orange;
+}
+table,
+td {
+  border: 1px solid black;
+  /* text-align: left; */
+  border-collapse: collapse;
+  padding: 1px 0px;
+}
+#left-button-product {
+  color: #999;
+  padding: 1px 20px;
+}
+#right-button-product {
+  color: #999;
+  padding: 1px 20px;
+}
+#right-button-product:hover {
+  color: rgb(59, 59, 59);
+}
+#left-button-product:hover {
+  color: rgb(59, 59, 59);
+}
+
+/* MEDIA SETTINGS */
+@media (min-width:1496px){
+  body{
+    margin: auto;
+    width: 1538px;
+  }
+}
+
 @media (max-width: 1080px) {
   .grid-box {
     display: flex;
@@ -305,6 +354,20 @@
   }
   .product-images {
     margin: auto;
+  }
+}
+@media (max-width: 1316px) {
+  #border-box p2 {
+    color: white;
+    position: absolute;
+    top: 74%;
+    left: 4%;
+    margin: 3px;
+    padding: 12px;
+    font-size: 42px;
+  }
+  .newitem-box{
+    justify-content: center;
   }
 }
 @media (max-width: 805px) {

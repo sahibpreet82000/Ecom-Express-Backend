@@ -1,9 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>E-COM EXPRESS | A Shopping Website</title>
+    <style></style>
+    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="index-hamburger.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -14,41 +18,15 @@
       src="https://kit.fontawesome.com/f0ea9c1e03.js"
       crossorigin="anonymous"
     ></script>
-    <link
-      rel="shortcut icon"
-      type="image/png"
-      href="./images/shopping-bag.png"
-    />
   </head>
   <body>
     <header>
-      <div class="header">
-        <a class="header" href="#">
-          <i id="remove-header-content" class="fas fa-envelope"></i>
-          <span id="remove-header-content">@ecomexpress.com</span>
-        </a>
-        <a class="header" href="#">
-          <i id="remove-header-content" class="fas fa-phone-alt"></i>
-          <span id="remove-header-content">+91 984666483</span>
-        </a>
-        <a class="header" href="index.html">
-          <i class="fas fa-sign-in-alt"></i> Login
-        </a>
-        <a class="header" href="register.html">
-          <i class="fas fa-book"></i> Register
-        </a>
-        <a class="icon" id="media-icons" href="#"
-          ><i class="fab fa-facebook-f"></i>
-        </a>
-        <a class="icon" id="media-icons" href="#">
-          <i class="fab fa-google"></i>
-        </a>
-        <a class="icon" id="media-icons" href="#">
-          <i class="fab fa-instagram-square"></i>
-        </a>
-        <a class="icon" href="#" id="media-icons"
-          ><i class="fab fa-twitter"></i>
-        </a>
+      <div class="cart-button">
+        <i class="fas fa-angle-left" id="left-button" onclick="decrease()"></i>
+        <p20 id="number-set" >0</p20>
+        <i class="fas fa-angle-right" id="right-button" onclick="increase()"></i>
       </div>
     </header>
-    <hr />
+    <script src="scriptfile.js"></script>
+  </body>
+</html>

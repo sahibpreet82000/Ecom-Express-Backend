@@ -1,3 +1,39 @@
 @media(max-width:800px){
 
 }
+*{
+    text-decoration: none;
+text-emphasis: none;
+text-transform: none;
+}
+.cart-button{
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+}
+.cart-button ul{
+    display: flex;
+}
+.cart-button li{
+  
+}
+#left-button{
+font-size: 40px;
+border: 2px solid black;
+padding: 20px;
+color: grey;
+}
+#right-button{
+font-size: 40px;
+border: 2px solid black;
+padding: 20px;
+}
+#right-button:hover{
+    background-color: grey;
+}
+
+#number-set{
+font-size: 40px;
+/* border: 2px solid black; */
+padding:0px 20px;
+}

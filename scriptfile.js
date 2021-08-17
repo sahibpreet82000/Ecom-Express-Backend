@@ -1,3 +1,5 @@
+// JAVASCRIPT FOR INDEX-PAGE
+
 function change() {
   let set = document.getElementById("set-eye-button");
   set.style.overflow = "visible";
@@ -19,3 +21,33 @@ function change() {
 //  function changetext(){
 //    let text = document.querySelector('#register-icon-set2');
 //  }
+
+// JAVASCRIPT FOR PRODUCT-CART
+
+function increase() {
+  let inc = document.getElementById("right-button");
+  let p = document.getElementById("number-set");
+  let i = p.innerHTML;
+  if(i<10){
+    i++;   
+  }
+  if(i==10){
+    alert("maximum value reach");
+  } 
+    document.getElementById("number-set").innerHTML = i;
+    document.getElementById("number-set").style.strokeLinecap = 'none';
+  
+}
+function decrease() {
+  // let dec = (document.querySelector("#left-button").style.color = "yellow");
+  let p = document.getElementById("number-set");
+  let i = p.innerHTML;
+  if(i>0){
+    i--;
+  }
+  if(i==0){
+    alert("you have to select atleast one item")
+  }
+ 
+  document.getElementById("number-set").innerHTML = i;
+}
