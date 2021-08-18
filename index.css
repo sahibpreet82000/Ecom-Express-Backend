@@ -401,7 +401,7 @@ p {
 
 /* media queries */
 
-@media (min-width:1496px){
+@media (min-width:1546px){
   body{
     margin: auto;
     width: 1538px;
