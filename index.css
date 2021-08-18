@@ -277,15 +277,15 @@ form {
 #register-icon-set2 {
   padding-left: 45px;
 }
-#set-eye-button{
-  position:absolute;
+#set-eye-button {
+  position: absolute;
   margin: 40px -38.7px;
   overflow: hidden;
   color: orange;
   font-size: 21px;
 }
-#set-eye-button2{
-  position:absolute;
+#set-eye-button2 {
+  position: absolute;
   margin: 40px -40px;
   overflow: hidden;
   color: orange;
@@ -328,6 +328,21 @@ form {
   margin: 12px;
   font-size: 30px;
 }
+/* html {
+  height: 100%;
+  box-sizing: border-box;
+}
+body {
+  position: relative;
+  padding-bottom: 6rem;
+  min-height: 100%;
+}
+footer {
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: 0;
+} */
 .footer-content {
   background: #2e2e2e;
   width: 100%;
@@ -401,14 +416,14 @@ p {
 
 /* media queries */
 
-@media (min-width:1546px){
-  body{
+@media (min-width: 1546px) {
+  body {
     margin: auto;
     width: 1538px;
   }
 }
-@media (max-width: 1320px){
-  .dropdown-content2 ul li a{
+@media (max-width: 1320px) {
+  .dropdown-content2 ul li a {
     padding: 1px;
     margin: 0px 9px;
     font-size: 14px;
@@ -610,7 +625,7 @@ p {
   .box {
     margin-left: 0px;
   }
-  form{
+  form {
     padding: 23px 42px;
   }
 }
@@ -641,9 +656,9 @@ p {
   .box {
     margin-left: 60px;
   }
-form{
-  padding: 19px 4px;
-}
+  form {
+    padding: 19px 4px;
+  }
 }
 
 /* Animation Content */
