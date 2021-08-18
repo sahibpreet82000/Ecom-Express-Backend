@@ -1,0 +1,201 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  text-decoration: none;
+  font-family: "Hind", sans-serif;
+}
+.home-index p49 {
+  color: #999;
+  font-weight: 400;
+}
+.display-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  margin: 49px 60px;
+}
+.display-product {
+}
+.display-grid-half {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+#margin-set-image {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  margin: auto;
+  width: 90%;
+}
+#margin-set-info {
+}
+.display-grid-content-main {
+}
+.display-grid-content-main img {
+  border: 1px solid darkgray;
+  width: 267px;
+  position: relative;
+  padding: 0px 0px;
+  top: 23%;
+  left: 0%;
+  transition: all 1.5s ease-in-out;
+}
+.display-grid-content-main img:hover {
+  transform: scale(1.3);
+  border: none;
+}
+.display-grid-content-main h9 {
+  font-size: 30px;
+  text-align: center;
+  font-weight: 400;
+  text-transform: uppercase;
+  font-family: "Lucida Sans";
+}
+.product-info {
+  margin-top: 22px;
+}
+.product-info h10 {
+  text-transform: uppercase;
+  font-family: "Lucida Sans";
+  font-size: 12px;
+}
+.product-info p47 {
+  font-family: "Lucida Sans";
+}
+.description {
+  padding-right: 129px;
+  margin-top: 53px;
+}
+.description h10 {
+  text-transform: uppercase;
+  font-weight: 800;
+  /* font-family: "Lucida Sans"; */
+  font-size: 14px;
+}
+.color-change p45 {
+  font-size: 26px;
+  font-family: "Lucida Sans";
+}
+.color-change ul {
+  display: flex;
+}
+.color-change ul li {
+  list-style: none;
+  padding:10px;
+  color: darkred;
+}
+.color-change ul li a span {
+  width: 15px;
+  height: 15px;
+  display: block;
+  background: #ff0000;
+  margin: 0 5px 0.5em;
+  margin: auto;
+  border-radius: 10px;
+}
+.color-change ul li a.brown span {
+  background: brown;
+  margin: auto;
+}
+.color-change ul li a.grey span {
+  background: grey;
+  margin: auto;
+}
+.color-change ul li a.blue span {
+  background: blue;
+  margin: auto;
+}
+.button-cart button {
+  display: block;
+  transition: all 0.4s ease-in-out;
+  background: white;
+  border: 1px solid orange;
+  color: orange;
+  width: 236px;
+  height: 39px;
+  /* margin: auto; */
+}
+.button-cart button:hover {
+  background: orange;
+  color: black;
+  cursor: pointer;
+}
+.share-icons {
+  margin: 15px 0px;
+}
+.share-icons p46 {
+  font-size: 21px;
+}
+.share-icons i {
+  padding: 2px;
+  font-size: 20px;
+}
+.share-icons i:hover {
+  color: orange;
+}
+#category-border {
+  border: 1px solid black;
+}
+.catelog-set {
+  width: 81%;
+  margin: auto;
+}
+.catelog-set a {
+  transition: all 0.4s ease-in-out;
+  margin: 0px 2px;
+  color: rgb(63, 62, 62);
+}
+.catelog-set a:hover {
+  color: orange;
+}
+.catelog-set ul {
+  list-style: none;
+}
+.catelog-set li {
+  color: rgb(63, 62, 62);
+  margin: 8px 30px;
+}
+.catelog-set p48 {
+  display: block;
+  font-family: "Lucida Sans";
+  text-align: center;
+  color: rgb(56, 51, 51);
+  font-size: 30px;
+  background: #f5f5f5;
+  letter-spacing: 4px;
+}
+.display-grid-img {
+  background: #f5f5f5;
+  width: 81%;
+  margin: auto;
+  margin-top: 18px;
+}
+.display-grid-img img {
+  display: block;
+  position: relative;
+  width: 84%;
+  padding: 16px;
+  margin: auto;
+}
+#border-box {
+  position: absolute;
+  top: 36%;
+  left: 10%;
+}
+#border-box p50 {
+  color: white;
+  position: relative;
+  top: 662px;
+  /* left: 27px; */
+  margin: 3px;
+  padding: 1px;
+  font-size: 40px;
+}
+#border-box p50:after {
+  content: "";
+  background: #fff;
+  width: 88%;
+  right: -18%;
+  height: 1.5px;
+  position: absolute;
+  bottom: 0%;
+}
