@@ -140,50 +140,50 @@
                 <p48>CATEGORIES</p48>
                 <ul>
                     <li>
-                        <img src="./images/next.png" alt="" /><a href="#">
+                        <img src="./images/next.png" alt="" /><a href="products.html">
                             Best Selling</a>
                     </li>
                     <li>
-                        <img src="./images/next.png" alt="" /><a href="#"> Man</a>
+                        <img src="./images/next.png" alt="" /><a href="product.html"> Man</a>
                         <ul>
                             <li>
                                 <img src="./images/next.png" alt="" />
-                                <a href="#"> Accessories</a>
+                                <a href="product2.html"> Accessories</a>
                             </li>
                             <li>
                                 <img src="./images/next.png" alt="" />
-                                <a href="#"> Coats & Jackets </a>
+                                <a href="products.html"> Coats & Jackets </a>
                             </li>
                             <li>
-                                <img src="./images/next.png" alt="" /> <a href="#"> Jeans </a>
+                                <img src="./images/next.png" alt="" /> <a href="products.html"> Jeans </a>
                             </li>
                             <li>
                                 <img src="./images/next.png" alt="" />
-                                <a href="#"> New Arrival</a>
+                                <a href="product2.html"> New Arrival</a>
                             </li>
                         </ul>
                     </li>
                     <li>
-                        <img src="./images/next.png" alt="" /><a href="#"> Sales</a>
+                        <img src="./images/next.png" alt="" /><a href="product2.html"> Sales</a>
                     </li>
                     <li>
-                        <img src="./images/next.png" alt="" /><a href="#"> Woman</a>
+                        <img src="./images/next.png" alt="" /><a href="products.html"> Woman</a>
                         <ul>
                             <li>
                                 <img src="./images/next.png" alt="" />
-                                <a href="#">Accessories </a>
+                                <a href="products.html">Accessories </a>
                             </li>
                             <li>
                                 <img src="./images/next.png" alt="" />
-                                <a href="#"> Dresses </a>
+                                <a href="products.html"> Dresses </a>
                             </li>
                             <li>
                                 <img src="./images/next.png" alt="" />
-                                <a href="#"> Shorts </a>
+                                <a href="products.html"> Shorts </a>
                             </li>
                             <li>
                                 <img src="./images/next.png" alt="" />
-                                <a href="#"> New Arrival </a>
+                                <a href="products.html"> New Arrival </a>
                             </li>
                         </ul>
                     </li>
@@ -193,24 +193,45 @@
         <div class="display-product">
             <div class="display-grid-half">
                 <div class="display-grid-content-main" id="margin-set-image">
-                    <img src="./images/19.jpg" alt="formal shirt">
+                    <img src="./images/si.jpg" alt="formal shirt">
+                    <div class="product-catelog-set">
+                        <ul>
+                            <li><img src="./images/si.jpg" alt="" onclick="imagechange()"></li>
+                            <li><img src="./images/si1.jpg" alt="" onclick="imagechange1()"></li>
+                            <li><img src="./images/si2.jpg" alt="" onclick="imagechange2()"></li>
+                        </ul>
+                    </div>
                 </div>
                 <div class="display-grid-content-main" id="margin-set-info">
                     <h9>Men's Solid Casual Shirt</h9>
                     <div class="product-info"> <span style="font-size: 32px; color:orange ;">$180</span> <br>
                         <div class="description">
-                        <h10>Description</h10> <br>
-                        <p47>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                            nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p47></div> <br>
+                            <h10>Description</h10> <br>
+                            <p47>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                                nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p47>
+                        </div> <br>
                         <div class="color-change">
-                            <p45>Color:</p45> 
+                            <p45>Color:</p45>
                             <ul>
                                 <li><a href="#"><span></span></a>Red</li>
                                 <li><a href="#" class="brown"><span></span></a>Brown</li>
                                 <li><a href="#" class="grey"><span></span></a>Grey</li>
                                 <li><a href="#" class="blue"><span></span></a>Blue</li>
                             </ul>
-
+                            <div class="quantity">
+                                <h1>Quantity:</h1>
+                                <table>
+                                    <tr>
+                                        <td> <i class="fas fa-angle-left" id="left-button" onclick="decrease()"></i>
+                                        </td>
+                                        <td>
+                                            <p20 id="number-set">0</p20>
+                                        </td>
+                                        <td> <i class="fas fa-angle-right" id="right-button" onclick="increase()"></i>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
                         </div>
                         <div class="button-cart">
                             <button type="menu">ADD TO CART</button>
@@ -236,8 +257,68 @@
             </div>
         </div>
 
-        <div class="display-product"></div>
-    </div>
+        <div class="display-product">
+            <div class="set-details-product">
+                <ul>
+                    <li><a href="#home" onclick="hovertext()">
+                            <h2>Description</h2>
+                        </a></li>
+                    <li> <a href="#home" onclick="hovertext2()">
+                            <h2>Reviews</h2>
+                        </a></li>
+                    <li> <a href="#home" onclick="hovertext3()">
+                            <h2>Information</h2>
+                        </a> </li>
+                </ul>
+                <div class="details2">
+                    <div class="details-heading">
+                        <h12> Dwane Bryane
+                        </h12> <br>
+                    </div>
+                    <p44>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi
+                        ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit.
+
+                    </p44>
+                    <div class="details-heading">
+                        <h12> Jhon Miller
+                        </h12> <br>
+                    </div>
+                    <p44>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi
+                        ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit.
+
+                    </p44>
+                </div>
+                <div class="details">
+                    <div class="details-heading">
+                        <h12>PRODUCT BRIEF DESCRIPTION
+                        </h12> <br>
+                    </div>
+                    <p44>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown
+                        aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica.
+                        Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure
+                        terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan
+                        american apparel, butcher voluptate nisi qui. <br> <br>
+                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+                        mollit anim id est laborum.</p44>
+                </div>
+                <div class="details3">
+                    <div class="details-heading">
+                        <h12>Material used
+                        </h12> <br>
+                    </div>
+                    <p44>Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo
+                        retro fanny pack lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft
+                        beer, iphone skateboard locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR
+                        banksy irony. Leggings gentrify squid 8-bit cred pitchfork. Williamsburg banh mi whatever
+                        gluten-free, carles pitchfork biodiesel fixie etsy retro mlkshk vice blog. Scenester cred you
+                        probably haven't heard of them, vinyl craft beer blog stumptown. Pitchfork sustainable tofu
+                        synth chambray yr.
+
+                    </p44>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- footer content  -->
@@ -328,6 +409,7 @@
             <span id="time"></span>
         </div>
     </footer>
+    <script src="scriptfile.js"></script>
 </body>
 
 </html>
