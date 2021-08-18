@@ -28,26 +28,41 @@ function increase() {
   let inc = document.getElementById("right-button");
   let p = document.getElementById("number-set");
   let i = p.innerHTML;
-  if(i<10){
-    i++;   
+  if (i < 10) {
+    i++;
   }
-  if(i==10){
+  if (i == 10) {
     alert("maximum value reach");
-  } 
-    document.getElementById("number-set").innerHTML = i;
-    document.getElementById("number-set").style.strokeLinecap = 'none';
-  
+  }
+  document.getElementById("number-set").innerHTML = i;
+  document.getElementById("number-set").style.strokeLinecap = "none";
 }
 function decrease() {
   // let dec = (document.querySelector("#left-button").style.color = "yellow");
   let p = document.getElementById("number-set");
   let i = p.innerHTML;
-  if(i>0){
+  if (i > 0) {
     i--;
   }
-  if(i==0){
-    alert("you have to select atleast one item")
+  if (i == 0) {
+    alert("you have to select atleast one item");
   }
- 
+
   document.getElementById("number-set").innerHTML = i;
+}
+
+function imagechange() {
+  let img = document.getElementById("margin-set-image");
+  img.innerHTML =
+    '<img src="./images/si.jpg" alt="formal shirt"> <div class="product-catelog-set"> <ul> <li><img src="./images/si.jpg" alt="" onclick="imagechange()"></li> <li><img src="./images/si1.jpg" alt="" onclick="imagechange1()"></li> <li><img src="./images/si2.jpg" alt="" onclick="imagechange2()"></li> </ul> </div>';
+}
+function imagechange1() {
+  let img = document.getElementById("margin-set-image");
+  img.innerHTML =
+    '<img src="./images/si1.jpg" alt="formal shirt"> <div class="product-catelog-set"> <ul> <li><img src="./images/si.jpg" alt="" onclick="imagechange()"></li> <li><img src="./images/si1.jpg" alt="" onclick="imagechange1()"></li> <li><img src="./images/si2.jpg" alt="" onclick="imagechange2()"></li> </ul> </div>';
+}
+function imagechange2() {
+  let img = document.getElementById("margin-set-image");
+  img.innerHTML =
+    '<img src="./images/si2.jpg" alt="formal shirt"> <div class="product-catelog-set"> <ul> <li><img src="./images/si.jpg" alt="" onclick="imagechange()"></li> <li><img src="./images/si1.jpg" alt="" onclick="imagechange1()"></li> <li><img src="./images/si2.jpg" alt="" onclick="imagechange2()"></li> </ul> </div>';
 }
