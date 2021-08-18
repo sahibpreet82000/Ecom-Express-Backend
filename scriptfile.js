@@ -51,6 +51,8 @@ function decrease() {
   document.getElementById("number-set").innerHTML = i;
 }
 
+// JAVA SCRIPT FOR DISPLAY.HTML
+
 function imagechange() {
   let img = document.getElementById("margin-set-image");
   img.innerHTML =
@@ -66,3 +68,36 @@ function imagechange2() {
   img.innerHTML =
     '<img src="./images/si2.jpg" alt="formal shirt"> <div class="product-catelog-set"> <ul> <li><img src="./images/si.jpg" alt="" onclick="imagechange()"></li> <li><img src="./images/si1.jpg" alt="" onclick="imagechange1()"></li> <li><img src="./images/si2.jpg" alt="" onclick="imagechange2()"></li> </ul> </div>';
 }
+
+function hovertext() {
+  let hov = document.querySelector(".details");
+  let hovi = document.querySelector(".details2");
+  let ho = document.querySelector(".details3");
+  hov.style.display = "block";
+  hovi.style.display = "none";
+  ho.style.display = "none";
+  // if (hov.style.display != "none") {
+  //   hov.style.display = "none";
+  // }
+  // } else {
+  //   hov.style.display = "block";
+  // }
+}
+function hovertext2(){
+  let hov = document.querySelector(".details");
+  let hovi = document.querySelector(".details2");
+  let ho = document.querySelector(".details3");
+  hov.style.display = "none";
+  hovi.style.display = "block";
+  hov.style.overflow = "visible";
+  ho.style.display = "none";
+}
+function hovertext3(){
+  let hov = document.querySelector(".details");
+  let hovi = document.querySelector(".details2");
+  let ho = document.querySelector(".details3");
+  hov.style.display = "none";
+  hovi.style.display = "none";
+  ho.style.display = "block";
+}
+
