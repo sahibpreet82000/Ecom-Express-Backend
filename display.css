@@ -30,7 +30,6 @@
 #margin-set-info {
 }
 
-
 .display-grid-content-main img {
   border: 1px solid darkgray;
   width: 267px;
@@ -45,29 +44,29 @@
   border: none;
   overflow: hidden;
 }
-.product-catelog-set ul{
-    margin: 5px 0 0;
-    position: static;
-    overflow: hidden;
+.product-catelog-set ul {
+  margin: 5px 0 0;
+  position: static;
+  overflow: hidden;
 }
-.product-catelog-set ul li{
-    width: 32.2%;
-    float: left;
-    margin: 0 1% 0 0;
-    list-style: none;
+.product-catelog-set ul li {
+  width: 32.2%;
+  float: left;
+  margin: 0 1% 0 0;
+  list-style: none;
 }
 .product-catelog-set ul li img {
-    width: 100%;
-    height: auto;
-    display: block;
-    transition: all 1s ease;
-    /* border: 1px solid darkgrey; */
-    opacity: 70%;
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: all 1s ease;
+  /* border: 1px solid darkgrey; */
+  opacity: 70%;
 }
-.product-catelog-set ul li img:hover{
-    border: 1px solid darkgrey;
-    opacity: 100%;
-    cursor:default;
+.product-catelog-set ul li img:hover {
+  border: 1px solid darkgrey;
+  opacity: 100%;
+  cursor: default;
 }
 .display-grid-content-main h9 {
   font-size: 30px;
@@ -106,7 +105,7 @@
 }
 .color-change ul li {
   list-style: none;
-  padding:10px;
+  padding: 10px;
   color: darkred;
 }
 .color-change ul li a span {
@@ -130,11 +129,11 @@
   background: blue;
   margin: auto;
 }
-.quantity{
-    margin-bottom: 12px;
+.quantity {
+  margin-bottom: 12px;
 }
-h1{
-    font-size: 27px;
+h1 {
+  font-size: 27px;
 }
 table,
 td {
@@ -142,22 +141,22 @@ td {
   /* text-align: left; */
   border-collapse: collapse;
 }
-#left-button{
-    padding: 12px 25px;
+#left-button {
+  padding: 12px 25px;
 }
-#right-button{
-    padding: 12px 25px;
+#right-button {
+  padding: 12px 25px;
 }
-#left-button:hover{
-    background: orange;
-    color: black;
+#left-button:hover {
+  background: orange;
+  color: black;
 }
-#right-button:hover{
-    background: orange;
-    color: black;
+#right-button:hover {
+  background: orange;
+  color: black;
 }
-#number-set{
-    padding: 0px 25px;
+#number-set {
+  padding: 0px 25px;
 }
 .button-cart button {
   display: block;
@@ -191,11 +190,12 @@ td {
   border: 1px solid black;
 }
 .catelog-set {
-  width: 81%;
+  height: 94%;
+  width: 75%;
   margin: auto;
 }
 .catelog-set a {
-    font-size: 19px;
+  font-size: 19px;
   transition: all 0.4s ease-in-out;
   margin: 0px 2px;
   color: rgb(63, 62, 62);
@@ -255,56 +255,55 @@ td {
   position: absolute;
   bottom: 0%;
 }
-h2{
-    font-family: "Lucida Sans";
-    font-size: 20px;  
-    font-weight: 200;
+h2 {
+  font-family: "Lucida Sans";
+  font-size: 20px;
+  font-weight: 200;
 }
-.set-details-product{
+.set-details-product {
 }
-.set-details-product ul{
-display: flex;
+.set-details-product ul {
+  display: flex;
 }
-.set-details-product ul li{
-list-style: none;
-outline: none;
-border-bottom: 1px solid black;
-padding: 12px;
+.set-details-product ul li {
+  list-style: none;
+  outline: none;
+  border-bottom: 1px solid black;
+  padding: 12px;
 }
-.set-details-product ul li:hover{
-    border: 1px solid darkgrey;
-    border-bottom: none;
-    border-radius: 4px;
-
+.set-details-product ul li:hover {
+  border: 1px solid darkgrey;
+  border-bottom: none;
+  border-radius: 4px;
 }
-.set-details-product ul li h2{
-    padding: 2px;
+.set-details-product ul li h2 {
+  padding: 2px;
 }
-.set-details-product ul li a{
-    color: rgb(37, 37, 37);
+.set-details-product ul li a {
+  color: rgb(37, 37, 37);
 }
-.details{
-    display: block;
-    padding: 22px 6px;
+.details {
+  display: block;
+  padding: 22px 6px;
 }
-.details2{
-    display: none;
-    overflow: hidden;
+.details2 {
+  display: none;
+  overflow: hidden;
 }
-.details3{
-    display: none;
-    overflow: hidden;
+.details3 {
+  display: none;
+  overflow: hidden;
 }
-.details-heading{
-    margin: 19px 0px;
+.details-heading {
+  margin: 19px 0px;
 }
-.details-heading h12{
-    color: orange;
-    font-size: 24px;
-    font-weight: 400;
+.details-heading h12 {
+  color: orange;
+  font-size: 24px;
+  font-weight: 400;
 }
-p44{
-    color: darkgray;
-    padding: 0px;
-    margin: auto;
+p44 {
+  color: darkgray;
+  padding: 0px;
+  margin: auto;
 }
