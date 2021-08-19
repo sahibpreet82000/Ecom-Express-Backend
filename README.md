@@ -1,2 +1,2 @@
 # Ecom-express
-An e-commerce Website Made With Html ,Css,Java Script , Mysql 
+An E-Commerce Website Made With Html ,Css,Java Script , Mysql 
