@@ -309,6 +309,7 @@ form {
   font-size: 30px;
   border: none;
   border-radius: 12px;
+  transition: all 400ms ease;
 }
 .signin-newuser {
   display: flex;
@@ -316,6 +317,8 @@ form {
 }
 .button-set:hover {
   background-color: rgb(177, 82, 47);
+  transform: translateY(1px);
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1), 0 1px 1px 0 rgba(0, 0, 0, 0.09);
 }
 .signin-newuser a {
   margin-bottom: 22px;
