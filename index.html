@@ -8,8 +8,6 @@
     <style></style>
     <link rel="stylesheet" href="index.css" />
     <link rel="stylesheet" href="register.css" />
-    <link rel="stylesheet" href="index-hamburger.html">
-    <link rel="stylesheet" href="index-hamburger.css">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -30,7 +28,7 @@
     <header>
       <div class="header">
         <a class="header" href="#">
-          <i id="remove-header-content" class="fas fa-envelope"></i>
+          <i id="remove-header-content mail-box-set" class="fas fa-envelope" ></i>
           <span id="remove-header-content">@ecomexpress.com</span>
         </a>
         <a class="header" href="#">
@@ -66,67 +64,71 @@
         <span class="logo" id="heading"> E-COM EXPRESS <br /></span>
       </div>
 
-        <!-- <button class="dropbtn2"><i class="fas fa-bars"></i></button> -->
-        <div class="dropdown-content2">
-          <ul>
-            <li>
-              <a href="index.html" target="blank">HOME</a>
-            </li>
-            <li class="product-hover">
-              <a href="products.html">PRODUCTS</a>
-              <i class="fas fa-caret-down" id="remove-product-downbar"></i>
-              <ul>
-                <div class="product-hover-grid">
-                  <div class="product-grid-layout">
-                    <p10>Men's Wear</p10>
-                    <li><a href="products.html">Clothing</a></li>
-                    <li><a href="products.html">Wallets</a></li>
-                    <li><a href="products.html">Shoes</a></li>
-                    <li><a href="products.html">Accessories</a></li>
-                    <li><a href="products.html">Watches</a></li>
-                  </div>
-                  <div class="product-grid-layout">
-                    <p10>Women's wear</p10>
-                    <li><a href="products.html">Clothing</a></li>
-                    <li><a href="products.html">Wallets</a></li>
-                    <li><a href="products.html">Shoes</a></li>
-                    <li><a href="products.html">Accessories</a></li>
-                    <li><a href="products.html">Watches</a></li>
-                  </div>
+      <div class="dropbtn2">
+        <a href="#" id="nav-bar" onclick="hamburger()"
+          ><span onclick="hamburger()"></span
+        ></a>
+      </div>
+      <div class="dropdown-content2">
+        <ul>
+          <li>
+            <a href="index.html" target="blank">HOME</a>
+          </li>
+          <li class="product-hover" id="nav">
+            <a href="products.html">PRODUCTS</a>
+            <i class="fas fa-caret-down" id="remove-product-downbar"></i>
+            <ul>
+              <div class="product-hover-grid">
+                <div class="product-grid-layout">
+                  <p10>Men's Wear</p10>
+                  <li><a href="products.html">Clothing</a></li>
+                  <li><a href="products.html">Wallets</a></li>
+                  <li><a href="products.html">Shoes</a></li>
+                  <li><a href="products.html">Accessories</a></li>
+                  <li><a href="products.html">Watches</a></li>
                 </div>
-              </ul>
-            </li>
-            <li class="product-hover">
-              <a href="product2.html">SHOPPING</a>
-              <i class="fas fa-caret-down" id="remove-shopping-downbar"></i>
-              <ul>
-                <div class="product-hover-grid">
-                  <div class="product-grid-layout">
-                    <p10>Furniture</p10>
-                    <li><a href="products.html">Clock</a></li>
-                    <li><a href="products.html">Wallets</a></li>
-                    <li><a href="products.html">Shoes</a></li>
-                    <li><a href="products.html">Accessories</a></li>
-                    <li><a href="products.html">Watches</a></li>
-                  </div>
-                  <div class="product-grid-layout">
-                    <p10>Clothing</p10>
-                    <li><a href="products.html">Blazers</a></li>
-                    <li><a href="products.html">Wallets</a></li>
-                    <li><a href="products.html">Shoes</a></li>
-                    <li><a href="products.html">Accessories</a></li>
-                    <li><a href="products.html">Watches</a></li>
-                  </div>
+                <div class="product-grid-layout">
+                  <p10>Women's wear</p10>
+                  <li><a href="products.html">Clothing</a></li>
+                  <li><a href="products.html">Wallets</a></li>
+                  <li><a href="products.html">Shoes</a></li>
+                  <li><a href="products.html">Accessories</a></li>
+                  <li><a href="products.html">Watches</a></li>
                 </div>
-              </ul>
-            </li>
-            <li><a href="Contact.html" target="blank">CONTACT US</a></li>
+              </div>
+            </ul>
+          </li>
+          <li class="product-hover">
+            <a href="product2.html">SHOPPING</a>
+            <i class="fas fa-caret-down" id="remove-shopping-downbar"></i>
+            <ul>
+              <div class="product-hover-grid">
+                <div class="product-grid-layout">
+                  <p10>Furniture</p10>
+                  <li><a href="products.html">Clock</a></li>
+                  <li><a href="products.html">Wallets</a></li>
+                  <li><a href="products.html">Shoes</a></li>
+                  <li><a href="products.html">Accessories</a></li>
+                  <li><a href="products.html">Watches</a></li>
+                </div>
+                <div class="product-grid-layout">
+                  <p10>Clothing</p10>
+                  <li><a href="products.html">Blazers</a></li>
+                  <li><a href="products.html">Wallets</a></li>
+                  <li><a href="products.html">Shoes</a></li>
+                  <li><a href="products.html">Accessories</a></li>
+                  <li><a href="products.html">Watches</a></li>
+                </div>
+              </div>
+            </ul>
+          </li>
+          <li><a href="Contact.html" target="blank">CONTACT US</a></li>
 
-            <li>
-              <a href="mail.html" target="blank">MAIL US</a>
-            </li>
-          </ul>
-        </div>
+          <li>
+            <a href="mail.html" target="blank">MAIL US</a>
+          </li>
+        </ul>
+      </div>
       <div class="search-button">
         <a id="searchbar" href="#"> <i class="fas fa-search"></i></a>
         <input
@@ -183,8 +185,14 @@
             placeholder="New password"
           />
           <i class="fas fa-eye" id="set-eye-button" onclick="change()"></i>
-          <i class="fas fa-eye-slash"  id="set-eye-button2" onclick="change()"></i>
-          <div class="forgot-pass-set"><a href="Forgetpassword.html"> Forgot Password?</a></div>
+          <i
+            class="fas fa-eye-slash"
+            id="set-eye-button2"
+            onclick="change()"
+          ></i>
+          <div class="forgot-pass-set">
+            <a href="Forgetpassword.html"> Forgot Password?</a>
+          </div>
           <div>
             <button class="button-set" type="submit" id="submit">Login</button>
           </div>
@@ -325,6 +333,7 @@
   <!-- JAVA SCRIPT -->
   <script src="scriptfile.js"></script>
   <script src="temporary.js"></script>
+  <script src="hamburger.js"></script>
   <script>
     // let navbar = document.getElementById('navbar');
     // navbar.addEventListener('mouseover' , function run(){

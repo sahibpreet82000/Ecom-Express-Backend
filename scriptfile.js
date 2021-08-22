@@ -83,7 +83,7 @@ function hovertext() {
   //   hov.style.display = "block";
   // }
 }
-function hovertext2(){
+function hovertext2() {
   let hov = document.querySelector(".details");
   let hovi = document.querySelector(".details2");
   let ho = document.querySelector(".details3");
@@ -92,7 +92,7 @@ function hovertext2(){
   hov.style.overflow = "visible";
   ho.style.display = "none";
 }
-function hovertext3(){
+function hovertext3() {
   let hov = document.querySelector(".details");
   let hovi = document.querySelector(".details2");
   let ho = document.querySelector(".details3");
@@ -100,4 +100,6 @@ function hovertext3(){
   hovi.style.display = "none";
   ho.style.display = "block";
 }
+
+// for hamburger icon
 

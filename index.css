@@ -21,6 +21,9 @@
 .header a:hover {
   color: orange;
 }
+i#remove-header-content\ mail-box-set {
+  vertical-align: middle;
+}
 .icon {
   margin: 0px 0px;
   width: 22px;
@@ -415,8 +418,11 @@ p {
 }
 .flicker-box img {
   width: 82px;
+  transition: all 1.2s ease-in-out;
 }
-
+.flicker-box img:hover{
+  transform: scale(1.5);
+}
 /* media queries */
 
 @media (min-width: 1546px) {
@@ -437,75 +443,106 @@ p {
 }
 
 @media (max-width: 1080px) {
-  .dropbtn2 {
+  /* .dropbtn2 {
     display: flex;
     border: 1px solid black;
     background-color: white;
     color: #999;
     padding: 4px 6px;
     /* width: 50px; */
-    font-size: 25px;
+  /* font-size: 25px;
+    cursor: pointer;
+    border-radius: 2px; */
+
+  .dropbtn2 {
+    display: block;
+    padding: 0px 0px;
+    width: 72px;
     cursor: pointer;
     border-radius: 2px;
-  }
-
-  .dropdown2 {
-    position: relative;
+    position: absolute;
     right: 0px;
+    top: 19%;
+    height: 17px;
+  }
+  .dropbtn2 a {
+    cursor: pointer;
+    top: 0%;
+    display: block;
+    position: absolute;
+    background: orange;
+    width: 0px;
+    padding: 0px 25px;
+    height: 0px;
+  }
+  .dropbtn2 a span {
+    background: orange;
+    content: "";
+    position: absolute;
+    /* top: 0%; */
+    width: 42px;
+    right: 22px;
+    height: 4px;
+  }
+  .dropbtn2 a span::after {
+    background: orange;
+    content: "";
+    position: absolute;
+    /* bottom: 233%; */
+    top: 242%;
+    width: 42px;
+    right: 0px;
+    height: 4px;
+  }
+  .dropbtn2 a span::before {
+    background: orange;
+    content: "";
+    position: absolute;
+    /* top: 0%; */
+    bottom: 233%;
+    width: 42px;
+    right: 0px;
+    height: 4px;
   }
   .dropdown-content2 {
-    display: flex;
-    justify-content: flex-end;
-    width: 115px;
+    display: none;
+    width: 100%;
   }
   .dropdown-content2 ul {
-    position: absolute;
-    display: none;
-    /* display: flex;
-  flex-direction: column; */
+    display: block;
+    transition: all 1.5s ease-in-out;
   }
   .dropdown-content2 ul li {
     /* position: absolute; */
-    margin: 2px;
-    background-color: white;
-    display: none;
-    border: none;
-    color: black;
-    width: 5rem;
-    z-index: 1;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    display: block;
+    margin: 12px;
+    padding: 9px;
   }
 
   .dropdown-content2 ul li a {
-    margin: 0px;
-    padding: 0px;
     color: rgb(37, 37, 37);
     text-decoration: none;
-    display: block;
     font-size: 19px;
+    transition: all 1.2s ease-in-out;
   }
 
-  .dropdown2:hover .dropdown-content2 ul {
-    padding: 0px;
-    margin: 0px;
-    display: flex;
-    flex-direction: column;
+  .dropbtn2 a:active span::after {
+    transform: rotate(45deg);
+    top: 0%;
   }
-  .dropdown2:hover .dropdown-content2 ul li {
-    padding: 25px;
-    margin: 0px;
-    display: flex;
-    width: 500px;
-    flex-direction: column;
+  .dropbtn2 a:active span::before {
+    top: 0%;
+    transform: rotate(-45deg);
   }
-  .dropdown-content2 ul li a:hover {
-    background: orange;
+  .dropbtn2 a:active span {
+    background: transparent;
+    top: 0%;
   }
 }
 
 @media (max-width: 1090px) {
   #navbar {
-    display: flex;
+    display: block;
     text-align: center;
   }
   #searchbar {
@@ -541,10 +578,31 @@ p {
     display: none;
     overflow: hidden;
   }
+  #heading {
+    font-size: 35px;
+  }
+  .logo img {
+    width: 72px;
+  }
+  .dropbtn2 {
+    top: 16%;
+  }
 }
 @media (max-width: 500px) {
-  .dropdown-content2 {
+  /* .dropdown-content2 {
     width: 0px;
+  } */
+  #heading {
+    font-size: 30px;
+  }
+  .logo img {
+    width: 72px;
+  }
+  .dropbtn2 a span,
+  .dropbtn2 a span::after,
+  .dropbtn2 a span:before {
+    width: 35px;
+    right: 0;
   }
 }
 @media (max-width: 912px) {
