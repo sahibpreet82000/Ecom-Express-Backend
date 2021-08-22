@@ -18,6 +18,8 @@
       src="https://kit.fontawesome.com/f0ea9c1e03.js"
       crossorigin="anonymous"
     ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
     <link
       rel="shortcut icon"
       type="image/png"
@@ -28,7 +30,10 @@
     <header>
       <div class="header">
         <a class="header" href="#">
-          <i id="remove-header-content mail-box-set" class="fas fa-envelope" ></i>
+          <i
+            id="remove-header-content mail-box-set"
+            class="fas fa-envelope"
+          ></i>
           <span id="remove-header-content">@ecomexpress.com</span>
         </a>
         <a class="header" href="#">
@@ -66,7 +71,7 @@
 
       <div class="dropbtn2">
         <a href="#" id="nav-bar" onclick="hamburger()"
-          ><span onclick="hamburger()"></span
+          ><span class="cross"></span
         ></a>
       </div>
       <div class="dropdown-content2">
@@ -75,7 +80,7 @@
             <a href="index.html" target="blank">HOME</a>
           </li>
           <li class="product-hover" id="nav">
-            <a href="products.html">PRODUCTS</a>
+            <a href="#home">PRODUCTS</a>
             <i class="fas fa-caret-down" id="remove-product-downbar"></i>
             <ul>
               <div class="product-hover-grid">
@@ -99,7 +104,7 @@
             </ul>
           </li>
           <li class="product-hover">
-            <a href="product2.html">SHOPPING</a>
+            <a href="#home">SHOPPING</a>
             <i class="fas fa-caret-down" id="remove-shopping-downbar"></i>
             <ul>
               <div class="product-hover-grid">
@@ -128,23 +133,24 @@
             <a href="mail.html" target="blank">MAIL US</a>
           </li>
         </ul>
-      </div>
-      <div class="search-button">
-        <a id="searchbar" href="#"> <i class="fas fa-search"></i></a>
-        <input
-          id="search-box"
-          type="text"
-          name="text"
-          id="text"
-          placeholder="search"
-        />
-      </div>
-      <div class="cart-total">
-        <a href="#">
-          $0.00 (0 items)
-          <i class="fas fa-shopping-cart" id="cart"></i>
-          <p>shopping-cart</p></a
-        >
+
+        <div class="search-button">
+          <a id="searchbar" href="#"> <i class="fas fa-search"></i></a>
+          <input
+            id="search-box"
+            type="text"
+            name="text"
+            id="text"
+            placeholder="search"
+          />
+        </div>
+        <div class="cart-total">
+          <a href="#">
+            $0.00 (0 items)
+            <i class="fas fa-shopping-cart" id="cart"></i> <br />
+            <p40>shopping-cart</p40></a
+          >
+        </div>
       </div>
     </nav>
     <div class="home-index">
@@ -339,5 +345,10 @@
     // navbar.addEventListener('mouseover' , function run(){
     //   console.log("you are on navbar")
     // });
+    $(document).ready(function () {
+      $("span .cross").click(function () {
+        $(".cross").toggle = "active";
+      });
+    });
   </script>
 </html>

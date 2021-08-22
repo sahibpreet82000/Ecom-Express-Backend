@@ -45,7 +45,10 @@ h1 {
   display: flex;
   align-items: center;
 }
-
+.dropdown-content2 {
+  display: flex;
+  align-items: center;
+}
 .dropdown-content2 ul {
   position: relative;
   transition: all 0.3s ease-in-out;
@@ -170,26 +173,28 @@ h1 {
 .cart-total {
   transition: all 0.4s ease-in-out;
   position: relative;
-  left: 6%;
-  bottom: 13px;
+  left: 12%;
+  bottom: 4px;
 }
 .cart-total a {
+  font-size: 16px;
   transition: all 0.4s ease-in-out;
   color: orange;
 }
 .cart-total #cart {
-  margin: 10px 0px;
+  margin: 0px 0px;
   width: 27px;
   vertical-align: middle;
 }
-.cart-total p {
+.cart-total p40 {
+  color: #999;
   margin: -13px 0px;
   vertical-align: middle;
 }
 .cart-total a:hover {
   color: orangered;
 }
-.cart-total p:hover {
+.cart-total p40:hover {
   color: black;
 }
 .dropbtn2 {
@@ -420,7 +425,7 @@ p {
   width: 82px;
   transition: all 1.2s ease-in-out;
 }
-.flicker-box img:hover{
+.flicker-box img:hover {
   transform: scale(1.5);
 }
 /* media queries */
@@ -462,12 +467,11 @@ p {
     border-radius: 2px;
     position: absolute;
     right: 0px;
-    top: 19%;
     height: 17px;
   }
   .dropbtn2 a {
     cursor: pointer;
-    top: 0%;
+    top: -73px;
     display: block;
     position: absolute;
     background: orange;
@@ -475,7 +479,7 @@ p {
     padding: 0px 25px;
     height: 0px;
   }
-  .dropbtn2 a span {
+  .cross {
     background: orange;
     content: "";
     position: absolute;
@@ -484,7 +488,7 @@ p {
     right: 22px;
     height: 4px;
   }
-  .dropbtn2 a span::after {
+  .cross::after {
     background: orange;
     content: "";
     position: absolute;
@@ -494,7 +498,7 @@ p {
     right: 0px;
     height: 4px;
   }
-  .dropbtn2 a span::before {
+  .cross::before {
     background: orange;
     content: "";
     position: absolute;
@@ -526,17 +530,24 @@ p {
     transition: all 1.2s ease-in-out;
   }
 
-  .dropbtn2 a:active span::after {
+  /* span:active .cross::after {
     transform: rotate(45deg);
     top: 0%;
   }
-  .dropbtn2 a:active span::before {
+  span:active .cross::before {
     top: 0%;
     transform: rotate(-45deg);
   }
-  .dropbtn2 a:active span {
+  span:active .cross {
     background: transparent;
     top: 0%;
+  } */
+  .product-hover:hover .product-hover-grid {
+    display: block;
+    width: auto;
+    position: static;
+    box-shadow: none;
+    border: none;
   }
 }
 
@@ -558,11 +569,7 @@ p {
     display: none;
     overflow: hidden;
   }
-  .cart-total {
-    display: none;
-    overflow: hidden;
-  }
-  .product-hover-grid {
+  /* .product-hover-grid {
     display: none;
     overflow: hidden;
   }
@@ -577,15 +584,15 @@ p {
   #remove-shopping-downbar {
     display: none;
     overflow: hidden;
-  }
+  } */
   #heading {
     font-size: 35px;
   }
   .logo img {
     width: 72px;
   }
-  .dropbtn2 {
-    top: 16%;
+  .dropbtn2 a {
+    top: -44px;
   }
 }
 @media (max-width: 500px) {
