@@ -543,7 +543,7 @@ p {
     top: 0%;
   } */
   .product-hover:hover .product-hover-grid {
-    display: block;
+    display: grid;
     width: auto;
     position: static;
     box-shadow: none;
