@@ -32,10 +32,7 @@
     <header>
       <div class="header">
         <a class="header" href="#">
-          <i
-            id="remove-header-content"
-            class="fas fa-envelope"
-          ></i>
+          <i id="remove-header-content" class="fas fa-envelope"></i>
           <span id="remove-header-content">@ecomexpress.com</span>
         </a>
         <a class="header" href="#">
@@ -71,9 +68,7 @@
       </div>
 
       <div class="dropbtn2">
-        <a href="#" id="nav-bar" onclick="hamburger()"
-          ><span class="cross"></span
-        ></a>
+        <a href="#" id="nav-bar"><span class="cross"></span></a>
       </div>
       <div class="dropdown-content2">
         <ul>
@@ -157,17 +152,21 @@
     </nav>
   </body>
   <script src="scriptfile.js"></script>
-  <script src="hamburger.js"></script>
   <script>
     $(document).ready(function () {
       $(".product-click").click(function () {
-        $("#hide-product-hover").toggle();
+        $("#hide-product-hover").toggle(1000);
       });
     });
 
     $(document).ready(function () {
       $(".shopping-click").click(function () {
-        $("#hide-shopping-hover").toggle();
+        $("#hide-shopping-hover").toggle(1000);
+      });
+    });
+    $(document).ready(function () {
+      $("#nav-bar").click(function () {
+        $(".dropdown-content2").toggle(1000);
       });
     });
   </script>
