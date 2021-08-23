@@ -218,7 +218,20 @@ h1 {
   font-size: 18px;
   vertical-align: baseline;
   /* margin-left: 60px; */
-}
+} 
+/* .home-index a::after {
+  margin: 0px 5px;
+  content: "";
+  width: 1px;
+  height: 14px;
+  background: black;
+  color: black;
+  position: absolute;
+  top: 36%;
+  bottom: 0%;
+  padding: 0;
+  transform: rotate(25deg);
+} */
 .home-index a:hover {
   color: orange;
 }
@@ -428,6 +441,12 @@ p {
 .flicker-box img:hover {
   transform: scale(1.5);
 }
+p39{
+  color: #999;
+  font-size: 15px;
+}
+
+
 /* media queries */
 
 @media (min-width: 1546px) {
@@ -545,9 +564,31 @@ p {
   .product-hover:hover .product-hover-grid {
     display: grid;
     width: auto;
+    margin: auto;
     position: static;
     box-shadow: none;
     border: none;
+  }
+  .search-button:hover #search-box {
+    display: inline-block;
+    overflow: hidden;
+    width: 75%;
+  }
+  #search-box {
+    position: relative;
+    background-color: white;
+    border: 1px solid gray;
+    border-radius: 10px;
+    color: black;
+    padding: 4px 7px;
+    margin: 10px;
+    margin-bottom: 22px;
+    text-align: left;
+    width: 40%;
+    z-index: 1;
+    box-shadow: 0px 8px 16px 0px rgb(0 0 0 / 20%);
+    /* overflow: hidden; */
+    outline: none;
   }
 }
 

@@ -2,16 +2,16 @@
     .map{
         padding: 16px;
         width: 94%;
-        margin: 0px;
+        margin: auto;
         margin-bottom: 32px;
     }
     input[type=text]{
-        width: 85%;
+        width: 99%;
     }
     .submit-btn{
         padding: 0px;
     }
     textarea{
-        width: 87%;
+        width: 99%;
     }
 }
