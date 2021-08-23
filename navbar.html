@@ -163,4 +163,17 @@
   </body>
   <script src="scriptfile.js"></script>
   <script src="hamburger.js"></script>
+  <script>
+    $(document).ready(function () {
+      $(".product-click").click(function () {
+        $("#hide-product-hover").toggle();
+      });
+    });
+
+    $(document).ready(function () {
+      $(".shopping-click").click(function () {
+        $("#hide-shopping-hover").toggle();
+      });
+    });
+  </script>
 </html>
