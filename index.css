@@ -21,7 +21,7 @@
 .header a:hover {
   color: orange;
 }
-i#remove-header-content\ mail-box-set {
+#remove-header-content {
   vertical-align: middle;
 }
 .icon {
@@ -569,22 +569,6 @@ p {
     display: none;
     overflow: hidden;
   }
-  /* .product-hover-grid {
-    display: none;
-    overflow: hidden;
-  }
-  .product-grid-layout {
-    display: none;
-    overflow: hidden;
-  }
-  #remove-product-downbar {
-    display: none;
-    overflow: hidden;
-  }
-  #remove-shopping-downbar {
-    display: none;
-    overflow: hidden;
-  } */
   #heading {
     font-size: 35px;
   }
