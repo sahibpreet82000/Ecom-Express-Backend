@@ -324,7 +324,7 @@ h2 {
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   }
   #margin-set-image {
-    width: 90%;
+    /* width: 90%; */
     padding: 22px;
   }
   .display-grid-content-main img {
@@ -386,17 +386,26 @@ h2 {
 }
 @media (max-width: 500px) {
   .catelog-set {
+    display: none;
     margin: auto;
     width: 74%;
     height: 100%;
   }
   #border-box {
+    display: none;
     left: 37%;
     top: 321%;
   }
   #border-box p50 {
+    display: none;
     font-size: 22px;
   }
+  .display-grid-img {
+    width: 60%;
+}
+.display-grid-img img{
+  width: 100%;
+}
 }
 @media (min-width: 822px) and (max-width: 900px) {
   .display-grid-img {
@@ -404,6 +413,7 @@ h2 {
     margin: auto;
   }
   #border-box {
+    display: none;
     top: 242%;
     left: 9%;
   }
