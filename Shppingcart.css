@@ -107,6 +107,10 @@ color: #999;
   .cart-button a{
     color: black;
     font-size: 20px;
+    padding: 9px 67px;
+  }
+  .cart-button:hover{
+    background-color: rgb(226, 82, 30);
   }
   .cart-button2{
     background: rgb(71, 71, 71);
@@ -118,8 +122,14 @@ color: #999;
   .cart-button2 a{
     color: orange;
     font-size: 20px;
+    padding: 9px 90px;
   }
-
+  .cart-button2:hover{
+    background-color: rgb(226, 82, 30);
+  }
+  .cart-button2 a:hover{
+    color: #000;
+  }
 @media(max-width:1000px){
     /* .table-container{
         grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
