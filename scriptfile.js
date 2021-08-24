@@ -18,9 +18,6 @@ function change() {
     document.getElementById("register-icon-set2").type = "password";
   }
 }
-//  function changetext(){
-//    let text = document.querySelector('#register-icon-set2');
-//  }
 
 // JAVASCRIPT FOR PRODUCT-CART
 
@@ -35,13 +32,11 @@ function increase() {
     alert("maximum value reach");
   }
   document.getElementById("number-set").innerHTML = i;
-  document.getElementById("number-set").style.strokeLinecap = "none";
 }
 function decrease() {
-  // let dec = (document.querySelector("#left-button").style.color = "yellow");
   let p = document.getElementById("number-set");
   let i = p.innerHTML;
-  if (i > 0) {
+  if (i > 1) {
     i--;
   }
   if (i == 0) {
@@ -53,22 +48,6 @@ function decrease() {
 
 // JAVA SCRIPT FOR DISPLAY.HTML
 
-// function imagechange() {
-//   let img = document.getElementById("margin-set-image");
-//   img.innerHTML =
-//     '<img src="./images/si.jpg" alt="formal shirt"> <div class="product-catelog-set"> <ul> <li><img src="./images/si.jpg" alt="" onclick="imagechange()"></li> <li><img src="./images/si1.jpg" alt="" onclick="imagechange1()"></li> <li><img src="./images/si2.jpg" alt="" onclick="imagechange2()"></li> </ul> </div>';
-// }
-// function imagechange1() {
-//   let img = document.getElementById("margin-set-image");
-//   img.innerHTML =
-//     '<img src="./images/si1.jpg" alt="formal shirt"> <div class="product-catelog-set"> <ul> <li><img src="./images/si.jpg" alt="" onclick="imagechange()"></li> <li><img src="./images/si1.jpg" alt="" onclick="imagechange1()"></li> <li><img src="./images/si2.jpg" alt="" onclick="imagechange2()"></li> </ul> </div>';
-// }
-// function imagechange2() {
-//   let img = document.getElementById("margin-set-image");
-//   img.innerHTML =
-//     '<img src="./images/si2.jpg" alt="formal shirt"> <div class="product-catelog-set"> <ul> <li><img src="./images/si.jpg" alt="" onclick="imagechange()"></li> <li><img src="./images/si1.jpg" alt="" onclick="imagechange1()"></li> <li><img src="./images/si2.jpg" alt="" onclick="imagechange2()"></li> </ul> </div>';
-// }
-
 function hovertext() {
   let hov = document.querySelector(".details");
   let hovi = document.querySelector(".details2");
@@ -76,12 +55,6 @@ function hovertext() {
   hov.style.display = "block";
   hovi.style.display = "none";
   ho.style.display = "none";
-  // if (hov.style.display != "none") {
-  //   hov.style.display = "none";
-  // }
-  // } else {
-  //   hov.style.display = "block";
-  // }
 }
 function hovertext2() {
   let hov = document.querySelector(".details");
@@ -101,5 +74,6 @@ function hovertext3() {
   ho.style.display = "block";
 }
 
-// for hamburger icon
+// for product caterlog
+
 

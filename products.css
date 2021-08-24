@@ -199,7 +199,10 @@
   top: 25%;
   left: 89%;
 }
-
+/* .dropbtn-arrow2{
+  transition: all 1.5s ease-in;
+  transform: rotate(180deg);
+} */
 .dropdown {
   position: relative;
   float: right;
@@ -227,10 +230,6 @@
   text-decoration: none;
   display: block;
   font-size: 19px;
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
 }
 .dropdown-content a:hover {
   background: orange;
@@ -297,8 +296,6 @@
 }
 table,
 td {
-  /* border: 1px solid black; */
-  /* text-align: left; */
   border-collapse: collapse;
   padding: 1px 0px;
 }

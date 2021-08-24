@@ -26,14 +26,12 @@
   </head>
 
   <body>
-
-  <div class="container"></div>
-      <!-- MAIN CONTENT -->
-      <div class="home-index">
-        <i class="fas fa-home" id="home-iconset"></i>
-        <a href="index.html">Home</a> / <p39>Product-display</p39>
-        <!-- <a href="index.html">Login page</a> -->
-      </div>
+    <div class="container"></div>
+    <!-- MAIN CONTENT -->
+    <div class="home-index">
+      <i class="fas fa-home" id="home-iconset"></i>
+      <a href="index.html">Home</a> / <p39>Product-display</p39>
+    </div>
     <div class="display-grid">
       <div class="display-product">
         <div class="catelog-set" id="category-border">
@@ -101,17 +99,40 @@
       <div class="display-product">
         <div class="display-grid-half">
           <div class="display-grid-content-main" id="margin-set-image">
-            <img name="preview" src="./images/si.jpg" alt="formal shirt" />
+            <img
+              class="img-animation"
+              name="preview"
+              src="./images/si.jpg"
+              alt="formal shirt"
+            />
             <div class="product-catelog-set">
               <ul>
                 <li>
-                  <img onclick="preview.src=img2.src" name="img2" src="./images/si.jpg" alt=""  />
+                  <img
+                    class="img-toggle"
+                    onclick="preview.src=img2.src"
+                    name="img2"
+                    src="./images/si.jpg"
+                    alt=""
+                  />
                 </li>
                 <li>
-                  <img  onclick="preview.src=img3.src" name="img3" src="./images/si1.jpg" alt=""  />
+                  <img
+                    class="img-toggle"
+                    onclick="preview.src=img3.src"
+                    name="img3"
+                    src="./images/si1.jpg"
+                    alt=""
+                  />
                 </li>
                 <li>
-                  <img onclick="preview.src=img4.src" name="img4" src="./images/si2.jpg" alt=""  />
+                  <img
+                    class="img-toggle"
+                    onclick="preview.src=img4.src"
+                    name="img4"
+                    src="./images/si2.jpg"
+                    alt=""
+                  />
                 </li>
               </ul>
             </div>
@@ -157,7 +178,7 @@
                         ></i>
                       </td>
                       <td>
-                        <p20 id="number-set">0</p20>
+                        <p20 id="number-set">1</p20>
                       </td>
                       <td>
                         <i
@@ -277,16 +298,20 @@
 
     <!-- footer content  -->
 
-   <div class="footer-container"></div>
-    
+    <div class="footer-container"></div>
   </body>
   <script src="scriptfile.js"></script>
   <script>
-    $(function(){
+    $(function () {
       $(".container").load("navbar.html");
     });
-    $(function(){
-    $(".footer-container").load("footer.html");
+    $(function () {
+      $(".footer-container").load("footer.html");
     });
-    </script>
+    // $(document).ready(function () {
+    //   $(".img-toggle").click(function () {
+    //     $(".img-animation").animate({ opacity: "0.5" }, 1000);
+    //   });
+    // });
+  </script>
 </html>

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>E-COM EXPRESS | A Shopping Website</title>
     <style></style>
-    <link rel="stylesheet" href="index.css" />
+    <!-- <link rel="stylesheet" href="index.css" /> -->
     <link rel="stylesheet" href="products.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -109,7 +109,7 @@
           </div>
         </div>
         <div class="dropdown">
-          <button class="dropbtn">Default Sorting</button>
+          <button class="dropbtn" onclick="rotate()">Default Sorting</button>
           <i class="fas fa-angle-down" id="dropbtn-arrow"></i>
           <div class="dropdown-content">
             <a href="#">Low to High</a>
@@ -260,5 +260,14 @@
     $(function () {
       $(".footer-container").load("footer.html");
     });
+    $(document).ready(function () {
+      $(".dropbtn").click(function () {
+        $(".dropdown-content").slideToggle(500);
+      });
+    });
+    // function rotate() {
+    //   let rot = document.getElementsByClassName(".dropdown-content");
+    //   rot.style.transform = "rotate(180deg)";
+    // }
   </script>
 </html>

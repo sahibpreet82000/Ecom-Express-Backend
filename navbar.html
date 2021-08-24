@@ -132,17 +132,19 @@
         </ul>
 
         <div class="search-button">
-          <a id="searchbar" href="#"> <i class="fas fa-search"></i></a>
-          <input
-            id="search-box"
-            type="text"
-            name="text"
-            id="text"
-            placeholder="search"
-          />
+          <a href="#"> <i id="searchbar" class="fas fa-search"></i></a>
+          <div id="searchbar2">
+            <input
+              id="search-box"
+              type="text"
+              name="text"
+              id="text"
+              placeholder="search"
+            />
+          </div>
         </div>
         <div class="cart-total">
-          <a href="#">
+          <a href="Shoppingcart.html">
             $0.00 (0 items)
             <i class="fas fa-shopping-cart" id="cart"></i> <br />
             <p40>shopping-cart</p40>
@@ -167,6 +169,11 @@
     $(document).ready(function () {
       $("#nav-bar").click(function () {
         $(".dropdown-content2").toggle(1000);
+      });
+    });
+    $(document).ready(function () {
+      $("#searchbar").click(function () {
+        $("#searchbar2").slideToggle(1000);
       });
     });
   </script>

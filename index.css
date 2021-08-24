@@ -580,7 +580,7 @@ p39 {
     border-radius: 10px;
     color: black;
     padding: 4px 7px;
-    margin: 10px;
+    margin: 20px;
     margin-bottom: 22px;
     text-align: left;
     width: 40%;
@@ -588,6 +588,9 @@ p39 {
     box-shadow: 0px 8px 16px 0px rgb(0 0 0 / 20%);
     /* overflow: hidden; */
     outline: none;
+  }
+  .search-button:hover #search-box {
+    position: static;
   }
 }
 
