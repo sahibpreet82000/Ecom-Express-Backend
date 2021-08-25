@@ -1,76 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>E-COM EXPRESS | A Shopping Website</title>
-    <style>
-
-    </style>
-      <link rel="stylesheet" href="index.css" />
-      <link rel="stylesheet" href="mail.css" />
-      <link rel="stylesheet" href="contact.css" />
-      <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Hind:wght@300;500;600&display=swap" rel="stylesheet">
-      <script src="https://kit.fontawesome.com/f0ea9c1e03.js" crossorigin="anonymous"></script>
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    </head>
-    <body>
-<div class="container"></div>
-<div class="home-index">
-  <i class="fas fa-home" id="home-iconset"></i>
-  <a href="index.html">Home</a> / <p39>Contact Us</p39>
-  <!-- <a href="index.html">Login page</a> -->
-</div>
-      <div class="loginpage">
-        <div id="login-heading">Contact Us</div>
-       </div>
-      <div class="container2">
-        <div class="row input-container">
-            <div class="col-xs-12">
-              <div class="styled-input wide">
-                <input type="text" required />
-                <label>Name</label> 
-              </div>
-            </div>
-            <div class="col-md-6 col-sm-12">
-              <div class="styled-input">
-                <input type="text" required />
-                <label>Email</label> 
-              </div>
-            </div>
-            <div class="col-md-6 col-sm-12">
-              <div class="styled-input" style="float:right;">
-                <input type="text" required />
-                <label>Phone Number</label> 
-              </div>
-            </div>
-            <div class="col-xs-12">
-              <div class="styled-input wide">
-                <textarea required></textarea>
-                <label>Message</label>
-              </div>
-            </div>
-            <div class="col-xs-12">
-              <div class="btn-lrg submit-btn">Send Message</div>
-            </div>
+    <style></style>
+    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="mail.css" />
+    <link rel="stylesheet" href="contact.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Hind:wght@300;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/f0ea9c1e03.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <div class="nav-container"></div>
+    <div>
+      <ul class="breadcrumb home-index">
+        <li><i class="fas fa-home" id="home-iconset"></i></li>
+        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+        <li class="breadcrumb-item"><p39>Contact Us</p39></li>
+        <li class="breadcrumb-item active"></li>
+      </ul>
+    </div>
+    <div class="loginpage">
+      <div id="login-heading">Contact Us</div>
+    </div>
+    <div class="container2">
+      <div class="row2 input-container">
+        <div class="col-xs-12">
+          <div class="styled-input wide">
+            <input type="text" required />
+            <label>Name</label>
+          </div>
         </div>
-        <div>
-            <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3098.7638135888296!2d-77.47669308468912!3d39.04350424592369!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b63eb3bc8da92b%3A0x78c8e09ab1cabc90!2sShopping+Plaza%2C+Ashburn%2C+VA+20147%2C+USA!5e0!3m2!1sen!2sin!4v1457602090579" frameborder="0" style="border: 0px; visibility: visible; animation-delay: 0.5s; animation-name: slideInLeft;" allowfullscreen="">
-          </iframe>
-            </div>
+        <div class="col-md-6 col-sm-12" style="padding: 0px;">
+          <div class="styled-input">
+            <input type="text" required />
+            <label>Email</label>
+          </div>
+        </div>
+        <div class="col-md-6 col-sm-12" style="padding: 0px;">
+          <div class="styled-input" style="float: right">
+            <input type="text" required />
+            <label>Phone Number</label>
+          </div>
+        </div>
+        <div class="col-xs-12">
+          <div class="styled-input wide">
+            <textarea required></textarea>
+            <label>Message</label>
+          </div>
+        </div>
+        <div class="col-xs-12">
+          <div class="btn-lrg submit-btn">Send Message</div>
+        </div>
       </div>
-      <div class="footer-container"></div>
-    </body>
-      <script>
-        $(function(){
-          $(".container").load("navbar.html");
-        });
-        $(function(){
-        $(".footer-container").load("footer.html");
-        });
-        </script>
-      
-        </html>   
+      <div>
+        <iframe
+          class="map"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3098.7638135888296!2d-77.47669308468912!3d39.04350424592369!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b63eb3bc8da92b%3A0x78c8e09ab1cabc90!2sShopping+Plaza%2C+Ashburn%2C+VA+20147%2C+USA!5e0!3m2!1sen!2sin!4v1457602090579"
+          frameborder="0"
+          style="
+            border: 0px;
+            visibility: visible;
+            animation-delay: 0.5s;
+            animation-name: slideInLeft;
+          "
+          allowfullscreen=""
+        >
+        </iframe>
+      </div>
+    </div>
+    <div class="footer-container"></div>
+  </body>
+  <script>
+    $(function () {
+      $(".nav-container").load("navbar.html");
+    });
+    $(function () {
+      $(".footer-container").load("footer.html");
+    });
+  </script>
+</html>

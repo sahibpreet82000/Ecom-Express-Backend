@@ -5,8 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Shopping-Cart | E-COM EXPRESS | A Shopping Website</title>
-    <link rel="stylesheet" href="Shppingcart.css" />
+    <link rel="stylesheet" href="Shoppingcart.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Hind:wght@300;500;600&display=swap"
@@ -25,20 +31,24 @@
   </head>
 
   <body>
-    <div class="container"></div>
+    <div class="nav-container"></div>
     <!-- MAIN CONTENT -->
-    <div class="home-index">
-      <i class="fas fa-home" id="home-iconset"></i>
-      <a href="index.html">Home</a> / <p39>Shopping-Cart</p39>
+    <div>
+      <ul class="breadcrumb home-index">
+        <li><i class="fas fa-home" id="home-iconset"></i></li>
+        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+        <li class="breadcrumb-item"><p39>Shopping-Cart</p39></li>
+        <li class="breadcrumb-item active"></li>
+      </ul>
     </div>
     <div class="cart-box">
       <div class="table-container">
         <div class="cart-head"><p38>Your Shopping-Cart Contains: </p38></div>
 
-        <table>
+        <table class="table-bordered">
           <tr id="table-heading">
             <td><p37>Sr.No</p37></td>
-            <td><p37>product</p37></td>
+            <td><p37>Products</p37></td>
             <td><p37>Quantity</p37></td>
             <td><p37>Product-Name</p37></td>
             <td><p37>Service Charges</p37></td>
@@ -85,12 +95,14 @@
           <ul>
             <li>
               <p34>Formal Shirt</p34>
-              <span  class="float">$250</span>
-            </li> <br>
+              <span class="float">$250</span>
+            </li>
+            <br />
             <li>
               <p34>Total Service Charges:</p34>
               <span class="float">$25</span>
-            </li> <br>
+            </li>
+            <br />
             <li>
               <p34>Total:</p34>
               <span class="float">$275</span>
@@ -98,7 +110,9 @@
           </ul>
         </div>
         <button class="cart-button"><a href="#">Continue to Basket</a></button>
-        <button class="cart-button2" type="menu" id="menu"><a href="products.html">Back to Home</a></button>
+        <button class="cart-button2" type="menu" id="menu">
+          <a href="products.html">Back to Home</a>
+        </button>
       </div>
     </div>
     <!-- footer content  -->
@@ -108,7 +122,7 @@
   <script src="scriptfile.js"></script>
   <script>
     $(function () {
-      $(".container").load("navbar.html");
+      $(".nav-container").load("navbar.html");
     });
     $(function () {
       $(".footer-container").load("footer.html");

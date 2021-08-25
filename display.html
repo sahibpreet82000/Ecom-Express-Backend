@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="display.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"/> -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"/>
     <link
       href="https://fonts.googleapis.com/css2?family=Hind:wght@300;500;600&display=swap"
       rel="stylesheet"
@@ -27,11 +27,15 @@
   </head>
 
   <body>
-    <div class="container"></div>
+    <div class="nav-container"></div>
     <!-- MAIN CONTENT -->
-    <div class="home-index">
-      <i class="fas fa-home" id="home-iconset"></i>
-      <a href="index.html">Home</a> / <p39>Product-display</p39>
+    <div>
+      <ul class="breadcrumb home-index">    
+            <li><i class="fas fa-home" id="home-iconset"></i></li>
+        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+        <li class="breadcrumb-item"><p39>Display</p39></li>
+        <li class="breadcrumb-item active"></li>
+      </ul>
     </div>
     <div class="display-grid">
       <div class="display-product">
@@ -304,7 +308,7 @@
   <script src="scriptfile.js"></script>
   <script>
     $(function () {
-      $(".container").load("navbar.html");
+      $(".nav-container").load("navbar.html");
     });
     $(function () {
       $(".footer-container").load("footer.html");

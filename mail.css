@@ -9,7 +9,13 @@ input:focus ~ label, textarea:focus ~ label, input:valid ~ label, textarea:valid
     -webkit-transition: all 0.225s ease;
     transition: all 0.225s ease;
 }
-
+.row2{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin: auto;
+}
 .styled-input {
     float: left;
     width: 293px;
@@ -22,6 +28,10 @@ input:focus ~ label, textarea:focus ~ label, input:valid ~ label, textarea:valid
     .styled-input {
         width:100%;
     }
+    .row2{
+        display: block;
+    }
+  
 }
 
 .styled-input label {

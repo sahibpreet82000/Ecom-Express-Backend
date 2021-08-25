@@ -4,6 +4,7 @@
   text-decoration: none;
   font-family: "Hind", sans-serif;
   box-sizing: border-box;
+  text-decoration: none;
 }
 .product-grid {
   display: grid;

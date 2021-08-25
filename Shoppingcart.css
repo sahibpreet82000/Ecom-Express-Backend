@@ -111,6 +111,11 @@ color: #999;
   }
   .cart-button:hover{
     background-color: rgb(226, 82, 30);
+   
+  }
+  .cart-button a:hover{
+    color: black;
+    text-decoration: none;
   }
   .cart-button2{
     background: rgb(71, 71, 71);
@@ -123,12 +128,15 @@ color: #999;
     color: orange;
     font-size: 20px;
     padding: 9px 90px;
+    text-decoration: none;
   }
   .cart-button2:hover{
     background-color: rgb(226, 82, 30);
+    
   }
   .cart-button2 a:hover{
     color: #000;
+    text-decoration: none;
   }
 @media(max-width:1000px){
     /* .table-container{

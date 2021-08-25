@@ -11,6 +11,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link
       href="https://fonts.googleapis.com/css2?family=Hind:wght@300;500;600&display=swap"
       rel="stylesheet"
@@ -76,8 +77,11 @@
             <a href="index.html" target="blank">HOME</a>
           </li>
           <li class="product-hover" id="nav">
-            <a class="product-click" href="#home">PRODUCTS</a>
-            <i class="fas fa-caret-down" id="remove-product-downbar"></i>
+            <a class="product-click" href="#home"
+              >PRODUCTS
+              <i class="fas fa-caret-down" id="remove-product-downbar"></i>
+            </a>
+
             <ul>
               <div class="product-hover-grid" id="hide-product-hover">
                 <div class="product-grid-layout">
@@ -101,8 +105,11 @@
             </ul>
           </li>
           <li class="product-hover">
-            <a class="shopping-click" href="#home">SHOPPING</a>
-            <i class="fas fa-caret-down" id="remove-shopping-downbar"></i>
+            <a class="shopping-click" href="#home"
+              >SHOPPING
+              <i class="fas fa-caret-down" id="remove-shopping-downbar"></i>
+            </a>
+
             <ul>
               <div class="product-hover-grid" id="hide-shopping-hover">
                 <div class="product-grid-layout">
@@ -132,8 +139,10 @@
         </ul>
 
         <div class="search-button">
-          <a href="#"> <i id="searchbar" class="fas fa-search"></i></a>
-          <div id="searchbar2">
+          <a href="#" >
+            <i id="searchbar" class="fas fa-search"></i
+          ></a>
+          <div class="searchbar2">
             <input
               id="search-box"
               type="text"
@@ -173,7 +182,7 @@
     });
     $(document).ready(function () {
       $("#searchbar").click(function () {
-        $("#searchbar2").slideToggle(1000);
+        $(".searchbar2").slideToggle(1000);
       });
     });
   </script>

@@ -253,6 +253,7 @@ h2 {
   font-family: "Lucida Sans";
   font-size: 20px;
   font-weight: 200;
+  text-decoration: none;
 }
 .set-details-product {
 }
@@ -269,13 +270,17 @@ h2 {
   border: 1px solid darkgrey;
   border-bottom: none;
   border-radius: 4px;
+  list-style: none;
 }
 .set-details-product ul li h2 {
   padding: 2px;
+  font-size: 20px;
 }
 .set-details-product ul li a {
   color: rgb(37, 37, 37);
 }
+.set-details-product ul li a:hover{
+text-decoration: none;}
 .details {
   display: block;
   padding: 22px 6px;
