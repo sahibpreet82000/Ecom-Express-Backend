@@ -8,7 +8,7 @@
     <style></style>
     <link rel="stylesheet" href="index.css" />
     <link rel="stylesheet" href="register.css" />
-
+    <link rel="stylesheet" href="hamburger-navbar.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -65,11 +65,30 @@
       <div class="logo">
         <img src="./images/logo11.jpg" alt="logo" />
         <span class="logo" id="heading"> E-COM EXPRESS <br /></span>
+        <div class="search-button2">
+          <a href="#" id="remove-search">
+            <i id="searchbar2" class="fas fa-search"></i
+          ></a>
+          <div class="searchbar2">
+            <input
+              id="search-box2"
+              type="text"
+              name="text"
+              id="text"
+              placeholder="search"
+            />
+          </div>
+          <div class="cart-total2">
+            <a href="#">
+              <i class="fas fa-shopping-cart" id="cart"></i> <br />
+            </a>
+          </div>
+          <div class="dropbtn2">
+            <a href="#" id="nav-bar"><span class="cross"></span></a>
+          </div>
+        </div>
       </div>
-
-      <div class="dropbtn2">
-        <a href="#" id="nav-bar"><span class="cross"></span></a>
-      </div>
+      <!-- for responsive only -->
       <div class="dropdown-content2">
         <ul>
           <li>
@@ -138,9 +157,7 @@
         </ul>
 
         <div class="search-button">
-          <a href="#" >
-            <i id="searchbar" class="fas fa-search"></i
-          ></a>
+          <a href="#"> <i id="searchbar" class="fas fa-search"></i></a>
           <div class="searchbar2">
             <input
               id="search-box"
@@ -184,5 +201,14 @@
         $(".searchbar2").slideToggle(1000);
       });
     });
+    $(document).ready(function () {
+      $("#searchbar2").click(function () {
+        $(".searchbar2").toggle(1000);
+      });
+    });
+    // function position() {
+    //   let pos = document.querySelector(".search-button2");
+    //   pos.style.left = "5%";
+    // }
   </script>
 </html>

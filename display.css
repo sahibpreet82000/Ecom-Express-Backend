@@ -110,6 +110,24 @@
 }
 .product-info p47 {
   font-family: "Lucida Sans";
+  color: #999;
+}
+#discount-tag{
+  font-size: 32px;
+  color: #999;
+  position: relative;
+  display: inline-block;
+}
+#discount-tag::before{
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: #999;
+  top: 44%;
+  left: 0%;
+  transform: rotate(160deg);
+
 }
 .description {
   padding-right: 129px;
@@ -131,7 +149,7 @@
 .color-change ul li {
   list-style: none;
   padding: 10px;
-  color: darkred;
+  color: #999;
 }
 .color-change ul li a span {
   width: 15px;

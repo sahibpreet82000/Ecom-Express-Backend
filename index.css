@@ -131,7 +131,7 @@ h1 {
   color: orange;
   cursor: pointer;
 }
-.search-button{
+.search-button {
   position: relative;
   left: 6%;
   display: flex;
@@ -463,55 +463,32 @@ p39 {
   }
 }
 
-@media (max-width: 1080px) {
-
+@media (max-width: 1090px) {
   .dropbtn2 {
-    display: block;
-    padding: 0px 0px;
-    width: 72px;
-    cursor: pointer;
-    border-radius: 2px;
-    position: absolute;
+    display: flex;
+    width: 65px;
+    position: relative;
     right: 0px;
-    height: 17px;
-  }
-  .dropbtn2 a {
-    cursor: pointer;
-    top: -69px;
-    display: block;
-    position: absolute;
-    background: orange;
-    width: 0px;
-    padding: 0px 12px;
-    height: 0px;
+    height: 8px;
   }
   .cross {
-    background: orange;
-    content: "";
-    position: absolute;
-    /* top: 0%; */
-    width: 42px;
-    right: 22px;
-    height: 4px;
+    right: 15px;
   }
   .cross::after {
-    background: orange;
-    content: "";
-    position: absolute;
-    /* bottom: 233%; */
     top: 242%;
-    width: 42px;
     right: 0px;
-    height: 4px;
   }
+  .cross::before {
+    bottom: 233%;
+    right: 0px;
+  }
+  .cross,
+  .cross::after,
   .cross::before {
     background: orange;
     content: "";
     position: absolute;
-    /* top: 0%; */
-    bottom: 233%;
     width: 42px;
-    right: 0px;
     height: 4px;
   }
   .dropdown-content2 {
@@ -556,7 +533,7 @@ p39 {
     box-shadow: none;
     border: none;
   }
-  .search-button{
+  .search-button {
     left: 0%;
   }
   .search-button:hover #search-box {
@@ -610,7 +587,10 @@ p39 {
     width: 72px;
   }
   .dropbtn2 a {
-    top: -44px;
+    top: 31px;
+  }
+  .cross::before {
+    bottom: 217%;
   }
   .product-grid-layout {
     margin: 0%;
@@ -629,8 +609,9 @@ p39 {
   .dropbtn2 a span,
   .dropbtn2 a span::after,
   .dropbtn2 a span:before {
-    width: 35px;
+    width: 32px;
     right: 0;
+    height: 3.5px;
   }
 }
 @media (max-width: 912px) {
