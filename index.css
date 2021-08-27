@@ -512,19 +512,6 @@ p39 {
     font-size: 19px;
     transition: all 1.2s ease-in-out;
   }
-
-  /* span:active .cross::after {
-    transform: rotate(45deg);
-    top: 0%;
-  }
-  span:active .cross::before {
-    top: 0%;
-    transform: rotate(-45deg);
-  }
-  span:active .cross {
-    background: transparent;
-    top: 0%;
-  } */
   .product-hover:hover .product-hover-grid {
     display: grid;
     width: auto;
@@ -567,11 +554,8 @@ p39 {
     display: block;
     text-align: center;
   }
-  #searchbar {
-    font-size: 44px;
-    left: 0%;
-  }
-  .cart-total {
+  .cart-total{
+    display: block;
     left: 0%;
   }
 }

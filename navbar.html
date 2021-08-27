@@ -79,7 +79,7 @@
             />
           </div>
           <div class="cart-total2">
-            <a href="#">
+            <a href="Shoppingcart.html">
               <i class="fas fa-shopping-cart" id="cart"></i> <br />
             </a>
           </div>
@@ -194,6 +194,11 @@
     $(document).ready(function () {
       $("#nav-bar").click(function () {
         $(".dropdown-content2").toggle(1000);
+      });
+    });
+    $(document).ready(function () {
+      $("#nav-bar").click(function () {
+        $(this).toggleClass("active");
       });
     });
     $(document).ready(function () {
