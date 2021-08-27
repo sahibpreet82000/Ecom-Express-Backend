@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>E-COM EXPRESS | A Shopping Website</title>
     <style></style>
-    <link rel="stylesheet" href="index.css" />
-    <link rel="stylesheet" href="products.css" />
+    <!-- <link rel="stylesheet" href="index.css" /> -->
+    <link rel="stylesheet" href="/css/products.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -22,14 +22,14 @@
     <link
       rel="shortcut icon"
       type="image/png"
-      href="./images/shopping-bag.png"
+      href="/images/shopping-bag.png"
     />
   </head>
   <body>
     <div class="nav-container"></div>
     <!-- <div class="price-bar">FILTER BY PRICE</div> -->
 
-    <!-- main-content -->
+    <!-- main content -->
     <div class="home-index">
       <i class="fas fa-home" id="home-iconset"></i>
       <a href="index.html">Home</a> / <p39>Product-Catelogue</p39>
@@ -40,53 +40,50 @@
         <div class="catelog-set">
           <ul>
             <li>
-              <img src="./images/next.png" alt="" /><a href="#">
+              <img src="/images/next.png" alt="" /><a href="#">
                 Best Selling</a
               >
             </li>
             <li>
-              <img src="./images/next.png" alt="" /><a href="#">
-                Home Collection</a
-              >
+              <img src="/images/next.png" alt="" /><a href="#"> Man</a>
               <ul>
                 <li>
-                  <img src="./images/next.png" alt="" />
-                  <a href="#"> Cookware</a>
+                  <img src="/images/next.png" alt="" />
+                  <a href="#"> Accessories</a>
                 </li>
                 <li>
-                  <img src="./images/next.png" alt="" />
-                  <a href="#"> Sofas </a>
+                  <img src="/images/next.png" alt="" />
+                  <a href="#"> Coats & Jackets </a>
                 </li>
                 <li>
-                  <img src="./images/next.png" alt="" />
-                  <a href="#"> Dining Table </a>
+                  <img src="/images/next.png" alt="" /> <a href="#"> Jeans </a>
                 </li>
                 <li>
-                  <img src="./images/next.png" alt="" />
+                  <img src="/images/next.png" alt="" />
                   <a href="#"> New Arrival</a>
                 </li>
               </ul>
             </li>
             <li>
-              <img src="./images/next.png" alt="" /><a href="#"> Sales</a>
+              <img src="/images/next.png" alt="" /><a href="#"> Sales</a>
             </li>
             <li>
-              <img src="./images/next.png" alt="" /><a href="#"> Decoration</a>
+              <img src="/images/next.png" alt="" /><a href="#"> Woman</a>
               <ul>
                 <li>
-                  <img src="./images/next.png" alt="" />
-                  <a href="#">Wall Clock </a>
+                  <img src="/images/next.png" alt="" />
+                  <a href="#">Accessories </a>
                 </li>
                 <li>
-                  <img src="./images/next.png" alt="" />
-                  <a href="#"> Lightings </a>
+                  <img src="/images/next.png" alt="" />
+                  <a href="#"> Dresses </a>
                 </li>
                 <li>
-                  <img src="./images/next.png" alt="" />
-                  <a href="#"> Top Brands </a>
+                  <img src="/images/next.png" alt="" />
+                  <a href="#"> Shorts </a>
                 </li>
                 <li>
-                  <img src="./images/next.png" alt="" />
+                  <img src="/images/next.png" alt="" />
                   <a href="#"> New Arrival </a>
                 </li>
               </ul>
@@ -97,7 +94,7 @@
 
       <div class="grid-box" id="section">
         <div class="main-img-set">
-          <img id="main-img" src="./images/28.jpg" alt="" />
+          <img id="main-img" src="/images/18.jpg" alt="" />
           <div class="section-box">
             <p2>
               2016 NEW COLLECTION <br />
@@ -110,7 +107,7 @@
           </div>
         </div>
         <div class="dropdown">
-          <button class="dropbtn">Default Sorting</button>
+          <button class="dropbtn" onclick="rotate()">Default Sorting</button>
           <i class="fas fa-angle-down" id="dropbtn-arrow"></i>
           <div class="dropdown-content">
             <a href="#">Low to High</a>
@@ -122,28 +119,28 @@
       <div class="grid-box" id="content-border">
         <p>NEW ARRIVAL</p>
         <div class="newitem-box">
-          <img src="./images/6.jpg" alt="" />
+          <img src="/images/6.jpg" alt="" />
           <span
             >OCCAECAT CUPIDATA <br />$180
             <button type="menu">ADD TO CART</button>
           </span>
         </div>
         <div class="newitem-box">
-          <img src="./images/26.jpg" alt="" />
+          <img src="/images/26.jpg" alt="" />
           <span>
             EMU FUGIAT QUO <br />$250 <button type="menu">ADD TO CART</button>
           </span>
         </div>
         <div class="newitem-box">
-          <img src="./images/11.jpg" alt="" />
+          <img src="/images/11.jpg" alt="" />
           <span>
             OFFICIA DESERUNT <br />$259 <button type="menu">ADD TO CART</button>
           </span>
-          <div class="newitem-box">
-            <img id="catelog-img" src="./images/29.jpg" alt="img" />
-            <div id="border-box">
-              <p50>SUMMER COLLECTION</p50>
-            </div>
+        </div>
+        <div class="newitem-box">
+          <img id="catelog-img" src="/images/27.jpg" alt="img" />
+          <div id="border-box">
+            <p50>SUMMER COLLECTION</p50>
           </div>
         </div>
       </div>
@@ -151,70 +148,70 @@
         <div class="section-background">
           <div class="section-content">
             <div class="product-images">
-              <img src="./images/30.jpg" alt="" />
+              <img src="/images/19.jpg" alt="" />
               <a href="display.html">
-                CENTER TABLE <br />
+                FORMAL SHIRT <br />
                 <div>$280</div>
               </a>
               <button type="submit">ADD TO CART</button>
             </div>
             <div class="product-images">
-              <img src="./images/32.jpg" alt="" />
-              <a href="#">
-                MEDIA CABINET <br />
+              <img src="/images/7.jpg" alt="" />
+              <a href="display.html">
+                FORMAL SHIRT <br />
                 <div>$280</div></a
               >
               <button type="submit">ADD TO CART</button>
             </div>
             <div class="product-images">
-              <img src="./images/31.jpg" alt="" />
+              <img src="/images/20.jpg" alt="" />
               <a href="#">
-                ENTERTAINMENT UNIT <br />
+                FORMAL SHIRT <br />
                 <div>$380</div>
               </a>
               <button type="submit">ADD TO CART</button>
             </div>
             <div class="product-images">
-              <img src="./images/33.jpg" alt="" />
-              <a href="#">
-                2 SEATER SOFA <br />
+              <img src="/images/21.jpg" alt="" />
+              <a href="display.html">
+                CASUAL SHOES <br />
                 <div>$180</div>
               </a>
               <button type="submit">ADD TO CART</button>
             </div>
             <div class="product-images">
-              <img src="./images/6.jpg" alt="" />
-              <a href="#">
-                STREET LAMP <br />
+              <img src="/images/22.jpg" alt="" />
+              <a href="display.html">
+                CASUAL SHOES <br />
                 <div>$200</div>
               </a>
               <button type="submit">ADD TO CART</button>
             </div>
             <div class="product-images">
-              <img src="./images/9.jpg" alt="" />
+              <img src="/images/23.jpg" alt="" />
               <a href="#">
-                STREET LAMP <br />
+                CASUAL SHOES <br />
                 <div>$250</div>
               </a>
               <button type="submit">ADD TO CART</button>
             </div>
             <div class="product-images">
-              <img src="./images/10.jpg" alt="" /><a href="#">
-                ANKLET <br />
+              <img src="/images/24.jpg" alt="" /><a href="display.html">
+                BLAZER <br />
                 <div>$500</div></a
               >
               <button type="submit">ADD TO CART</button>
             </div>
             <div class="product-images">
-              <img src="./images/11.jpg" alt="" />
+              <img src="/images/26.jpg" alt="" />
               <a href="#">
-                STONE BANGLES <br />
+                BLAZER <br />
                 <div>$450</div>
               </a>
               <button type="submit">ADD TO CART</button>
             </div>
             <div class="product-images">
-              <img src="./images/34.jpg" alt="" />
+              <img src="/images/34.jpg" alt="" />
               <a href="#">
                 CLOCK <br />
                 <div>$150</div>
@@ -233,8 +230,8 @@
                   onclick="decreasepage()"
                 ></i>
               </td>
-              <td><a href="products.html">1</a></td>
-              <td><a href="#">2</a></td>
+              <td><a href="#">1</a></td>
+              <td><a href="product2.html">2</a></td>
               <td><a href="#">3</a></td>
               <td>
                 <i
@@ -247,6 +244,8 @@
           </table>
         </div>
       </div>
+
+      <!-- <div class="product-catalog-content"></div> -->
     </div>
 
     <div class="footer-container"></div>
@@ -259,5 +258,14 @@
     $(function () {
       $(".footer-container").load("footer.html");
     });
+    $(document).ready(function () {
+      $(".dropbtn").click(function () {
+        $(".dropdown-content").slideToggle(500);
+      });
+    });
+    // function rotate() {
+    //   let rot = document.getElementsByClassName(".dropdown-content");
+    //   rot.style.transform = "rotate(180deg)";
+    // }
   </script>
 </html>
