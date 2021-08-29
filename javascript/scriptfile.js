@@ -76,4 +76,3 @@ function hovertext3() {
 
 // for product caterlog
 
-

@@ -10,8 +10,6 @@
 //   }
 // }
 
-
-
 // function imagechange() {
 //   let img = document.getElementById("margin-set-image");
 //   img.innerHTML =
@@ -27,3 +25,15 @@
 //   img.innerHTML =
 //     '<img src="./images/si2.jpg" alt="formal shirt"> <div class="product-catelog-set"> <ul> <li><img src="./images/si.jpg" alt="" onclick="imagechange()"></li> <li><img src="./images/si1.jpg" alt="" onclick="imagechange1()"></li> <li><img src="./images/si2.jpg" alt="" onclick="imagechange2()"></li> </ul> </div>';
 // }
+
+//for product.html
+let getname = prompt("Enter your name?", "");
+let wel = document.getElementById("welcome");
+if (getname) {
+  wel.innerHTML = "<span>Welcome &nbsp;<span>" + getname;
+} 
+else {
+  wel.innerHTML = " ";
+  wel.style.overflow="hidden";
+  wel.style.margin="0px";
+}

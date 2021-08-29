@@ -25,12 +25,12 @@ console.log(returnval);
 
 // alert
 
-alert("PLEASE LOGIN TO CONTINUE");
+// alert("PLEASE LOGIN TO CONTINUE");
 
 // PROMPT
 
-// let getname = prompt("Enter your name?", "Sahib");
-// console.log(getname);
+
+
 
 // CONFIRM
 //  let confirmation = prompt("enter your age?" , "");
