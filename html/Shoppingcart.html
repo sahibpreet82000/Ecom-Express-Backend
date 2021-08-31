@@ -45,7 +45,7 @@
       <div class="table-container">
         <div class="cart-head"><p38>Your Shopping-Cart Contains: </p38></div>
 
-        <table class="table-bordered">
+        <table class="table-bordered" id="remove-table">
           <tr id="table-heading">
             <td><p37>Sr.No</p37></td>
             <td><p37>Products</p37></td>
@@ -95,17 +95,17 @@
           <ul>
             <li>
               <p34>Formal Shirt</p34>
-              <span class="float">$250</span>
+              <span class="float" id="product-value">$250</span>
             </li>
             <br />
             <li>
               <p34>Total Service Charges:</p34>
-              <span class="float">$25</span>
+              <span class="float" id="tax">$25</span>
             </li>
             <br />
             <li>
               <p34>Total:</p34>
-              <span class="float">$275</span>
+              <span class="float" id="total"></span>
             </li>
           </ul>
         </div>
@@ -134,5 +134,10 @@
         });
       });
     });
+    // let a = document.getElementById("product-value").replace("$", "");
+    // let b = document.getElementById("tax").replace("$", "");
+    // let c = document.getElementById("total");
+    // d = a + b;
+    // c.innerHTML = "$ " + d;
   </script>
 </html>

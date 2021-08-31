@@ -44,6 +44,7 @@ h1 {
   padding: 0px;
   display: flex;
   align-items: center;
+  margin-bottom: -10px;
 }
 .dropdown-content2 {
   display: flex;
@@ -328,6 +329,7 @@ form {
   border: none;
   border-radius: 12px;
   transition: all 400ms ease;
+  text-decoration: none;
 }
 .signin-newuser {
   display: flex;
@@ -336,12 +338,18 @@ form {
 .button-set:hover {
   background-color: rgb(177, 82, 47);
   transform: translateY(1px);
+  text-decoration: none;
+  text-decoration-color: none;
+  outline: none;
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1), 0 1px 1px 0 rgba(0, 0, 0, 0.09);
 }
 .signin-newuser a {
   margin-bottom: 22px;
   color: orange;
   animation: animate 1.5s linear infinite;
+}
+.signin-newuser a:hover{
+  text-decoration: none;
 }
 #heading-newuser {
   display: flex;
@@ -554,7 +562,7 @@ p39 {
     display: block;
     text-align: center;
   }
-  .cart-total{
+  .cart-total {
     display: block;
     left: 0%;
   }

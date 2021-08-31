@@ -5,6 +5,9 @@
   font-family: "Hind", sans-serif;
   box-sizing: border-box;
 }
+/* #remove-table{
+  display: none;
+} */
 .cart-head{
     padding: 27px 0px;
     font-size: 22px;
