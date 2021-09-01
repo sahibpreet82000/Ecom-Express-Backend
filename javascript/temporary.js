@@ -1,25 +1,25 @@
-function greet(name) {
-  console.log(name + " is a good boy");
-}
-var name = "Sahib";
-var age = "20";
-var temp = `My name is ${name} and i am ${age} years old.`;
-var len = name.length;
-console.log(`length of name is ${len}`);
-// document.getElementById('content').innerHTML = ' <h3> this is a heading </h3> '
-let name1 = "mehak";
-let name2 = "mithi";
-let name3 = "jesse";
-greet(name);
-greet(name1);
-greet(name2);
-greet(name3);
-function sum(a, b, c) {
-  let add = a + b + c;
-  return add;
-}
-let returnval = sum(2, 7, 4);
-console.log(returnval);
+// function greet(name) {
+//   console.log(name + " is a good boy");
+// }
+// var name = "Sahib";
+// var age = "20";
+// var temp = `My name is ${name} and i am ${age} years old.`;
+// var len = name.length;
+// console.log(`length of name is ${len}`);
+// // document.getElementById('content').innerHTML = ' <h3> this is a heading </h3> '
+// let name1 = "mehak";
+// let name2 = "mithi";
+// let name3 = "jesse";
+// greet(name);
+// greet(name1);
+// greet(name2);
+// greet(name3);
+// function sum(a, b, c) {
+//   let add = a + b + c;
+//   return add;
+// }
+// let returnval = sum(2, 7, 4);
+// console.log(returnval);
 
 // ALERT AND PROMPT
 

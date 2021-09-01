@@ -45,65 +45,15 @@ function decrease() {
   document.getElementById("number-set").innerHTML = i;
 }
 
-// function shopping() {
-//   document.getElementsByClassName(
-//     "table-container"
-//   ).innerHTML = `<table class="table-bordered" id="remove-table">
-//   <tr id="table-heading">
-//     <td><p37>Sr.No</p37></td>
-//     <td><p37>Products</p37></td>
-//     <td><p37>Quantity</p37></td>
-//     <td><p37>Product-Name</p37></td>
-//     <td><p37>Service Charges</p37></td>
-//     <td><p37>Price</p37></td>
-//     <td><p37>Remove</p37></td>
-//   </tr>
-//   <tr id="table-heading2" style="text-align: center">
-//     <td style="width: 0%">1.</td>
-//     <td style="width: 20%">
-//       <img id="cart-image-set" src="/images/20.jpg" alt="image" />
-//     </td>
-//     <td style="width: 13%">
-//       <table class="qunatity-table">
-//         <tr class="qunatity-table">
-//           <td class="qunatity-table" style="width: 5%">
-//             <i
-//               class="fas fa-angle-left"
-//               id="left-button"
-//               onclick="decrease()"
-//             ></i>
-//           </td>
-//           <td class="qunatity-table" style="width: 5%">
-//             <p20 id="number-set">1</p20>
-//           </td>
-//           <td class="qunatity-table" style="width: 5%">
-//             <i
-//               class="fas fa-angle-right"
-//               id="right-button"
-//               onclick="increase()"
-//             ></i>
-//           </td>
-//         </tr>
-//       </table>
-//     </td>
-//     <td style="width: 9%">Formal Shirt</td>
-//     <td style="width: 6%"><p35>$5</p35></td>
-//     <td style="width: 10%"><p35>$180</p35></td>
-//     <td style="width: 0%">
-//       <i class="fas fa-times" id="cross-sign"></i>
-//     </td>
-//   </tr>
-// </table>`;
-//   console.log(shopping);
-// }
 // JAVASCRIPT FOR PRODUCT-CART
-function cart() {
-  let s = document.getElementById("submit").innerText.replace("$", "");
-  let car = document.getElementById("cart-quantity");
-  let c = document.getElementById("cart-set");
-  c.innerText = "$ " + s;
-  let a = car.innerHTML;
-}
+
+// function cart() {
+//   let s = document.getElementById("submit").innerText.replace("$", "");
+//   let car = document.getElementById("cart-quantity");
+//   let c = document.getElementById("cart-set");
+//   c.innerText = "$ " + s;
+//   let a = car.innerHTML;
+// }
 
 // JAVA SCRIPT FOR DISPLAY.HTML
 

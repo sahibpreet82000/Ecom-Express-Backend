@@ -348,7 +348,7 @@ form {
   color: orange;
   animation: animate 1.5s linear infinite;
 }
-.signin-newuser a:hover{
+.signin-newuser a:hover {
   text-decoration: none;
 }
 #heading-newuser {
@@ -568,10 +568,6 @@ p39 {
   }
 }
 @media (max-width: 812px) {
-  #searchbar {
-    display: none;
-    overflow: hidden;
-  }
   #heading {
     font-size: 35px;
   }
@@ -701,6 +697,12 @@ p39 {
     display: none;
   }
   #footer-heading {
+    display: none;
+    overflow: hidden;
+  }
+}
+@media screen and (max-width:1080px) and (min-width:610px){
+  #searchbar{
     display: none;
     overflow: hidden;
   }
