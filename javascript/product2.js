@@ -184,7 +184,7 @@ Your Shopping-Cart Contains: <span> ${productvalue} items</span>
 </div>
 <div class="buttons">
 <button class="cart-button"><a href="#">Continue to Basket</a></button>
-<button class="cart-button2" type="menu" id="menu">
+<button class="cart-button2" >
 <a href="/html/products.html">Back to Home</a>
 </button>
 </div>
