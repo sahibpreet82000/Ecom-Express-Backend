@@ -62,6 +62,58 @@ for (let i = 0; i < cart.length; i++) {
   });
 }
 
+// let arrange = document.querySelector(".sorting");
+// let sortt = document.querySelector(".product-section");
+// arrange.addEventListener("click", () => {
+//   products.sort((a, b) => a.price - b.price);
+//   let s = document.querySelector(".section-background");
+//   s.style.display = "none";
+
+//   products.forEach((item) => {
+//     var elem = document.createElement("div");
+//     elem.innerHTML = `
+    
+//         <div class="product-images">
+//           <img src="/images/${item.tag}.jpg" alt="" />
+//           <a href="/html/display.html">
+//             ${item.name.toUpperCase()} <br />
+//             <div id="submit"> $${item.price}</div>
+//           </a>
+//           <button type="submit" class="add-cart">ADD TO CART</button>
+//         </div>
+  
+  
+//     `;
+//     sortt.appendChild(elem);
+//   });
+// });
+
+// let arrange2 = document.querySelector(".sorting2");
+// let sortt2 = document.querySelector(".product-section");
+//   arrange2.addEventListener("click", () => {
+//       products.sort((a, b) => b.price - a.price);
+//       if(products.sort){
+//         let s = document.querySelector(".section-background");
+//         s.style.display = "none";
+        
+//         products.forEach((items) => {
+//           var elem = document.createElement("div");
+//           elem.innerHTML = 
+//             `
+//               <div class="product-images">
+//                 <img src="/images/${item.tag}.jpg" alt="" />
+//                 <a href="/html/display.html">
+//                   ${item.name.toUpperCase()} <br />
+//                   <div id="submit">$${item.price}</div>
+//                 </a>
+//                 <button type="submit" class="add-cart">ADD TO CART</button>
+//               </div>
+//             `;
+//           sortt2.appendChild(elem);
+//         });
+//       }
+// });
+
 function cartnumber(product) {
   let productvalue = localStorage.getItem("cart number");
 
@@ -189,9 +241,8 @@ Your Shopping-Cart Contains: <span> ${productvalue} items</span>
 </button>
 </div>
 `;
-  }
-  else{
-    productcontainer.innerHTML =`<div class="cart-empty">
+  } else {
+    productcontainer.innerHTML = `<div class="cart-empty">
     <p>your cart is empty :(</p>
       <div class="buttons">
           <button class="cart-button"><a href="#">Continue to Basket</a></button>
