@@ -263,7 +263,7 @@
 .product-section {
   position: relative;
   bottom: 80px;
-  background: #f5f5f5;
+  /* background: #f5f5f5; */
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   width: 100%;
