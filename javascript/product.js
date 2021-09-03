@@ -1,6 +1,24 @@
 let cart = document.querySelectorAll(".add-cart");
 let products = [
   {
+    name: "occaecat cupidata",
+    tag: "6",
+    price: 180,
+    inCart: 0,
+  },
+  {
+    name: "emu fugiat quo",
+    tag: "26",
+    price: 250,
+    inCart: 0,
+  },
+  {
+    name: "officia deserunt",
+    tag: "11",
+    price: 259,
+    inCart: 0,
+  },
+  {
     name: "formal shirt",
     tag: "19",
     price: 280,
@@ -62,58 +80,61 @@ for (let i = 0; i < cart.length; i++) {
   });
 }
 
-// let arrange = document.querySelector(".sorting");
-// let sortt = document.querySelector(".product-section");
-// arrange.addEventListener("click", () => {
-//   products.sort((a, b) => a.price - b.price);
-//   let s = document.querySelector(".section-background");
-//   s.style.display = "none";
+function setting(){
 
-//   products.forEach((item) => {
-//     var elem = document.createElement("div");
-//     elem.innerHTML = `
+let sortt = document.querySelector(".product-section");
+
+  products.sort((a, b) => a.price - b.price);
+  let s = document.querySelector(".section-background");
+  s.style.display = "none";
+  products.forEach((item) => {
+  
+      var elem = document.createElement("div");
+      elem.innerHTML = `
     
-//         <div class="product-images">
-//           <img src="/images/${item.tag}.jpg" alt="" />
-//           <a href="/html/display.html">
-//             ${item.name.toUpperCase()} <br />
-//             <div id="submit"> $${item.price}</div>
-//           </a>
-//           <button type="submit" class="add-cart">ADD TO CART</button>
-//         </div>
-  
-  
-//     `;
-//     sortt.appendChild(elem);
-//   });
-// });
+      <div class="product-images">
+        <img src="/images/${item.tag}.jpg" alt="" />
+        <a href="/html/display.html">
+          ${item.name.toUpperCase()} <br />
+          <div id="submit"> $${item.price}</div>
+        </a>
+        <button type="submit" class="add-cart">ADD TO CART</button>
+      </div>
 
-// let arrange2 = document.querySelector(".sorting2");
-// let sortt2 = document.querySelector(".product-section");
-//   arrange2.addEventListener("click", () => {
-//       products.sort((a, b) => b.price - a.price);
-//       if(products.sort){
-//         let s = document.querySelector(".section-background");
-//         s.style.display = "none";
+
+  `;
+  sortt.appendChild(elem);
+  // $(this).toggle(1000);
+  });
+
+}
+
+function setting2(){
+
+let sortt2 = document.querySelector(".product-section");
+  
+      products.sort((a, b) => b.price - a.price);
+      
+        let s = document.querySelector(".section-background");
+        s.style.display = "none";
         
-//         products.forEach((items) => {
-//           var elem = document.createElement("div");
-//           elem.innerHTML = 
-//             `
-//               <div class="product-images">
-//                 <img src="/images/${item.tag}.jpg" alt="" />
-//                 <a href="/html/display.html">
-//                   ${item.name.toUpperCase()} <br />
-//                   <div id="submit">$${item.price}</div>
-//                 </a>
-//                 <button type="submit" class="add-cart">ADD TO CART</button>
-//               </div>
-//             `;
-//           sortt2.appendChild(elem);
-//         });
-//       }
-// });
+        products.forEach((item) => {
+          var elem = document.createElement("div");
+          elem.innerHTML = 
+            `
+              <div class="product-images">
+                <img src="/images/${item.tag}.jpg" alt="" />
+                <a href="/html/display.html">
+                  ${item.name.toUpperCase()} <br />
+                  <div id="submit">$${item.price}</div>
+                </a>
+                <button type="submit" class="add-cart">ADD TO CART</button>
+              </div>
+            `;
+          sortt2.appendChild(elem);
+        });
 
+}
 function cartnumber(product) {
   let productvalue = localStorage.getItem("cart number");
 
@@ -151,7 +172,7 @@ function setItems(product) {
 }
 function totalCost(product) {
   let cartcost = localStorage.getItem("totalCost");
-  //   console.log("the price is ", product.price);
+ 
   if (cartcost != null) {
     cartcost = parseInt(cartcost);
     localStorage.setItem("totalCost", cartcost + product.price);
@@ -171,7 +192,7 @@ function displaycart() {
   if (cartitem && productcontainer) {
     productcontainer.innerHTML = ` `;
     productcontainer.innerHTML += `    
- <div class="cart-head">
+<div class="cart-head">
 Your Shopping-Cart Contains: <span> ${productvalue} items</span>
 <div class = "basket heading">
   <ul>
@@ -186,7 +207,7 @@ Your Shopping-Cart Contains: <span> ${productvalue} items</span>
     Object.values(cartitem).map((item) => {
       productcontainer.innerHTML += ` 
 
-<div class="basket basket-remove">
+<div class="basket">
 <ul>
 <li>
     <img id="cart-image-set" src="/images/${item.tag}.jpg" alt="image" />
@@ -208,7 +229,7 @@ Your Shopping-Cart Contains: <span> ${productvalue} items</span>
      
     </li>
     <li>
-  <span>${item.name}</span>
+  <span>${item.name.toUpperCase()}</span>
   </li>
   <li>
   <p35>$5</p35>
@@ -258,8 +279,8 @@ displaycart();
 
 $(document).ready(function () {
   $("#cross-sign").click(function () {
-    $(".basket-remove").fadeOut("slow", function () {
-      $(".basket-remove").remove();
+    $(this).fadeOut("slow", function () {
+      $(this).remove();
     });
   });
 });
