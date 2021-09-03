@@ -590,6 +590,7 @@ p39 {
   } */
   #heading {
     font-size: 30px;
+    margin: auto;
   }
   .logo img {
     width: 72px;
@@ -601,6 +602,9 @@ p39 {
     right: 0;
     height: 3.5px;
   }
+  .search-button2 {
+    left: -8%;
+}
 }
 @media (max-width: 912px) {
   .form-box {
