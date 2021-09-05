@@ -250,7 +250,7 @@
   background: #f5f5f5;
   width: 100%;
   padding: 0px 0px;
-  margin: -79px 0px;
+  margin: -135px 0px;
   margin-bottom: 3px;
 }
 
@@ -263,12 +263,20 @@
 .product-section {
   position: relative;
   bottom: 80px;
-  /* background: #f5f5f5; */
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   width: 100%;
   padding: 15px;
 }
+.product-section2 {
+  position: relative;
+  bottom: 80px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 100%;
+  padding: 15px;
+}
+
 .product-images {
   margin: auto;
 }
@@ -445,6 +453,11 @@ td {
     padding: 0px;
   }
   .product-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    padding: 0px;
+  }
+  .product-section2 {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     padding: 0px;

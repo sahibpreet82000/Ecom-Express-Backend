@@ -80,17 +80,17 @@ for (let i = 0; i < cart.length; i++) {
   });
 }
 
-function setting(){
-
-let sortt = document.querySelector(".product-section");
+function setting() {
+  let sortt = document.querySelector(".product-section");
 
   products.sort((a, b) => a.price - b.price);
   let s = document.querySelector(".section-background");
   s.style.display = "none";
-  products.forEach((item) => {
   
-      var elem = document.createElement("div");
-      elem.innerHTML = `
+  let p = document.querySelector(".section-background2").style.background ="#f5f5f5";
+  products.forEach((item) => {
+    var elem = document.createElement("div");
+    elem.innerHTML = `
     
       <div class="product-images">
         <img src="/images/${item.tag}.jpg" alt="" />
@@ -103,25 +103,23 @@ let sortt = document.querySelector(".product-section");
 
 
   `;
-  sortt.appendChild(elem);
-  // $(this).toggle(1000);
+    sortt.appendChild(elem);
+    // $(this).toggle(1000);
   });
-
 }
 
-function setting2(){
+function setting2() {
+  let sortt2 = document.querySelector(".product-section2");
 
-let sortt2 = document.querySelector(".product-section");
-  
-      products.sort((a, b) => b.price - a.price);
-      
-        let s = document.querySelector(".section-background");
-        s.style.display = "none";
-        
-        products.forEach((item) => {
-          var elem = document.createElement("div");
-          elem.innerHTML = 
-            `
+  products.sort((a, b) => b.price - a.price);
+
+  let s = document.querySelector(".section-background");
+  s.style.display = "none";
+ 
+  let p = document.querySelector(".section-background3").style.background ="#f5f5f5";
+  products.forEach((item) => {
+    var elem = document.createElement("div");
+    elem.innerHTML = `
               <div class="product-images">
                 <img src="/images/${item.tag}.jpg" alt="" />
                 <a href="/html/display.html">
@@ -131,9 +129,8 @@ let sortt2 = document.querySelector(".product-section");
                 <button type="submit" class="add-cart">ADD TO CART</button>
               </div>
             `;
-          sortt2.appendChild(elem);
-        });
-
+    sortt2.appendChild(elem);
+  });
 }
 function cartnumber(product) {
   let productvalue = localStorage.getItem("cart number");
@@ -172,7 +169,7 @@ function setItems(product) {
 }
 function totalCost(product) {
   let cartcost = localStorage.getItem("totalCost");
- 
+
   if (cartcost != null) {
     cartcost = parseInt(cartcost);
     localStorage.setItem("totalCost", cartcost + product.price);
@@ -279,8 +276,8 @@ displaycart();
 
 $(document).ready(function () {
   $("#cross-sign").click(function () {
-    $(this).fadeOut("slow", function () {
-      $(this).remove();
+    $(".basket").fadeOut("slow", function () {
+      // localStorage.removeItem("");
     });
   });
 });

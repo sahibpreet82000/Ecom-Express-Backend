@@ -171,7 +171,7 @@
           <a href="/html/Shoppingcart.html">
             $ <p24 id="cart-set">0</p24> ( <span>0</span> items)
             <i class="fas fa-shopping-cart" id="cart"></i> <br />
-            <p40>shopping-cart</p40>
+            <p40><a href="#" class="empty-cart">Clear cart</a></p40>
           </a>
         </div>
       </div>
@@ -210,6 +210,13 @@
     $(document).ready(function () {
       $("#searchbar2").click(function () {
         $(".searchbar3").toggle(1000);
+      });
+    });
+    $(document).ready(function () {
+      $(".empty-cart").click(function () {
+        localStorage.clear();
+        document.getElementById("cart-set").textContent = "0";
+        document.querySelector(".cart-total span").textContent = "0";
       });
     });
     // function position() {
