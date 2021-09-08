@@ -179,6 +179,24 @@
   font-size: 3em;
   line-height: 1.5em;
 }
+#text-hide{
+  position: absolute;
+  overflow: hidden;
+  top: 140%;
+  transform: translateX(-2000px);
+}
+#text-hide p89 {
+  margin: 2px 0px;
+  background-color: white;
+  color: black;
+  font-size: 1.2em;
+  line-height: 2em;
+
+}
+.image-text:hover #text-hide{
+  transform: translateX(0px);
+  transition: all 1s ease-in-out;
+}
 .image-text span {
   color: orange;
 }
@@ -354,7 +372,7 @@
     margin: 0px;
   }
   .merge img {
-    width: 403px;
+    width: 350px;
   }
   .loginpage p1 {
     text-align: center;
@@ -362,6 +380,15 @@
   .banner-text {
     font-size: 18px;
     padding: 15px;
+  }
+  .special{
+    padding: 0;
+  }
+  .special-img img{
+    width: 100%;
+  }
+  .item-box button{
+    width: 344px;
   }
 }
 @keyframes slide {

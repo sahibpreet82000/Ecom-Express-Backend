@@ -57,11 +57,16 @@
       <div class="banner-images">
         <div class="images-grid">
           <figure class="effect-julia slide-left-animate">
-            <div class="images-set slide-left-animate">
+            <div class="images-set slide-left-animate" onmouseover="over()">
               <img src="./images/4.jpg" alt="" />
               <div class="image-text slide-left-animate">
                 <p85>Best<span>Store</span></p85> <br />
                 <h3>IN ONLINE SHOPPING</h3>
+                <div id="text-hide">
+                  <p89>Cupidatat non proident, sunt</p89> <br>
+                  <p89>Officia deserunt mollit anim</p89> <br>
+                  <p89>Laboris nisi ut aliquip consequat</p89>
+                </div>
               </div>
             </div>
           </figure>
@@ -214,5 +219,14 @@
     //     alert("Welcome " + $("#register-icon-set").val());
     //   });
     // });
+  
+// $(".image-set").mouseover(function(){
+//   $("#text-hide").css =("transform","translate(0px)");
+// });
+   function over(){
+   let ele =  document.getElementById("text-hide");
+   ele.style.transition = "all 2s ease-in-out";
+   ele.style.transform = "translateX(0px)";
+   }
   </script>
 </html>

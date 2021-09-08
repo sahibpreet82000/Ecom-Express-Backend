@@ -78,9 +78,7 @@ h1 {
   color: orange;
   /* filter: invert(); */
 }
-.product-hover-grid {
-  display: none;
-}
+
 .product-grid-layout {
   padding: 17px;
   margin: 13px;
@@ -95,27 +93,28 @@ h1 {
   list-style: none;
   text-decoration: none;
 }
-.product-hover:hover .product-hover-grid {
-  display: grid;
+.product-hover .product-hover-grid {
+  display: none;
   grid-template-columns: 1fr 1fr;
   background-color: white;
   position: absolute;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  width: 533px;
+  width: 500px;
   margin: 26px;
   border-radius: 2px;
   z-index: 1;
 }
-.product-hover:hover .product-grid-layout a {
+.product-hover .product-grid-layout a {
   font-size: 15px;
   display: contents;
   color: rgb(63, 62, 62);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
-.product-hover:hover .product-grid-layout a:hover {
+.product-hover .product-grid-layout a:hover {
   color: orange;
 }
+
 .logo {
   display: flex;
   position: relative;
@@ -522,7 +521,7 @@ p39 {
     font-size: 19px;
     transition: all 1.2s ease-in-out;
   }
-  .product-hover:hover .product-hover-grid {
+  .product-hover .product-hover-grid {
     display: grid;
     width: auto;
     margin: auto;
