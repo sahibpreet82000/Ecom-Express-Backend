@@ -71,7 +71,7 @@
     overflow: hidden;
   }
   .search-button2 {
-    left: 5%;
+    left: 30%;
   }
   #remove-search {
     display: none;
@@ -92,9 +92,17 @@
     top: 33%;
   }
 }
-@media(max-width:500px){
-  #nav-bar.active .cross::after{
-    transform: translateY(-7px) rotate(133deg);
-
+@media(max-width: 560px){
+  .search-button2 {
+    left: 20%;
   }
 }
+@media (max-width: 500px) {
+  #nav-bar.active .cross::after {
+    transform: translateY(-7px) rotate(133deg);
+  }
+  .search-button2 {
+    left: -8%;
+  }
+}
+

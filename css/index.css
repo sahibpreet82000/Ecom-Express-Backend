@@ -423,6 +423,7 @@ p {
 }
 .flicker-grid {
   display: grid;
+  grid-gap: 10px 0px;
   grid-template-columns: 6rem 6rem 6rem;
 }
 .flicker-box img {
@@ -602,9 +603,6 @@ p39 {
     width: 32px;
     right: 0;
     height: 3.5px;
-  }
-  .search-button2 {
-    left: -8%;
   }
 }
 @media (max-width: 912px) {

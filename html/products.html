@@ -37,7 +37,7 @@
     </div>
     <div class="product-grid">
       <div class="grid-box slide-up" id="category-border">
-        <p>CATEGORIES</p>
+        <p80>CATEGORIES</p80>
         <div class="catelog-set slide-left-animate">
           <ul>
             <li>
@@ -113,35 +113,37 @@
           </div>
         </div>
       </div>
-      <div class="grid-box slide-up" id="content-border">
-        <p>NEW ARRIVAL</p>
-        <div class="slide-left-animate">
-          <div class="newitem-box">
-            <img src="/images/6.jpg" alt="" />
-            <span>
-              OCCAECAT CUPIDATA <br />$180
-              <button type="menu" class="add-cart">ADD TO CART</button>
-            </span>
-          </div>
-          <div class="newitem-box">
-            <img src="/images/26.jpg" alt="" />
-            <span>
-              EMU FUGIAT QUO <br />$250
-              <button type="menu" class="add-cart">ADD TO CART</button>
-            </span>
-          </div>
-          <div class="newitem-box">
-            <img src="/images/11.jpg" alt="" />
-            <span>
-              OFFICIA DESERUNT <br />$259
-              <button type="menu" class="add-cart">ADD TO CART</button>
-            </span>
-          </div>
-          <div class="newitem-box">
-            <img id="catelog-img" src="/images/27.jpg" alt="img" />
-            <div id="border-box">
-              <p50>SUMMER COLLECTION</p50>
+      <div class="grid-box slide-up">
+        <div id="content-border">
+          <p80>NEW ARRIVAL</p80>
+          <div class="slide-left-animate">
+            <div class="newitem-box">
+              <img src="/images/6.jpg" alt="" />
+              <span>
+                OCCAECAT CUPIDATA <br />$180
+                <button type="menu" class="add-cart">ADD TO CART</button>
+              </span>
             </div>
+            <div class="newitem-box">
+              <img src="/images/26.jpg" alt="" />
+              <span>
+                EMU FUGIAT QUO <br />$250
+                <button type="menu" class="add-cart">ADD TO CART</button>
+              </span>
+            </div>
+            <div class="newitem-box">
+              <img src="/images/11.jpg" alt="" />
+              <span>
+                OFFICIA DESERUNT <br />$259
+                <button type="menu" class="add-cart">ADD TO CART</button>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="newitem-img">
+          <img id="catelog-img" src="/images/27.jpg" alt="img" />
+          <div id="border-box">
+            <p50>SUMMER COLLECTION</p50>
           </div>
         </div>
       </div>
@@ -224,7 +226,7 @@
           </div>
         </div>
 
-        <div class="next-page">
+        <div class="next-page slide-animate">
           <table>
             <tr>
               <td>
@@ -266,8 +268,12 @@
     $(document).ready(function () {
       $(".dropbtn").click(function () {
         $(".dropdown-content").slideToggle(500);
+        $(this).focusout(function () {
+          $(".dropdown-content").css("display", "none");
+        });
       });
     });
+
     // function rotate() {
     //   let rot = document.getElementsByClassName(".dropdown-content");
     //   rot.style.transform = "rotate(180deg)";

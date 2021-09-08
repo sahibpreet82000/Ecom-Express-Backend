@@ -235,7 +235,7 @@ Your Shopping-Cart Contains: <span> ${productvalue} items</span>
   <p35 id="change-price"> $ ${item.price * item.inCart} .00</p35>
   </li>
   <li>
-    <i class="fas fa-times" id="cross-sign"></i>
+    <i class="fas fa-times clicked" onclick="remove()" id="cross-sign"></i>
   </li>
     </ul>
     </div>
@@ -280,4 +280,24 @@ $(document).ready(function () {
       // localStorage.removeItem("");
     });
   });
+});
+
+function remove(){
+ 
+  let productvalue = localStorage.getItem("cart number");
+ 
+  localStorage.removeItem(productvalue);
+  
+}
+
+// for animation 
+window.addEventListener("scroll", function () {
+  var element = document.querySelector(".section-content");
+  var position = element.getBoundingClientRect();
+
+  // checking for partial visibility
+  if (position.top < window.innerHeight && position.bottom >= 0) {
+    element.style.visibility = "visible";
+    element.style.animation = "slide-up 1s";
+  }
 });
