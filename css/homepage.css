@@ -54,7 +54,7 @@
   grid-gap: 15px;
   padding: 0px 114px;
 }
-.effect-julia{
+.effect-julia {
   background: black;
   margin: auto;
 }
@@ -71,20 +71,20 @@
 .images-set img {
   width: 100%;
 }
-.image{
+.image {
   width: 90%;
 }
-.image img{
-  opacity: .8;
+.image img {
+  opacity: 0.8;
   width: 100%;
   overflow: hidden;
   display: block;
   transition: all 1.5s ease-in-out;
 }
-.images-set img:hover{
+.images-set img:hover {
   transform: scale(1.5);
   transition: all 1.5s ease-in-out;
-  opacity: .8;
+  opacity: 0.8;
 }
 .images-set2 {
   width: 92%;
@@ -93,11 +93,10 @@
   overflow: hidden;
   display: block;
   transition: all 1.5s ease-in-out;
-
 }
 .images-set2 img {
   max-width: 100%;
-  opacity: .8;
+  opacity: 0.8;
   /* transform: scale(1.5); */
   margin: auto;
   display: block;
@@ -105,7 +104,7 @@
 .images-set2 img:hover {
   transform: scale(1.5);
   transition: all 1.5s ease-in-out;
-opacity: .8;
+  opacity: 0.8;
 }
 .home-items-bg {
   padding: 5em 0;
@@ -126,9 +125,10 @@ opacity: .8;
 }
 
 .home-set {
-  margin: auto;
+  margin: 0 auto;
   background: white;
   padding-bottom: 16px;
+  font-weight: 400;
 }
 .home-set img {
   width: 200px;
@@ -169,51 +169,50 @@ opacity: .8;
   color: black;
   cursor: pointer;
 }
-.image-text{
-position: absolute;
-top: 11%;
-left: 6%;
-    color: white;
+.image-text {
+  position: absolute;
+  top: 11%;
+  left: 6%;
+  color: white;
 }
-.image-text p85{
- 
+.image-text p85 {
   font-size: 3em;
   line-height: 1.5em;
 }
-.image-text span{
-color: orange;
+.image-text span {
+  color: orange;
 }
-.image-text h3{
+.image-text h3 {
   letter-spacing: 2px;
 }
-.image-text2{
-position: absolute;
-top: 39%;
-    left: 24%;
-    margin: 0;
+.image-text2 {
+  position: absolute;
+  top: 39%;
+  left: 24%;
+  margin: 0;
 }
-.image-text2 p83{
-font-size: 2em;
-color: #fff;
-margin: 0;
-}
-.image-text3{
-position: absolute;
-top: 33%;
-    left: 29%;
-    margin: 0;
-}
-.image-text3 p84{
+.image-text2 p83 {
   font-size: 2em;
   color: #fff;
-  margin: 0; 
+  margin: 0;
 }
-.image-text4{
+.image-text3 {
+  position: absolute;
+  top: 33%;
+  left: 29%;
+  margin: 0;
+}
+.image-text3 p84 {
+  font-size: 2em;
+  color: #fff;
+  margin: 0;
+}
+.image-text4 {
   position: absolute;
   top: 47%;
   left: 19%;
 }
-.image-text4 p86{
+.image-text4 p86 {
   text-align: center;
   font-size: 2em;
   color: #fff;
@@ -249,16 +248,16 @@ top: 33%;
     padding: 12px;
   }
 }
-@media(max-width:610px){
-  .banner-back p82{
+@media (max-width: 610px) {
+  .banner-back p82 {
     margin: 0px;
   }
-}
-.merge img{
-  width: 403px;
-}
-.loginpage p1{
-  text-align: center;
+  .merge img {
+    width: 403px;
+  }
+  .loginpage p1 {
+    text-align: center;
+  }
 }
 @keyframes slide {
   0% {
