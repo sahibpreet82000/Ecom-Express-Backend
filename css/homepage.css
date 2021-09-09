@@ -9,6 +9,9 @@
 }
 .main-container {
 }
+.flicker-grid{
+  grid-template-columns: 9rem 9rem 9rem !important;
+}
 .home-img {
   background: url(/images/banner.jpg) no-repeat 0px 0px;
   background-size: cover;

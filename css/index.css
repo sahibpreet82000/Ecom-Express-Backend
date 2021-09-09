@@ -382,7 +382,7 @@ h1 {
   /* font-size: 40px; */
 }
 p {
-  justify-content: right;
+  /* justify-content: right; */
   display: flex;
   color: #999;
   margin-right: 12px;
