@@ -725,6 +725,16 @@ p39 {
   form {
     padding: 19px 4px;
   }
+  .sticky{
+    position: fixed;
+    top: 0;
+    background: white;
+    display: block;
+    text-align: center;
+    z-index: 4;
+    width: 100%;
+  }
+
 }
 
 /* Animation Content */
