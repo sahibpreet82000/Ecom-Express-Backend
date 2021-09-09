@@ -38,7 +38,7 @@ let products = [
   },
   {
     name: "stones bangles",
-    tag: "",
+    tag: "11",
     price: 257,
     inCart: 0,
   },

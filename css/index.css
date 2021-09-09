@@ -522,7 +522,7 @@ p39 {
     transition: all 1.2s ease-in-out;
   }
   .product-hover .product-hover-grid {
-    display: grid;
+    /* display: grid; */
     width: auto;
     margin: auto;
     position: static;

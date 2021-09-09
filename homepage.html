@@ -10,8 +10,6 @@
     <link rel="stylesheet" href="/css/homepage.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
       rel="stylesheet"
@@ -31,6 +29,11 @@
       crossorigin="anonymous"
     ></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
 
     <link
       rel="shortcut icon"
@@ -48,10 +51,34 @@
           <div class="banner-back">
             <p82>Upto <span class="back-box">50% Off</span></p82>
           </div>
-          <!-- <div class="banner-chnange">
-            <p83>TOYS</p83>
-            <p83>GAMES</p83>
-          </div> -->
+
+          <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators ol-settings">
+              <li
+                data-target="#myCarousel"
+                data-slide-to="0"
+                class="active"
+              ></li>
+              <li data-target="#myCarousel" data-slide-to="1"></li>
+              <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol>
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner carousel-setting">
+              <div class="item active">
+                <h3>T-Shirts + Formal Pants + Jewellery + Cosmetics</h3>
+              </div>
+
+              <div class="item">
+                <h3>Toys + Furniture + Lighting + Watches</h3>
+              </div>
+
+              <div class="item">
+                <h3>Tops + Books & Media + Sports</h3>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <div class="banner-images">
@@ -63,8 +90,8 @@
                 <p85>Best<span>Store</span></p85> <br />
                 <h3>IN ONLINE SHOPPING</h3>
                 <div id="text-hide">
-                  <p89>Cupidatat non proident, sunt</p89> <br>
-                  <p89>Officia deserunt mollit anim</p89> <br>
+                  <p89>Cupidatat non proident, sunt</p89> <br />
+                  <p89>Officia deserunt mollit anim</p89> <br />
                   <p89>Laboris nisi ut aliquip consequat</p89>
                 </div>
               </div>
@@ -206,7 +233,6 @@
   <!-- JAVA SCRIPT -->
   <script src="/javascript/index-script.js"></script>
   <script src="/javascript/scriptfile.js"></script>
-  <script src="/javascript/temporary.js"></script>
   <script>
     $(function () {
       $(".nav-container").load("/html/navbar.html");
@@ -214,19 +240,10 @@
     $(function () {
       $(".footer-container").load("/html/footer.html");
     });
-    // $(document).ready(function () {
-    //   $(".button-set").click(function () {
-    //     alert("Welcome " + $("#register-icon-set").val());
-    //   });
-    // });
-  
-// $(".image-set").mouseover(function(){
-//   $("#text-hide").css =("transform","translate(0px)");
-// });
-   function over(){
-   let ele =  document.getElementById("text-hide");
-   ele.style.transition = "all 2s ease-in-out";
-   ele.style.transform = "translateX(0px)";
-   }
+    function over() {
+      let ele = document.getElementById("text-hide");
+      ele.style.transition = "all 2s ease-in-out";
+      ele.style.transform = "translateX(0px)";
+    }
   </script>
 </html>
