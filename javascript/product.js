@@ -283,11 +283,7 @@ $(document).ready(function () {
 });
 
 function remove(){
- 
-  let productvalue = localStorage.getItem("cart number");
- 
-  localStorage.removeItem(productvalue);
-  
+  localStorage.clear();  
 }
 
 // for animation 

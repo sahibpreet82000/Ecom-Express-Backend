@@ -223,3 +223,8 @@ window.addEventListener("scroll", function () {
     element.style.animation = "slide-up 1s";
   }
 });
+
+
+function remove(){
+  localStorage.clear();  
+}
