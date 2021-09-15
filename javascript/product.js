@@ -86,8 +86,9 @@ function setting() {
   products.sort((a, b) => a.price - b.price);
   let s = document.querySelector(".section-background");
   s.style.display = "none";
-  
-  let p = document.querySelector(".section-background2").style.background ="#f5f5f5";
+
+  let p = (document.querySelector(".section-background2").style.background =
+    "#f5f5f5");
   products.forEach((item) => {
     var elem = document.createElement("div");
     elem.innerHTML = `
@@ -115,8 +116,9 @@ function setting2() {
 
   let s = document.querySelector(".section-background");
   s.style.display = "none";
- 
-  let p = document.querySelector(".section-background3").style.background ="#f5f5f5";
+
+  let p = (document.querySelector(".section-background3").style.background =
+    "#f5f5f5");
   products.forEach((item) => {
     var elem = document.createElement("div");
     elem.innerHTML = `
@@ -221,7 +223,7 @@ Your Shopping-Cart Contains: <span> ${productvalue} items</span>
           <i
             class="fas fa-angle-right"
             id="right-button"
-            onclick="increase()"
+            onclick="increase();"
           ></i>
      
     </li>
@@ -282,9 +284,9 @@ $(document).ready(function () {
   });
 });
 
-function remove(){
-  localStorage.clear();  
+function remove() {
+  localStorage.clear();
+  location.reload();
 }
 
-// for animation 
-
+// for animation
