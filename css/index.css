@@ -474,8 +474,21 @@ p39 {
   .dropdown-content2 ul li {
     margin: 0px;
   }
+  #searchbar{
+font-size: 36px;
+  }
+  .cart-total a{
+    font-size: 13px;
+  }
 }
-
+@media(min-width:1320px)and (max-width:1380px) {
+  .search-button{
+    left: 2%;
+  }
+  .cart-total{
+    left: 6%;
+  }
+}
 @media (max-width: 1090px) {
   .dropbtn2 {
     display: flex;

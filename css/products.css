@@ -409,7 +409,7 @@ td {
   }
 
   #main-img {
-    width: 95%;
+    width: 100%;
   }
   .section-box p2 {
     left: 17%;
@@ -493,6 +493,9 @@ td {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     padding: 0px;
+  }
+  .product-section2{
+    bottom: 0px;
   }
 }
 @media (max-width: 636px) {

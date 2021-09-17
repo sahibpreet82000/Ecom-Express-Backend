@@ -110,3 +110,5 @@ window.addEventListener("scroll", function () {
     element.style.animation = "slide-up 1s";
   }
 });
+var nm = ['car','jeep','van'];
+let set = localStorage.setItem('name',JSON.stringify(nm)) ;
