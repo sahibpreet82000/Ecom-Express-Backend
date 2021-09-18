@@ -237,7 +237,7 @@ Your Shopping-Cart Contains: <span> ${productvalue} items</span>
   <p35 id="change-price"> $ ${item.price * item.inCart} .00</p35>
   </li>
   <li>
-    <i class="fas fa-times clicked" onclick="remove()" id="cross-sign"></i>
+    <i class="fas fa-times clicked" onclick="remove(this.id)" id="cross-sign"></i>
   </li>
     </ul>
     </div>
