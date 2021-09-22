@@ -1,3 +1,5 @@
+//--------------------------------------------------toggle navbar elements--------------------------------------------------
+
 $(document).ready(function () {
     $(".product-click").click(function () {
       $("#hide-product-hover").toggle(200);
@@ -19,6 +21,8 @@ $(document).ready(function () {
       }
     });
   });
+  //--------------------------------------------------toggle dropdown button--------------------------------------------------
+
   $(document).ready(function () {
     $("#nav-bar").click(function () {
       $(".dropdown-content2").toggle(500);
@@ -29,16 +33,21 @@ $(document).ready(function () {
       $(this).toggleClass("active");
     });
   });
+  //--------------------------------------------------for searchbar toggle--------------------------------------------------
+
   $(document).ready(function () {
     $("#searchbar").click(function () {
       $(".searchbar2").slideToggle(800);
     });
   });
+
   $(document).ready(function () {
     $("#searchbar2").click(function () {
       $(".searchbar3").toggle(800);
     });
   });
+  //--------------------------------------------------empty cart--------------------------------------------------
+
   $(document).ready(function () {
     $(".empty-cart").click(function () {
       localStorage.clear();

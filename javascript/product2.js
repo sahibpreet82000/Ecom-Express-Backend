@@ -1,4 +1,6 @@
 let cart = document.querySelectorAll(".add-cart");
+//--------------------------------------------------for adding products --------------------------------------------------
+
 let products = [
   {
     name: "center table",
@@ -61,6 +63,64 @@ for (let i = 0; i < cart.length; i++) {
     totalCost(products[i]);
   });
 }
+//--------------------------------------------------for price low to high--------------------------------------------------
+
+function setting() {
+  let sortt = document.querySelector(".product-section");
+
+  products.sort((a, b) => a.price - b.price);
+  let s = document.querySelector(".section-background");
+  s.style.display = "none";
+
+  let p = (document.querySelector(".section-background2").style.background =
+    "#f5f5f5");
+  products.forEach((item) => {
+    var elem = document.createElement("div");
+    elem.innerHTML = `
+    
+      <div class="product-images">
+        <img src="/images/${item.tag}.jpg" alt="" />
+        <a href="/html/display.html">
+          ${item.name.toUpperCase()} <br />
+          <div id="submit"> $${item.price}</div>
+        </a>
+        <button type="submit" class="add-cart">ADD TO CART</button>
+      </div>
+
+
+  `;
+    sortt.appendChild(elem);
+    // $(this).toggle(1000);
+  });
+}
+//--------------------------------------------------for price high to low--------------------------------------------------
+
+function setting2() {
+  let sortt2 = document.querySelector(".product-section2");
+
+  products.sort((a, b) => b.price - a.price);
+
+  let s = document.querySelector(".section-background");
+  s.style.display = "none";
+
+  let p = (document.querySelector(".section-background3").style.background =
+    "#f5f5f5");
+  products.forEach((item) => {
+    var elem = document.createElement("div");
+    elem.innerHTML = `
+              <div class="product-images">
+                <img src="/images/${item.tag}.jpg" alt="" />
+                <a href="/html/display.html">
+                  ${item.name.toUpperCase()} <br />
+                  <div id="submit">$${item.price}</div>
+                </a>
+                <button type="submit" class="add-cart">ADD TO CART</button>
+              </div>
+            `;
+    sortt2.appendChild(elem);
+  });
+}
+//--------------------------------------------------for setting cart number--------------------------------------------------
 
 function cartnumber(product) {
   let productvalue = localStorage.getItem("cart number");
@@ -76,6 +136,7 @@ function cartnumber(product) {
   }
   setItems(product);
 }
+//--------------------------------------------------for setting products--------------------------------------------------
 
 function setItems(product) {
   let cartitem = localStorage.getItem("productsCart");
@@ -97,6 +158,8 @@ function setItems(product) {
 
   localStorage.setItem("productsCart", JSON.stringify(cartitem));
 }
+//--------------------------------------------------for setting cost--------------------------------------------------
+
 function totalCost(product) {
   let cartcost = localStorage.getItem("totalCost");
   //   console.log("the price is ", product.price);
@@ -109,6 +172,8 @@ function totalCost(product) {
     document.getElementById("cart-set").innerHTML = product.price;
   }
 }
+//--------------------------------------------------for display products--------------------------------------------------
+
 function displaycart() {
   let cartitem = localStorage.getItem("productsCart");
   let productvalue = localStorage.getItem("cart number");
@@ -203,6 +268,7 @@ Your Shopping-Cart Contains: <span> ${productvalue} items</span>
 }
 
 displaycart();
+//--------------------------------------------------extra events--------------------------------------------------
 
 $(document).ready(function () {
   $("#cross-sign").click(function () {
@@ -224,6 +290,7 @@ window.addEventListener("scroll", function () {
   }
 });
 
+//--------------------------------------------------for remove items from cart--------------------------------------------------
 
 function remove(){
   localStorage.clear();  

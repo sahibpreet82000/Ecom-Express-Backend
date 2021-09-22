@@ -1,4 +1,6 @@
 let cart = document.querySelectorAll(".new-cart");
+//--------------------------------------------------for adding products --------------------------------------------------
+
 let products = [
   {
     name: "formal shirt",
@@ -56,6 +58,8 @@ for (let i = 0; i < cart.length; i++) {
   });
 }
 
+//--------------------------------------------------for setting cart number--------------------------------------------------
+
 function cartnumber(product) {
   let productvalue = localStorage.getItem("cart number");
 
@@ -70,6 +74,8 @@ function cartnumber(product) {
   }
   setItems(product);
 }
+
+//--------------------------------------------------for adding cart content--------------------------------------------------
 
 function setItems(product) {
   let cartitem = localStorage.getItem("productsCart");
@@ -91,6 +97,9 @@ function setItems(product) {
 
   localStorage.setItem("productsCart", JSON.stringify(cartitem));
 }
+
+//--------------------------------------------------for adding cart cost--------------------------------------------------
+
 function totalCost(product) {
   let cartcost = localStorage.getItem("totalCost");
 
@@ -103,6 +112,9 @@ function totalCost(product) {
     document.getElementById("cart-set").innerHTML = product.price;
   }
 }
+
+//--------------------------------------------------for display cart --------------------------------------------------
+
 function displaycart() {
   let cartitem = localStorage.getItem("productsCart");
   let productvalue = localStorage.getItem("cart number");
@@ -197,6 +209,8 @@ Your Shopping-Cart Contains: <span> ${productvalue} items</span>
 }
 
 displaycart();
+
+//--------------------------------------------------extra events--------------------------------------------------
 
 $(document).ready(function () {
   $("#cross-sign").click(function () {

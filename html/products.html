@@ -265,18 +265,17 @@
     $(function () {
       $(".footer-container").load("/html/footer.html");
     });
+    //--------------------------------------------------for drop-button hover-------------------------------------------------
+
     $(document).ready(function () {
       $(".dropbtn").click(function () {
         $(".dropdown-content").slideToggle(500);
-       
       });
-       
+      $(".dropdown-content").focusout(function () {
+        $(this).css("display", "none");
+      });
     });
-     $(".dropdown-content").focusout(function () {
-          $(this).css("display", "none");
-        });
-    
-    
+
     // function rotate() {
     //   let rot = document.getElementsByClassName(".dropdown-content");
     //   rot.style.transform = "rotate(180deg)";

@@ -1,4 +1,6 @@
 let cart = document.querySelectorAll(".add-cart");
+//--------------------------------------------------for adding products --------------------------------------------------
+
 let products = [
   {
     name: "occaecat cupidata",
@@ -79,6 +81,7 @@ for (let i = 0; i < cart.length; i++) {
     totalCost(products[i]);
   });
 }
+//--------------------------------------------------for price low to high--------------------------------------------------
 
 function setting() {
   let sortt = document.querySelector(".product-section");
@@ -108,6 +111,7 @@ function setting() {
     // $(this).toggle(1000);
   });
 }
+//--------------------------------------------------for price high to low--------------------------------------------------
 
 function setting2() {
   let sortt2 = document.querySelector(".product-section2");
@@ -134,6 +138,8 @@ function setting2() {
     sortt2.appendChild(elem);
   });
 }
+//--------------------------------------------------for setting cart number--------------------------------------------------
+
 function cartnumber(product) {
   let productvalue = localStorage.getItem("cart number");
 
@@ -148,6 +154,7 @@ function cartnumber(product) {
   }
   setItems(product);
 }
+//--------------------------------------------------for setting products--------------------------------------------------
 
 function setItems(product) {
   let cartitem = localStorage.getItem("productsCart");
@@ -169,6 +176,8 @@ function setItems(product) {
 
   localStorage.setItem("productsCart", JSON.stringify(cartitem));
 }
+//--------------------------------------------------for setting cost--------------------------------------------------
+
 function totalCost(product) {
   let cartcost = localStorage.getItem("totalCost");
 
@@ -181,6 +190,8 @@ function totalCost(product) {
     document.getElementById("cart-set").innerHTML = product.price;
   }
 }
+//--------------------------------------------------for display products--------------------------------------------------
+
 function displaycart() {
   let cartitem = localStorage.getItem("productsCart");
   let productvalue = localStorage.getItem("cart number");
@@ -275,6 +286,7 @@ Your Shopping-Cart Contains: <span> ${productvalue} items</span>
 }
 
 displaycart();
+//--------------------------------------------------extra events--------------------------------------------------
 
 $(document).ready(function () {
   $("#cross-sign").click(function () {
@@ -283,6 +295,8 @@ $(document).ready(function () {
     });
   });
 });
+
+//--------------------------------------------------for remove cart item--------------------------------------------------
 
 function remove() {
   localStorage.clear();

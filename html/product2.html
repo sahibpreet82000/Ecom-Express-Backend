@@ -109,8 +109,8 @@
           <button class="dropbtn">Default Sorting</button>
           <i class="fas fa-angle-down" id="dropbtn-arrow"></i>
           <div class="dropdown-content">
-            <a href="#">Low to High</a>
-            <a href="#">High to Low</a>
+            <a href="#" onclick="setting()">Low to High</a>
+            <a href="#" onclick="setting2()">High to Low</a>
             <a href="#">Popularity</a>
           </div>
         </div>
@@ -265,12 +265,13 @@
     $(function () {
       $(".footer-container").load("/html/footer.html");
     });
+
     $(document).ready(function () {
       $(".dropbtn").click(function () {
         $(".dropdown-content").slideToggle(500);
-        $(this).focusout(function () {
-          $(".dropdown-content").css("display", "none");
-        });
+      });
+      $(".dropdown-content").focusout(function () {
+        $(this).css("display", "none");
       });
     });
   </script>
