@@ -29,6 +29,10 @@
   margin-top: 40px;
   margin-left: 12px;
 }
+.basket{
+  animation-name: zoom;
+  animation-duration: 1s;
+}
 .basket ul {
   display: flex;
   align-items: center;
@@ -136,6 +140,10 @@ p34 {
 .cart-empty p {
   font-size: 30px;
   margin-bottom: 50px;
+}
+.remove{
+  display: none;
+  transition: all 1s ease-in-out;
 }
 
 @media (max-width: 1000px) {

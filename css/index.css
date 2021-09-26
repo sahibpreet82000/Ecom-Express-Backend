@@ -492,7 +492,7 @@ font-size: 36px;
 @media (max-width: 1090px) {
   .dropbtn2 {
     display: flex;
-    width: 65px;
+    width: 54px;
     position: relative;
     right: 0px;
     height: 8px;
@@ -514,7 +514,7 @@ font-size: 36px;
     background: orange;
     content: "";
     position: absolute;
-    width: 42px;
+    width: 33px;
     height: 4px;
   }
   .dropdown-content2 {

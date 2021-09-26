@@ -365,7 +365,8 @@ td {
   animation: zoom 1s;
   animation-delay: 0.3s;
 }
-/* MEDIA SETTINGS */
+
+/*------------------------ MEDIA SETTINGS----------------------- */
 @media (min-width: 1546px) {
   body {
     margin: auto;

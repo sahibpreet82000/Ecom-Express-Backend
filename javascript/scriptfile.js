@@ -20,30 +20,29 @@ function change() {
 
 // JAVASCRIPT FOR SHOPPING-CART and Display
 
-function increase() {
-  let inc = document.getElementById("right-button");
-  let p = document.getElementById("number-set");
-  let i = p.innerHTML;
-  if (i < 10) {
-    i++;
-  }
-  if (i == 10) {
-    alert("maximum value reach");
-  }
-  document.getElementById("number-set").innerHTML = i;
-}
-function decrease() {
-  let p = document.getElementById("number-set");
-  let i = p.innerHTML;
-  if (i > 1) {
-    i--;
-  }
-  if (i == 0) {
-    alert("you have to select atleast one item");
-  }
+// function increase() {
+//   let inc = document.getElementById("right-button");
 
-  document.getElementById("number-set").innerHTML = i;
-}
+//   if (i < 10) {
+//     i++;
+//   }
+//   if (i == 10) {
+//     alert("maximum value reach");
+//   }
+//   document.getElementById("number-set").innerHTML = i;
+// }
+// function decrease() {
+//   let p = document.getElementById("number-set");
+//   let i = p.innerHTML;
+//   if (i > 1) {
+//     i--;
+//   }
+//   if (i == 0) {
+//     alert("you have to select atleast one item");
+//   }
+
+//   document.getElementById("number-set").innerHTML = i;
+// }
 
 // JAVASCRIPT FOR PRODUCT-CART
 

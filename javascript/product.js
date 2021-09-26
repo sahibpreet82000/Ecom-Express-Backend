@@ -108,7 +108,6 @@ function setting() {
 
   `;
     sortt.appendChild(elem);
-    // $(this).toggle(1000);
   });
 }
 //--------------------------------------------------for price high to low--------------------------------------------------
@@ -197,7 +196,7 @@ function displaycart() {
   let productvalue = localStorage.getItem("cart number");
   cartitem = JSON.parse(cartitem);
   let productcontainer = document.querySelector(".table-container");
-  console.log(cartitem);
+  // console.log(cartitem);
   let cartcost = localStorage.getItem("totalCost");
   if (cartitem && productcontainer) {
     productcontainer.innerHTML = ` `;
@@ -226,15 +225,13 @@ Your Shopping-Cart Contains: <span> ${productvalue} items</span>
           <i
             class="fas fa-angle-left"
             id="left-button"
-            onclick="decrease()"
           ></i>
        
           <p20 id="number-set">${item.inCart}</p20>
        
           <i
             class="fas fa-angle-right"
-            id="right-button"
-            onclick="increase();"
+            id="right-button"       
           ></i>
      
     </li>
@@ -245,10 +242,10 @@ Your Shopping-Cart Contains: <span> ${productvalue} items</span>
   <p35>$5</p35>
   </li>
   <li>
-  <p35 id="change-price"> $ ${item.price * item.inCart} .00</p35>
+  <p35 id="change-price"> $${item.price * item.inCart} .00</p35>
   </li>
   <li>
-    <i class="fas fa-times clicked" onclick="remove(this.id)" id="cross-sign"></i>
+    <i class="fas fa-times clicked" id="cross-sign"></i>
   </li>
     </ul>
     </div>
@@ -261,7 +258,7 @@ Your Shopping-Cart Contains: <span> ${productvalue} items</span>
   <br />
   <li>
     <p34>Total:</p34>
-    <span class="float" id="total"> ${cartcost}</span>
+    <span class="float" id="total"> $${cartcost}</span>
   </li>
 </ul>
 </div>
@@ -288,19 +285,70 @@ Your Shopping-Cart Contains: <span> ${productvalue} items</span>
 displaycart();
 //--------------------------------------------------extra events--------------------------------------------------
 
-$(document).ready(function () {
-  $("#cross-sign").click(function () {
-    $(".basket").fadeOut("slow", function () {
-      // localStorage.removeItem("");
-    });
+//--------------------------------------------------for remove cart item--------------------------------------------------
+
+
+let remove = document.querySelectorAll("#cross-sign");
+remove.forEach((e) => {
+  e.addEventListener("click", function (el) {
+    // let cartitem = localStorage.getItem("productsCart");
+    // cartitem = JSON.parse(cartitem);
+    // cartitem.splice(el.target,1);
+
+    // localStorage.setItem("productsCart", JSON.stringify(cartitem));
+    // let productvalue = localStorage.getItem("cart number");
+    // console.log(el.target.parentElement.parentElement.parentElement);
+    el.target.parentElement.parentElement.parentElement.classList.add("remove");
+    
+  });
+});
+// ------------------------------for increase quatity--------------------------------
+let inc = document.querySelectorAll("#right-button");
+inc.forEach((i) => {
+  i.addEventListener("click", function (e) {
+    let l = e.target.parentElement.children[1].innerHTML;
+    let b =
+      e.target.parentElement.parentElement.children[4].children[0].innerHTML
+        .replaceAll("$", "")
+        .replaceAll(".00", "");
+
+    console.log(
+      e.target.parentElement.parentElement.children[4].children[0].innerHTML
+    );
+    l = parseInt(l);
+    b = parseInt(b);
+    console.log(b);
+    let cartcost = localStorage.getItem("totalCost");
+    if (l < 10 && b) {
+      l++;
+      e.target.parentElement.children[1].innerHTML = l;
+      e.target.parentElement.parentElement.children[4].children[0].innerHTML = "$"+ 2 * b +".00";
+    }
+    if (l == 10) {
+      alert("maximum value reach");
+    }
   });
 });
 
-//--------------------------------------------------for remove cart item--------------------------------------------------
+// ------------------------------for decrease quatity--------------------------------
+let dec = document.querySelectorAll("#left-button");
+dec.forEach((i) => {
+  i.addEventListener("click", function (e) {
+    let l = e.target.parentElement.children[1].innerHTML;
+    let b =
+      e.target.parentElement.parentElement.children[4].children[0].innerHTML
+        .replaceAll("$", "")
+        .replaceAll(".00", "");
 
-function remove() {
-  localStorage.clear();
-  location.reload();
-}
-
-// for animation
+    l = parseInt(l);
+    if (l > 1 && b) {
+      l--;
+      e.target.parentElement.children[1].innerHTML = l;
+      e.target.parentElement.parentElement.children[4].children[0].innerHTML =
+        "$" + parseInt(b) / 2 + ".00";
+    }
+    if (l == 0) {
+      alert("You have to select atlease one item");
+    }
+  });
+});
