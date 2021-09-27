@@ -242,8 +242,10 @@ Your Shopping-Cart Contains: <span> ${productvalue} items</span>
   <br />
   <br />
   <li>
-    <p34>Total:</p34>
-    <span class="float" id="total"> ${cartcost}</span>
+  <p34>Tax:</p34>
+  <span class="float" id="total"> ${tax}</span></br>
+  <p34>Total:</p34>
+  <span class="float2" id="total"> ${cartcost + tax}</span> 
   </li>
 </ul>
 </div>
@@ -268,30 +270,122 @@ Your Shopping-Cart Contains: <span> ${productvalue} items</span>
 }
 
 displaycart();
-//--------------------------------------------------extra events--------------------------------------------------
 
-$(document).ready(function () {
-  $("#cross-sign").click(function () {
-    $(".basket-remove").fadeOut("slow", function () {
-      $(".basket-remove").remove();
-    });
-  });
-});
-
-// for animation 
+//------------------------------------------------for animation----------------------------------------------------------
 window.addEventListener("scroll", function () {
   var element = document.querySelector(".section-content");
   var position = element.getBoundingClientRect();
 
-  // checking for partial visibility
+  //---------------------------------------- checking for partial visibility------------------------------------------------
+
   if (position.top < window.innerHeight && position.bottom >= 0) {
     element.style.visibility = "visible";
     element.style.animation = "slide-up 1s";
   }
 });
 
-//--------------------------------------------------for remove items from cart--------------------------------------------------
+//--------------------------------------------------for remove cart item--------------------------------------------------
 
-function remove(){
-  localStorage.clear();  
-}
+let remove = document.querySelectorAll("#cross-sign");
+remove.forEach((e) => {
+  e.addEventListener("click", function (el) {
+    // let cartitem = localStorage.getItem("productsCart");
+    // cartitem = JSON.parse(cartitem);
+    // cartitem.splice(el.target,1);
+
+    // localStorage.setItem("productsCart", JSON.stringify(cartitem));
+    // let productvalue = localStorage.getItem("cart number");
+    // console.log(el.target.parentElement.parentElement.parentElement);
+    el.target.parentElement.parentElement.parentElement.classList.add("remove");
+    localStorage.clear();
+  });
+});
+// ------------------------------for increase quatity--------------------------------
+let inc = document.querySelectorAll("#right-button");
+inc.forEach((i) => {
+  i.addEventListener("click", function (e) {
+    let l = e.target.parentElement.children[1].innerHTML;
+    let b =
+      e.target.parentElement.parentElement.children[4].children[0].innerHTML
+        .replaceAll("$", "")
+        .replaceAll(".00", "");
+    let total = document.querySelector(".float2").innerHTML.replaceAll("$", "");
+    let totalItems = document
+      .querySelector(".cart-head span")
+      .innerHTML.replaceAll("items", "");
+
+    // console.log(
+    //   // e.target.parentElement.parentElement.parentElement.parentElement.children[2].children.classList("float")
+    //   document.querySelector(".cart-head span").innerHTML
+    // );
+    l = parseInt(l);
+    b = parseInt(b);
+    total = parseInt(total);
+    totalItems = parseInt(totalItems);
+    let cartcost = localStorage.getItem("totalCost");
+    cartcost = JSON.parse(cartcost);
+    let cartitem = localStorage.getItem("productsCart");
+    cartitem = JSON.parse(cartitem);
+    if (l < 10 && b) {
+      l++;
+      e.target.parentElement.children[1].innerHTML = l;
+      Object.values(cartitem).map((item) => {
+        // console.log(cartitem[5]);
+        e.target.parentElement.parentElement.children[4].children[0].innerHTML =
+          item.price + b + ".00";
+        document.querySelector(".float2").innerHTML = total + item.price;
+        document.querySelector(".cart-head span").innerHTML =
+          totalItems + 1 + " items";
+      });
+    }
+    if (l == 10) {
+      alert("maximum value reach");
+    }
+  });
+});
+
+// ------------------------------for decrease quatity--------------------------------
+
+let dec = document.querySelectorAll("#left-button");
+dec.forEach((i) => {
+  i.addEventListener("click", function (e) {
+    let l = e.target.parentElement.children[1].innerHTML;
+    let b =
+      e.target.parentElement.parentElement.children[4].children[0].innerHTML
+        .replaceAll("$", "")
+        .replaceAll(".00", "");
+    let total = document.querySelector(".float2").innerHTML.replaceAll("$", "");
+    let totalItems = document
+      .querySelector(".cart-head span")
+      .innerHTML.replaceAll("items", "");
+    l = parseInt(l);
+    b = parseInt(b);
+    total = parseInt(total);
+    totalItems = parseInt(totalItems);
+    let cartitem = localStorage.getItem("productsCart");
+    cartitem = JSON.parse(cartitem);
+    if (l > 1 && b) {
+      l--;
+      e.target.parentElement.children[1].innerHTML = l;
+      Object.values(cartitem).map((item) => {
+        e.target.parentElement.parentElement.children[4].children[0].innerHTML =
+          b - item.price + ".00";
+        document.querySelector(".float2").innerHTML = total - item.price;
+        document.querySelector(".cart-head span").innerHTML =
+          totalItems - 1 + " items";
+      });
+    }
+    if (l == 0) {
+      alert("You have to select atlease one item");
+    }
+  });
+});
+//--------------------------------------------------extra events--------------------------------------------------
+
+// $(document).ready(function () {
+//   $("#cross-sign").click(function () {
+//     $(".basket-remove").fadeOut("slow", function () {
+//       $(".basket-remove").remove();
+//     });
+//   });
+// });
