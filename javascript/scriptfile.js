@@ -1,4 +1,4 @@
-// JAVASCRIPT FOR INDEX-PAGE
+//--------------------------JAVASCRIPT FOR INDEX-PAGE----------------------------------
 
 function change() {
   let set = document.getElementById("set-eye-button");
@@ -18,7 +18,7 @@ function change() {
   }
 }
 
-// JAVASCRIPT FOR SHOPPING-CART and Display
+//------------------------JAVASCRIPT FOR SHOPPING-CART and Display---------------------------------
 
 // function increase() {
 //   let inc = document.getElementById("right-button");
@@ -44,7 +44,7 @@ function change() {
 //   document.getElementById("number-set").innerHTML = i;
 // }
 
-// JAVASCRIPT FOR PRODUCT-CART
+//-------------------------------JAVASCRIPT FOR PRODUCT-CART------------------------------
 
 // function cart() {
 //   let s = document.getElementById("submit").innerText.replace("$", "");
@@ -54,7 +54,7 @@ function change() {
 //   let a = car.innerHTML;
 // }
 
-// JAVA SCRIPT FOR DISPLAY.HTML
+//-------------------------------JAVA SCRIPT FOR DISPLAY.HTML----------------------------------
 
 function hovertext() {
   let hov = document.querySelector(".details");
@@ -82,4 +82,4 @@ function hovertext3() {
   ho.style.display = "block";
 }
 
-// for animations
+//-------------------------------------for animations---------------------------------------------

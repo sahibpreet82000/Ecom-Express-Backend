@@ -83,7 +83,7 @@ p35 {
 .cart-value {
   display: block;
   position: relative;
-  width: 20%;
+  /* width: 20%; */
   height: 100%;
   margin: 67px 24px;
 }
@@ -92,7 +92,11 @@ p35 {
 }
 .float {
   font-size: 30px;
-  float: right;
+margin: 8px;
+}
+.float2 {
+  font-size: 30px;
+  margin: 8px;
 }
 p34 {
   font-size: 30px;

@@ -189,6 +189,7 @@ function totalCost(product) {
     document.getElementById("cart-set").innerHTML = product.price;
   }
 }
+
 //--------------------------------------------------for display products--------------------------------------------------
 
 function displaycart() {
@@ -196,8 +197,9 @@ function displaycart() {
   let productvalue = localStorage.getItem("cart number");
   cartitem = JSON.parse(cartitem);
   let productcontainer = document.querySelector(".table-container");
-  // console.log(cartitem);
+  let tax = productvalue * 5;
   let cartcost = localStorage.getItem("totalCost");
+  cartcost = JSON.parse(cartcost);
   if (cartitem && productcontainer) {
     productcontainer.innerHTML = ` `;
     productcontainer.innerHTML += `    
@@ -239,10 +241,10 @@ Your Shopping-Cart Contains: <span> ${productvalue} items</span>
   <span>${item.name.toUpperCase()}</span>
   </li>
   <li>
-  <p35>$5</p35>
+  <p35>5</p35>
   </li>
   <li>
-  <p35 id="change-price"> $${item.price * item.inCart} .00</p35>
+  <p35 id="change-price"> ${item.price * item.inCart} .00</p35>
   </li>
   <li>
     <i class="fas fa-times clicked" id="cross-sign"></i>
@@ -257,8 +259,10 @@ Your Shopping-Cart Contains: <span> ${productvalue} items</span>
   <br />
   <br />
   <li>
+  <p34>Tax:</p34>
+    <span class="float" id="total"> ${tax}</span></br>
     <p34>Total:</p34>
-    <span class="float" id="total"> $${cartcost}</span>
+    <span class="float2" id="total"> ${cartcost + tax}</span> 
   </li>
 </ul>
 </div>
@@ -287,7 +291,6 @@ displaycart();
 
 //--------------------------------------------------for remove cart item--------------------------------------------------
 
-
 let remove = document.querySelectorAll("#cross-sign");
 remove.forEach((e) => {
   e.addEventListener("click", function (el) {
@@ -299,7 +302,7 @@ remove.forEach((e) => {
     // let productvalue = localStorage.getItem("cart number");
     // console.log(el.target.parentElement.parentElement.parentElement);
     el.target.parentElement.parentElement.parentElement.classList.add("remove");
-    
+    localStorage.clear();
   });
 });
 // ------------------------------for increase quatity--------------------------------
@@ -311,18 +314,34 @@ inc.forEach((i) => {
       e.target.parentElement.parentElement.children[4].children[0].innerHTML
         .replaceAll("$", "")
         .replaceAll(".00", "");
+    let total = document.querySelector(".float2").innerHTML.replaceAll("$", "");
+    let totalItems = document
+      .querySelector(".cart-head span")
+      .innerHTML.replaceAll("items", "");
 
-    console.log(
-      e.target.parentElement.parentElement.children[4].children[0].innerHTML
-    );
+    // console.log(
+    //   // e.target.parentElement.parentElement.parentElement.parentElement.children[2].children.classList("float")
+    //   document.querySelector(".cart-head span").innerHTML
+    // );
     l = parseInt(l);
     b = parseInt(b);
-    console.log(b);
+    total = parseInt(total);
+    totalItems = parseInt(totalItems);
     let cartcost = localStorage.getItem("totalCost");
+    cartcost = JSON.parse(cartcost);
+    let cartitem = localStorage.getItem("productsCart");
+    cartitem = JSON.parse(cartitem);
     if (l < 10 && b) {
       l++;
       e.target.parentElement.children[1].innerHTML = l;
-      e.target.parentElement.parentElement.children[4].children[0].innerHTML = "$"+ 2 * b +".00";
+      Object.values(cartitem).map((item) => {
+        // console.log(cartitem[5]);
+        e.target.parentElement.parentElement.children[4].children[0].innerHTML =
+          item.price + b + ".00";
+        document.querySelector(".float2").innerHTML = total + item.price;
+        document.querySelector(".cart-head span").innerHTML =
+          totalItems + 1 + " items";
+      });
     }
     if (l == 10) {
       alert("maximum value reach");
@@ -331,6 +350,7 @@ inc.forEach((i) => {
 });
 
 // ------------------------------for decrease quatity--------------------------------
+
 let dec = document.querySelectorAll("#left-button");
 dec.forEach((i) => {
   i.addEventListener("click", function (e) {
@@ -339,13 +359,26 @@ dec.forEach((i) => {
       e.target.parentElement.parentElement.children[4].children[0].innerHTML
         .replaceAll("$", "")
         .replaceAll(".00", "");
-
+    let total = document.querySelector(".float2").innerHTML.replaceAll("$", "");
+    let totalItems = document
+      .querySelector(".cart-head span")
+      .innerHTML.replaceAll("items", "");
     l = parseInt(l);
+    b = parseInt(b);
+    total = parseInt(total);
+    totalItems = parseInt(totalItems);
+    let cartitem = localStorage.getItem("productsCart");
+    cartitem = JSON.parse(cartitem);
     if (l > 1 && b) {
       l--;
       e.target.parentElement.children[1].innerHTML = l;
-      e.target.parentElement.parentElement.children[4].children[0].innerHTML =
-        "$" + parseInt(b) / 2 + ".00";
+      Object.values(cartitem).map((item) => {
+        e.target.parentElement.parentElement.children[4].children[0].innerHTML =
+          b - item.price + ".00";
+        document.querySelector(".float2").innerHTML = total - item.price;
+        document.querySelector(".cart-head span").innerHTML =
+          totalItems - 1 + " items";
+      });
     }
     if (l == 0) {
       alert("You have to select atlease one item");

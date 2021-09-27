@@ -67,7 +67,7 @@ $(document).ready(function () {
   function myFunction() {
     if (window.pageYOffset >= sticky) {
       navbar.classList.add("sticky");
-      navbar.style.transition = "none";
+      // navbar.style.transition = "none";
     } else {
       navbar.classList.remove("sticky");
     }
