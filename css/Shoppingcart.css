@@ -29,6 +29,19 @@
   margin-top: 40px;
   margin-left: 12px;
 }
+.basketHeading{
+  animation-name: zoom;
+  animation-duration: 1s;
+}
+.basketHeading ul {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.basketHeading ul li {
+  margin: auto;
+  list-style: none;
+}
 .basket{
   animation-name: zoom;
   animation-duration: 1s;
@@ -42,6 +55,7 @@
   margin: auto;
   list-style: none;
 }
+
 
 p37 {
   font-size: 20px;

@@ -179,7 +179,7 @@ function setItems(product) {
 
 function totalCost(product) {
   let cartcost = localStorage.getItem("totalCost");
-
+  let productvalue = localStorage.getItem("cart number");
   if (cartcost != null) {
     cartcost = parseInt(cartcost);
     localStorage.setItem("totalCost", cartcost + product.price);
@@ -194,18 +194,20 @@ function totalCost(product) {
 
 function displaycart() {
   let cartitem = localStorage.getItem("productsCart");
-  let productvalue = localStorage.getItem("cart number");
   cartitem = JSON.parse(cartitem);
   let productcontainer = document.querySelector(".table-container");
-  let tax = productvalue * 5;
-  let cartcost = localStorage.getItem("totalCost");
-  cartcost = JSON.parse(cartcost);
+  let getNum = localStorage.getItem("cart number");
+  let gettex = localStorage.getItem("totalCost");
+  gettex = JSON.parse(gettex);
+  getNum = JSON.parse(getNum);
+  gettex = parseInt(gettex);
+  let tax =getNum  * 5;
   if (cartitem && productcontainer) {
     productcontainer.innerHTML = ` `;
     productcontainer.innerHTML += `    
 <div class="cart-head">
-Your Shopping-Cart Contains: <span> ${productvalue} items</span>
-<div class = "basket heading">
+Your Shopping-Cart Contains: <span> ${getNum} </span> items
+<div class = "basketHeading heading">
   <ul>
     <li><p37>Products</p37></li>
     <li><p37>Quantity</p37></li>
@@ -262,7 +264,7 @@ Your Shopping-Cart Contains: <span> ${productvalue} items</span>
   <p34>Tax:</p34>
     <span class="float" id="total"> ${tax}</span></br>
     <p34>Total:</p34>
-    <span class="float2" id="total"> ${cartcost + tax}</span> 
+    <span class="float2" id="total"> ${gettex + tax}</span> 
   </li>
 </ul>
 </div>
@@ -291,20 +293,28 @@ displaycart();
 
 //--------------------------------------------------for remove cart item--------------------------------------------------
 
-let remove = document.querySelectorAll("#cross-sign");
-remove.forEach((e) => {
-  e.addEventListener("click", function (el) {
-    // let cartitem = localStorage.getItem("productsCart");
-    // cartitem = JSON.parse(cartitem);
-    // cartitem.splice(el.target,1);
+// let remove = document.querySelectorAll("#cross-sign");
+// remove.forEach((e) => {
+//   e.addEventListener("click", function (el) {
+//     const cart = [];
+//     el.target.parentElement.parentElement.parentElement.classList.add("remove");
+//     let shop = document.querySelectorAll(".basket");
+//     console.log(shop);
+//     shop.forEach( e =>{
+//       console.log(e.innerHTML);
+//     //  cart.push(e.innerHTML);
+//     });
+// cartitem.splice(product.tag,1);
 
-    // localStorage.setItem("productsCart", JSON.stringify(cartitem));
-    // let productvalue = localStorage.getItem("cart number");
-    // console.log(el.target.parentElement.parentElement.parentElement);
-    el.target.parentElement.parentElement.parentElement.classList.add("remove");
-    localStorage.clear();
-  });
-});
+// localStorage.setItem("productsCart", JSON.stringify(cart));
+
+// localStorage.setItem("productsCart", JSON.stringify(cartitem));
+// let productvalue = localStorage.getItem("cart number");
+// console.log(el.target.parentElement.parentElement.parentElement);
+
+// localStorage.clear();
+// });
+// });
 // ------------------------------for increase quatity--------------------------------
 let inc = document.querySelectorAll("#right-button");
 inc.forEach((i) => {
@@ -315,34 +325,44 @@ inc.forEach((i) => {
         .replaceAll("$", "")
         .replaceAll(".00", "");
     let total = document.querySelector(".float2").innerHTML.replaceAll("$", "");
-    let totalItems = document
-      .querySelector(".cart-head span")
-      .innerHTML.replaceAll("items", "");
-
-    // console.log(
-    //   // e.target.parentElement.parentElement.parentElement.parentElement.children[2].children.classList("float")
-    //   document.querySelector(".cart-head span").innerHTML
-    // );
+    let totalItems = document.querySelector(".cart-head span").innerHTML;
+    let tax = document.querySelector(".float").innerHTML;
+    let tex = document.querySelector(".float2");
+    let num = document.querySelector(".cart-head span");
+    let cartitem = localStorage.getItem("productsCart");
+    let existing = [];
+    let existingNumber = [];
+    let existingIncrease = [];
+     let getNum = localStorage.getItem("cart number");
+    let gettex = localStorage.getItem("totalCost");
+    gettex = JSON.parse(gettex);
+    let cartHeading = document.querySelector("#cart-set");
+    let cartHeadingValue = document.querySelector(".cart-total span");
+    console.log(typeof(cartHeading.innerHTML));
+    tax = parseInt(tax);
     l = parseInt(l);
     b = parseInt(b);
     total = parseInt(total);
     totalItems = parseInt(totalItems);
-    let cartcost = localStorage.getItem("totalCost");
-    cartcost = JSON.parse(cartcost);
-    let cartitem = localStorage.getItem("productsCart");
     cartitem = JSON.parse(cartitem);
     if (l < 10 && b) {
       l++;
       e.target.parentElement.children[1].innerHTML = l;
       Object.values(cartitem).map((item) => {
-        // console.log(cartitem[5]);
         e.target.parentElement.parentElement.children[4].children[0].innerHTML =
           item.price + b + ".00";
         document.querySelector(".float2").innerHTML = total + item.price;
-        document.querySelector(".cart-head span").innerHTML =
-          totalItems + 1 + " items";
       });
+      document.querySelector(".cart-head span").innerHTML =
+        totalItems + 1;
+      document.querySelector(".float").innerHTML = tax + 5;
+      existing.push(tex.innerHTML);
+      existingNumber.push(num.innerHTML);
+      cartHeading.innerHTML = total;
+      cartHeadingValue.innerHTML = totalItems + 1;
     }
+    localStorage.setItem("totalCost", JSON.stringify(existing));
+    localStorage.setItem("cart number", JSON.stringify(existingNumber));
     if (l == 10) {
       alert("maximum value reach");
     }
@@ -360,15 +380,25 @@ dec.forEach((i) => {
         .replaceAll("$", "")
         .replaceAll(".00", "");
     let total = document.querySelector(".float2").innerHTML.replaceAll("$", "");
-    let totalItems = document
-      .querySelector(".cart-head span")
-      .innerHTML.replaceAll("items", "");
+    let totalItems = document.querySelector(".cart-head span").innerHTML;
+    let tax = document.querySelector(".float").innerHTML;
+    let cartitem = localStorage.getItem("productsCart");
+    let tex = document.querySelector(".float2");
+    let num = document.querySelector(".cart-head span");
+    let getNum = localStorage.getItem("cart number");
+   let gettex = localStorage.getItem("totalCost");
+   let cartHeading = document.querySelector("#cart-set");
+   let cartHeadingValue = document.querySelector(".cart-total span");
+   let existing = [];
+   let existingNumber = [];
+   let existingDecrease = [];
+    tax = parseInt(tax);
     l = parseInt(l);
     b = parseInt(b);
     total = parseInt(total);
-    totalItems = parseInt(totalItems);
-    let cartitem = localStorage.getItem("productsCart");
     cartitem = JSON.parse(cartitem);
+    totalItems = parseInt(totalItems);
+    gettex = JSON.parse(gettex);
     if (l > 1 && b) {
       l--;
       e.target.parentElement.children[1].innerHTML = l;
@@ -377,9 +407,17 @@ dec.forEach((i) => {
           b - item.price + ".00";
         document.querySelector(".float2").innerHTML = total - item.price;
         document.querySelector(".cart-head span").innerHTML =
-          totalItems - 1 + " items";
+          totalItems - 1;
       });
+      document.querySelector(".float").innerHTML = tax - 5;
+      existing.push(tex.innerHTML);
+      existingNumber.push(num.innerHTML);
+      cartHeading.innerHTML = total;
+      cartHeadingValue.innerHTML = totalItems - 1;
     }
+    localStorage.setItem("totalCost", JSON.stringify(existing));
+    localStorage.setItem("cart number", JSON.stringify(existingNumber));
+
     if (l == 0) {
       alert("You have to select atlease one item");
     }

@@ -11,7 +11,7 @@ let products = [
   {
     name: "dining table",
     tag: "5",
-    price: 550,
+    price: 500,
     inCart: 0,
   },
   {
