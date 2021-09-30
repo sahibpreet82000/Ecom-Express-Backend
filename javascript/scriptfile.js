@@ -44,16 +44,6 @@ function change() {
 //   document.getElementById("number-set").innerHTML = i;
 // }
 
-//-------------------------------JAVASCRIPT FOR PRODUCT-CART------------------------------
-
-// function cart() {
-//   let s = document.getElementById("submit").innerText.replace("$", "");
-//   let car = document.getElementById("cart-quantity");
-//   let c = document.getElementById("cart-set");
-//   c.innerText = "$ " + s;
-//   let a = car.innerHTML;
-// }
-
 //-------------------------------JAVA SCRIPT FOR DISPLAY.HTML----------------------------------
 
 function hovertext() {

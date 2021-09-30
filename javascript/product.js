@@ -140,13 +140,12 @@ function setting2() {
 //--------------------------------------------------for setting cart number--------------------------------------------------
 
 function cartnumber(product) {
-  let productvalue = localStorage.getItem("cart number");
+  let getNum = localStorage.getItem("cart number");
+  getNum = parseInt(getNum);
 
-  productvalue = parseInt(productvalue);
-
-  if (productvalue) {
-    localStorage.setItem("cart number", productvalue + 1);
-    document.querySelector(".cart-total span").textContent = productvalue + 1;
+  if (getNum) {
+    localStorage.setItem("cart number", getNum + 1);
+    document.querySelector(".cart-total span").textContent = getNum + 1;
   } else {
     localStorage.setItem("cart number", 1);
     document.querySelector(".cart-total span").textContent = 1;
@@ -178,14 +177,15 @@ function setItems(product) {
 //--------------------------------------------------for setting cost--------------------------------------------------
 
 function totalCost(product) {
-  let cartcost = localStorage.getItem("totalCost");
-  let productvalue = localStorage.getItem("cart number");
-  if (cartcost != null) {
-    cartcost = parseInt(cartcost);
-    localStorage.setItem("totalCost", cartcost + product.price);
-    document.getElementById("cart-set").innerHTML = cartcost + product.price;
+  let gettex = localStorage.getItem("totalCost");
+  let getNum = localStorage.getItem("cart number");
+  let tax = getNum * 5;
+  if (gettex != null) {
+    gettex = parseInt(gettex);
+    localStorage.setItem("totalCost", gettex + product.price + tax);
+    document.getElementById("cart-set").innerHTML = gettex + product.price;
   } else {
-    localStorage.setItem("totalCost", product.price);
+    localStorage.setItem("totalCost", product.price + tax);
     document.getElementById("cart-set").innerHTML = product.price;
   }
 }
@@ -201,7 +201,7 @@ function displaycart() {
   gettex = JSON.parse(gettex);
   getNum = JSON.parse(getNum);
   gettex = parseInt(gettex);
-  let tax =getNum  * 5;
+  let tax = getNum * 5;
   if (cartitem && productcontainer) {
     productcontainer.innerHTML = ` `;
     productcontainer.innerHTML += `    
@@ -246,7 +246,7 @@ Your Shopping-Cart Contains: <span> ${getNum} </span> items
   <p35>5</p35>
   </li>
   <li>
-  <p35 id="change-price"> ${item.price * item.inCart} .00</p35>
+  <p35 id="change-price"> ${item.price} .00</p35>
   </li>
   <li>
     <i class="fas fa-times clicked" id="cross-sign"></i>
@@ -264,7 +264,7 @@ Your Shopping-Cart Contains: <span> ${getNum} </span> items
   <p34>Tax:</p34>
     <span class="float" id="total"> ${tax}</span></br>
     <p34>Total:</p34>
-    <span class="float2" id="total"> ${gettex + tax}</span> 
+    <span class="float2" id="total"> ${gettex}</span> 
   </li>
 </ul>
 </div>
@@ -293,28 +293,24 @@ displaycart();
 
 //--------------------------------------------------for remove cart item--------------------------------------------------
 
-// let remove = document.querySelectorAll("#cross-sign");
-// remove.forEach((e) => {
-//   e.addEventListener("click", function (el) {
-//     const cart = [];
-//     el.target.parentElement.parentElement.parentElement.classList.add("remove");
-//     let shop = document.querySelectorAll(".basket");
-//     console.log(shop);
-//     shop.forEach( e =>{
-//       console.log(e.innerHTML);
-//     //  cart.push(e.innerHTML);
-//     });
-// cartitem.splice(product.tag,1);
+let remove = document.querySelectorAll("#cross-sign");
+remove.forEach((e) => {
+  e.addEventListener("click", function (el) {
+    // const cartitem = [inCart];
+    // let b = el.target.parentElement.parentElement.parentElement.parentElement;
+    let cartitem = localStorage.getItem("productsCart");
+    cartitem = JSON.parse(cartitem);
+    // cartitem.push(product);
+    el.target.parentElement.parentElement.parentElement.classList.add("remove");
+    // console.log(b);
 
-// localStorage.setItem("productsCart", JSON.stringify(cart));
+    localStorage.setItem("productsCart", JSON.stringify(cartitem));
 
-// localStorage.setItem("productsCart", JSON.stringify(cartitem));
-// let productvalue = localStorage.getItem("cart number");
-// console.log(el.target.parentElement.parentElement.parentElement);
+    // localStorage.clear();
+  });
+});
 
-// localStorage.clear();
-// });
-// });
+
 // ------------------------------for increase quatity--------------------------------
 let inc = document.querySelectorAll("#right-button");
 inc.forEach((i) => {
@@ -332,13 +328,12 @@ inc.forEach((i) => {
     let cartitem = localStorage.getItem("productsCart");
     let existing = [];
     let existingNumber = [];
-    let existingIncrease = [];
-     let getNum = localStorage.getItem("cart number");
+    let getNum = localStorage.getItem("cart number");
     let gettex = localStorage.getItem("totalCost");
     gettex = JSON.parse(gettex);
     let cartHeading = document.querySelector("#cart-set");
     let cartHeadingValue = document.querySelector(".cart-total span");
-    console.log(typeof(cartHeading.innerHTML));
+    console.log(typeof cartHeading.innerHTML);
     tax = parseInt(tax);
     l = parseInt(l);
     b = parseInt(b);
@@ -349,12 +344,9 @@ inc.forEach((i) => {
       l++;
       e.target.parentElement.children[1].innerHTML = l;
       Object.values(cartitem).map((item) => {
-        e.target.parentElement.parentElement.children[4].children[0].innerHTML =
-          item.price + b + ".00";
-        document.querySelector(".float2").innerHTML = total + item.price;
+        document.querySelector(".float2").innerHTML = total + b;
       });
-      document.querySelector(".cart-head span").innerHTML =
-        totalItems + 1;
+      document.querySelector(".cart-head span").innerHTML = totalItems + 1;
       document.querySelector(".float").innerHTML = tax + 5;
       existing.push(tex.innerHTML);
       existingNumber.push(num.innerHTML);
@@ -386,12 +378,11 @@ dec.forEach((i) => {
     let tex = document.querySelector(".float2");
     let num = document.querySelector(".cart-head span");
     let getNum = localStorage.getItem("cart number");
-   let gettex = localStorage.getItem("totalCost");
-   let cartHeading = document.querySelector("#cart-set");
-   let cartHeadingValue = document.querySelector(".cart-total span");
-   let existing = [];
-   let existingNumber = [];
-   let existingDecrease = [];
+    let gettex = localStorage.getItem("totalCost");
+    let cartHeading = document.querySelector("#cart-set");
+    let cartHeadingValue = document.querySelector(".cart-total span");
+    let existing = [];
+    let existingNumber = [];
     tax = parseInt(tax);
     l = parseInt(l);
     b = parseInt(b);
@@ -403,11 +394,8 @@ dec.forEach((i) => {
       l--;
       e.target.parentElement.children[1].innerHTML = l;
       Object.values(cartitem).map((item) => {
-        e.target.parentElement.parentElement.children[4].children[0].innerHTML =
-          b - item.price + ".00";
-        document.querySelector(".float2").innerHTML = total - item.price;
-        document.querySelector(".cart-head span").innerHTML =
-          totalItems - 1;
+        document.querySelector(".float2").innerHTML = total - b;
+        document.querySelector(".cart-head span").innerHTML = totalItems - 1;
       });
       document.querySelector(".float").innerHTML = tax - 5;
       existing.push(tex.innerHTML);

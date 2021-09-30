@@ -123,13 +123,12 @@ function setting2() {
 //--------------------------------------------------for setting cart number--------------------------------------------------
 
 function cartnumber(product) {
-  let productvalue = localStorage.getItem("cart number");
+  let getNum = localStorage.getItem("cart number");
+  getNum = parseInt(getNum);
 
-  productvalue = parseInt(productvalue);
-
-  if (productvalue) {
-    localStorage.setItem("cart number", productvalue + 1);
-    document.querySelector(".cart-total span").textContent = productvalue + 1;
+  if (getNum) {
+    localStorage.setItem("cart number", getNum + 1);
+    document.querySelector(".cart-total span").textContent = getNum + 1;
   } else {
     localStorage.setItem("cart number", 1);
     document.querySelector(".cart-total span").textContent = 1;
@@ -161,32 +160,37 @@ function setItems(product) {
 //--------------------------------------------------for setting cost--------------------------------------------------
 
 function totalCost(product) {
-  let cartcost = localStorage.getItem("totalCost");
-  //   console.log("the price is ", product.price);
-  if (cartcost != null) {
-    cartcost = parseInt(cartcost);
-    localStorage.setItem("totalCost", cartcost + product.price);
-    document.getElementById("cart-set").innerHTML = cartcost + product.price;
+  let gettex = localStorage.getItem("totalCost");
+  let getNum = localStorage.getItem("cart number");
+  let tax = getNum * 5;
+  if (gettex != null) {
+    gettex = parseInt(gettex);
+    localStorage.setItem("totalCost", gettex + product.price + tax);
+    document.getElementById("cart-set").innerHTML = gettex + product.price;
   } else {
-    localStorage.setItem("totalCost", product.price);
+    localStorage.setItem("totalCost", product.price + tax);
     document.getElementById("cart-set").innerHTML = product.price;
   }
 }
+
 //--------------------------------------------------for display products--------------------------------------------------
 
 function displaycart() {
   let cartitem = localStorage.getItem("productsCart");
-  let productvalue = localStorage.getItem("cart number");
   cartitem = JSON.parse(cartitem);
   let productcontainer = document.querySelector(".table-container");
-  console.log(cartitem);
-  let cartcost = localStorage.getItem("totalCost");
+  let getNum = localStorage.getItem("cart number");
+  let gettex = localStorage.getItem("totalCost");
+  gettex = JSON.parse(gettex);
+  getNum = JSON.parse(getNum);
+  gettex = parseInt(gettex);
+  let tax = getNum * 5;
   if (cartitem && productcontainer) {
     productcontainer.innerHTML = ` `;
     productcontainer.innerHTML += `    
- <div class="cart-head">
-Your Shopping-Cart Contains: <span> ${productvalue} items</span>
-<div class = "basket heading">
+<div class="cart-head">
+Your Shopping-Cart Contains: <span> ${getNum} </span> items
+<div class = "basketHeading heading">
   <ul>
     <li><p37>Products</p37></li>
     <li><p37>Quantity</p37></li>
@@ -199,7 +203,7 @@ Your Shopping-Cart Contains: <span> ${productvalue} items</span>
     Object.values(cartitem).map((item) => {
       productcontainer.innerHTML += ` 
 
-<div class="basket basket-remove">
+<div class="basket">
 <ul>
 <li>
     <img id="cart-image-set" src="/images/${item.tag}.jpg" alt="image" />
@@ -208,29 +212,27 @@ Your Shopping-Cart Contains: <span> ${productvalue} items</span>
           <i
             class="fas fa-angle-left"
             id="left-button"
-            onclick="decrease()"
           ></i>
        
           <p20 id="number-set">${item.inCart}</p20>
        
           <i
             class="fas fa-angle-right"
-            id="right-button"
-            onclick="increase()"
+            id="right-button"       
           ></i>
      
     </li>
     <li>
-  <span>${item.name}</span>
+  <span>${item.name.toUpperCase()}</span>
   </li>
   <li>
-  <p35>$5</p35>
+  <p35>5</p35>
   </li>
   <li>
-  <p35 id="change-price"> $ ${item.price * item.inCart} .00</p35>
+  <p35 id="change-price"> ${item.price} .00</p35>
   </li>
   <li>
-    <i class="fas fa-times" id="cross-sign"></i>
+    <i class="fas fa-times clicked" id="cross-sign"></i>
   </li>
     </ul>
     </div>
@@ -243,15 +245,15 @@ Your Shopping-Cart Contains: <span> ${productvalue} items</span>
   <br />
   <li>
   <p34>Tax:</p34>
-  <span class="float" id="total"> ${tax}</span></br>
-  <p34>Total:</p34>
-  <span class="float2" id="total"> ${cartcost + tax}</span> 
+    <span class="float" id="total"> ${tax}</span></br>
+    <p34>Total:</p34>
+    <span class="float2" id="total"> ${gettex}</span> 
   </li>
 </ul>
 </div>
 <div class="buttons">
 <button class="cart-button"><a href="#">Continue to Basket</a></button>
-<button class="cart-button2" >
+<button class="cart-button2" type="menu" id="menu">
 <a href="/html/products.html">Back to Home</a>
 </button>
 </div>
@@ -271,36 +273,27 @@ Your Shopping-Cart Contains: <span> ${productvalue} items</span>
 
 displaycart();
 
-//------------------------------------------------for animation----------------------------------------------------------
-window.addEventListener("scroll", function () {
-  var element = document.querySelector(".section-content");
-  var position = element.getBoundingClientRect();
-
-  //---------------------------------------- checking for partial visibility------------------------------------------------
-
-  if (position.top < window.innerHeight && position.bottom >= 0) {
-    element.style.visibility = "visible";
-    element.style.animation = "slide-up 1s";
-  }
-});
-
 //--------------------------------------------------for remove cart item--------------------------------------------------
 
 let remove = document.querySelectorAll("#cross-sign");
 remove.forEach((e) => {
   e.addEventListener("click", function (el) {
-    // let cartitem = localStorage.getItem("productsCart");
-    // cartitem = JSON.parse(cartitem);
-    // cartitem.splice(el.target,1);
-
-    // localStorage.setItem("productsCart", JSON.stringify(cartitem));
-    // let productvalue = localStorage.getItem("cart number");
-    // console.log(el.target.parentElement.parentElement.parentElement);
+    // const cartitem = [inCart];
+    // let b = el.target.parentElement.parentElement.parentElement.parentElement;
+    let cartitem = localStorage.getItem("productsCart");
+    cartitem = JSON.parse(cartitem);
+    // cartitem.push(product);
     el.target.parentElement.parentElement.parentElement.classList.add("remove");
-    localStorage.clear();
+    // console.log(b);
+
+    localStorage.setItem("productsCart", JSON.stringify(cartitem));
+
+    // localStorage.clear();
   });
 });
-// ------------------------------for increase quatity--------------------------------
+
+// ------------------------------for increase quatity--------------------------------4
+
 let inc = document.querySelectorAll("#right-button");
 inc.forEach((i) => {
   i.addEventListener("click", function (e) {
@@ -310,34 +303,40 @@ inc.forEach((i) => {
         .replaceAll("$", "")
         .replaceAll(".00", "");
     let total = document.querySelector(".float2").innerHTML.replaceAll("$", "");
-    let totalItems = document
-      .querySelector(".cart-head span")
-      .innerHTML.replaceAll("items", "");
-
-    // console.log(
-    //   // e.target.parentElement.parentElement.parentElement.parentElement.children[2].children.classList("float")
-    //   document.querySelector(".cart-head span").innerHTML
-    // );
+    let totalItems = document.querySelector(".cart-head span").innerHTML;
+    let tax = document.querySelector(".float").innerHTML;
+    let tex = document.querySelector(".float2");
+    let num = document.querySelector(".cart-head span");
+    let cartitem = localStorage.getItem("productsCart");
+    let existing = [];
+    let existingNumber = [];
+    let getNum = localStorage.getItem("cart number");
+    let gettex = localStorage.getItem("totalCost");
+    gettex = JSON.parse(gettex);
+    let cartHeading = document.querySelector("#cart-set");
+    let cartHeadingValue = document.querySelector(".cart-total span");
+    console.log(typeof cartHeading.innerHTML);
+    tax = parseInt(tax);
     l = parseInt(l);
     b = parseInt(b);
     total = parseInt(total);
     totalItems = parseInt(totalItems);
-    let cartcost = localStorage.getItem("totalCost");
-    cartcost = JSON.parse(cartcost);
-    let cartitem = localStorage.getItem("productsCart");
     cartitem = JSON.parse(cartitem);
     if (l < 10 && b) {
       l++;
       e.target.parentElement.children[1].innerHTML = l;
       Object.values(cartitem).map((item) => {
-        // console.log(cartitem[5]);
-        e.target.parentElement.parentElement.children[4].children[0].innerHTML =
-          item.price + b + ".00";
-        document.querySelector(".float2").innerHTML = total + item.price;
-        document.querySelector(".cart-head span").innerHTML =
-          totalItems + 1 + " items";
+        document.querySelector(".float2").innerHTML = total + b;
       });
+      document.querySelector(".cart-head span").innerHTML = totalItems + 1;
+      document.querySelector(".float").innerHTML = tax + 5;
+      existing.push(tex.innerHTML);
+      existingNumber.push(num.innerHTML);
+      cartHeading.innerHTML = total;
+      cartHeadingValue.innerHTML = totalItems + 1;
     }
+    localStorage.setItem("totalCost", JSON.stringify(existing));
+    localStorage.setItem("cart number", JSON.stringify(existingNumber));
     if (l == 10) {
       alert("maximum value reach");
     }
@@ -355,33 +354,47 @@ dec.forEach((i) => {
         .replaceAll("$", "")
         .replaceAll(".00", "");
     let total = document.querySelector(".float2").innerHTML.replaceAll("$", "");
-    let totalItems = document
-      .querySelector(".cart-head span")
-      .innerHTML.replaceAll("items", "");
+    let totalItems = document.querySelector(".cart-head span").innerHTML;
+    let tax = document.querySelector(".float").innerHTML;
+    let cartitem = localStorage.getItem("productsCart");
+    let tex = document.querySelector(".float2");
+    let num = document.querySelector(".cart-head span");
+    let getNum = localStorage.getItem("cart number");
+    let gettex = localStorage.getItem("totalCost");
+    let cartHeading = document.querySelector("#cart-set");
+    let cartHeadingValue = document.querySelector(".cart-total span");
+    let existing = [];
+    let existingNumber = [];
+    tax = parseInt(tax);
     l = parseInt(l);
     b = parseInt(b);
     total = parseInt(total);
-    totalItems = parseInt(totalItems);
-    let cartitem = localStorage.getItem("productsCart");
     cartitem = JSON.parse(cartitem);
+    totalItems = parseInt(totalItems);
+    gettex = JSON.parse(gettex);
     if (l > 1 && b) {
       l--;
       e.target.parentElement.children[1].innerHTML = l;
       Object.values(cartitem).map((item) => {
-        e.target.parentElement.parentElement.children[4].children[0].innerHTML =
-          b - item.price + ".00";
-        document.querySelector(".float2").innerHTML = total - item.price;
-        document.querySelector(".cart-head span").innerHTML =
-          totalItems - 1 + " items";
+        document.querySelector(".float2").innerHTML = total - b;
+        document.querySelector(".cart-head span").innerHTML = totalItems - 1;
       });
+      document.querySelector(".float").innerHTML = tax - 5;
+      existing.push(tex.innerHTML);
+      existingNumber.push(num.innerHTML);
+      cartHeading.innerHTML = total;
+      cartHeadingValue.innerHTML = totalItems - 1;
     }
+    localStorage.setItem("totalCost", JSON.stringify(existing));
+    localStorage.setItem("cart number", JSON.stringify(existingNumber));
+
     if (l == 0) {
       alert("You have to select atlease one item");
     }
   });
 });
-//--------------------------------------------------extra events--------------------------------------------------
 
+//--------------------------------------------------extra events--------------------------------------------------
 // $(document).ready(function () {
 //   $("#cross-sign").click(function () {
 //     $(".basket-remove").fadeOut("slow", function () {
@@ -389,3 +402,15 @@ dec.forEach((i) => {
 //     });
 //   });
 // });
+//------------------------------------------------for animation----------------------------------------------------------
+window.addEventListener("scroll", function () {
+  var element = document.querySelector(".section-content");
+  var position = element.getBoundingClientRect();
+
+  //---------------------------------------- checking for partial visibility------------------------------------------------
+
+  if (position.top < window.innerHeight && position.bottom >= 0) {
+    element.style.visibility = "visible";
+    element.style.animation = "slide-up 1s";
+  }
+});
