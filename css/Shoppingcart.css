@@ -188,5 +188,21 @@ p34 {
   }
 }
 @media(max-width:517px){
+.basketHeading{
+  display: none;
+}
+#cart-image-set{
+  width: 70px;
+  padding: 0;
+}
 
+.basket ul li:nth-child(4) {
+  display: none;
+}
+#number-set {
+  padding: 0px 5px;
+}
+p35{
+  font-size: 25px;
+}
 }
