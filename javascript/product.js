@@ -186,7 +186,7 @@ function totalCost(product) {
     document.getElementById("cart-set").innerHTML = gettex + product.price;
   } else {
     localStorage.setItem("totalCost", product.price + tax);
-    document.getElementById("cart-set").innerHTML = product.price;
+    document.getElementById("cart-set").innerHTML = product.price + tax;
   }
 }
 
@@ -301,7 +301,9 @@ remove.forEach((e) => {
     let cartitem = localStorage.getItem("productsCart");
     cartitem = JSON.parse(cartitem);
     // cartitem.push(product);
-    el.target.parentElement.parentElement.parentElement.classList.add("remove");
+    console.log(cartitem);
+
+    // el.target.parentElement.parentElement.parentElement.classList.add("remove");
     // console.log(b);
 
     localStorage.setItem("productsCart", JSON.stringify(cartitem));
@@ -309,7 +311,6 @@ remove.forEach((e) => {
     // localStorage.clear();
   });
 });
-
 
 // ------------------------------for increase quatity--------------------------------
 let inc = document.querySelectorAll("#right-button");
@@ -338,6 +339,8 @@ inc.forEach((i) => {
     l = parseInt(l);
     b = parseInt(b);
     total = parseInt(total);
+    cartHeading = parseInt(cartHeading);
+    cartHeadingValue = parseInt(cartHeadingValue);
     totalItems = parseInt(totalItems);
     cartitem = JSON.parse(cartitem);
     if (l < 10 && b) {
@@ -350,8 +353,6 @@ inc.forEach((i) => {
       document.querySelector(".float").innerHTML = tax + 5;
       existing.push(tex.innerHTML);
       existingNumber.push(num.innerHTML);
-      cartHeading.innerHTML = total;
-      cartHeadingValue.innerHTML = totalItems + 1;
     }
     localStorage.setItem("totalCost", JSON.stringify(existing));
     localStorage.setItem("cart number", JSON.stringify(existingNumber));
@@ -400,8 +401,6 @@ dec.forEach((i) => {
       document.querySelector(".float").innerHTML = tax - 5;
       existing.push(tex.innerHTML);
       existingNumber.push(num.innerHTML);
-      cartHeading.innerHTML = total;
-      cartHeadingValue.innerHTML = totalItems - 1;
     }
     localStorage.setItem("totalCost", JSON.stringify(existing));
     localStorage.setItem("cart number", JSON.stringify(existingNumber));
@@ -411,3 +410,4 @@ dec.forEach((i) => {
     }
   });
 });
+

@@ -181,4 +181,82 @@
   <script src="/javascript/product.js"></script>
   <script src="/javascript/loadwindow.js"></script>
   <script src="/javascript/navbar.js"></script>
+  <script>
+    // ------------------------------for searching a product--------------------------------
+
+    let search = document.getElementById("search-box");
+    search.addEventListener("input", () => {
+      let inputVal = search.value.toUpperCase();
+      let searchitem = document.getElementsByClassName("product-images");
+      console.log(searchitem);
+      Array.from(searchitem).forEach(function (element) {
+        let searchName = element.getElementsByTagName("a")[0].innerText;
+        console.log(searchName);
+        if (searchName.includes(inputVal)) {
+          element.style.display = "block";
+        } else {
+          element.style.display = "none";
+        }
+      });
+    });
+  </script>
+  <script>
+    // ------------------------------for searching a product--------------------------------
+
+    let search2 = document.getElementById("search-box2");
+    search2.addEventListener("input", () => {
+      let inputVal = search2.value.toUpperCase();
+      let searchitem = document.getElementsByClassName("product-images");
+      console.log(searchitem);
+      Array.from(searchitem).forEach(function (element) {
+        let searchName = element.getElementsByTagName("a")[0].innerText;
+        console.log(searchName);
+        console.log(searchName);
+        if (searchName.includes(inputVal)) {
+          element.style.display = "block";
+        } else {
+          element.style.display = "none";
+        }
+      });
+    });
+  </script>
+  <script>
+    // ------------------------------for searching a product--------------------------------
+
+    let searchHome = document.getElementById("search-box");
+    searchHome.addEventListener("input", () => {
+      let inputVal = searchHome.value.toUpperCase();
+      let searchitem = document.getElementsByClassName("home-set");
+      console.log(searchitem);
+      Array.from(searchitem).forEach(function (element) {
+        let searchName = element.getElementsByTagName("a")[0].innerText;
+        console.log(searchName);
+        if (searchName.includes(inputVal)) {
+          element.style.display = "block";
+        } else {
+          element.style.display = "none";
+        }
+      });
+    });
+  </script>
+  <script>
+    // ------------------------------for searching a product--------------------------------
+
+    let searchHome2 = document.getElementById("search-box2");
+    searchHome2.addEventListener("input", () => {
+      let inputVal = searchHome2.value.toUpperCase();
+      let searchitem = document.getElementsByClassName("home-set");
+      console.log(searchitem);
+      Array.from(searchitem).forEach(function (element) {
+        let searchName = element.getElementsByTagName("a")[0].innerText;
+        console.log(searchName);
+        console.log(searchName);
+        if (searchName.includes(inputVal)) {
+          element.style.display = "block";
+        } else {
+          element.style.display = "none";
+        }
+      });
+    });
+  </script>
 </html>

@@ -21,7 +21,7 @@ let products = [
     inCart: 0,
   },
   {
-    name: "runnung shoes",
+    name: "running shoes",
     tag: "8",
     price: 150,
     inCart: 0,
@@ -229,7 +229,7 @@ remove.forEach((e) => {
 
     localStorage.setItem("productsCart", JSON.stringify(cartitem));
 
-    // localStorage.clear();
+    localStorage.clear();
   });
 });
 
