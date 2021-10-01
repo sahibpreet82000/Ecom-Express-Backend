@@ -5,8 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>E-COM EXPRESS | A Shopping Website</title>
-    <style>
-    </style>
+    <style></style>
     <!-- <link rel="stylesheet" href="index.css" /> -->
     <link rel="stylesheet" href="/css/products.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -244,7 +243,7 @@
                 <i
                   class="fas fa-angle-right"
                   id="right-button-product"
-                  onclick="increasepage()"
+                  onclick="location.href='/html/product2.html'"
                 ></i>
               </td>
             </tr>
@@ -255,32 +254,36 @@
     </div>
 
     <div class="footer-container"></div>
+    //--------------------------------------------------JavaScript-------------------------------------------------
+
+    <script src="/javascript/scriptfile.js"></script>
+    <script src="/javascript/temporary.js"></script>
+    <script src="/javascript/product.js"></script>
+    <script>
+      $(function () {
+        $(".nav-container").load("/html/navbar.html");
+      });
+      $(function () {
+        $(".footer-container").load("/html/footer.html");
+      });
+      //--------------------------------------------------for drop-button hover-------------------------------------------------
+
+      $(document).ready(function () {
+        $(".dropbtn").click(function () {
+          $(".dropdown-content").slideToggle(500);
+        });
+        $(".dropdown-content").focusout(function () {
+          $(this).css("display", "none");
+        });
+        $(".dropbtn").click(function () {
+          $("#dropbtn-arrow").toggleClass("dropbtn-arrow2");
+        });
+      });
+
+      // function rotate() {
+      //   let rot = document.getElementsByClassName(".dropdown-content");
+      //   rot.style.transform = "rotate(180deg)";
+      // } class="add-cart"
+    </script>
   </body>
-  <script src="/javascript/scriptfile.js"></script>
-  <script src="/javascript/temporary.js"></script>
-  <script src="/javascript/product.js"></script>
-  <script>
-    $(function () {
-      $(".nav-container").load("/html/navbar.html");
-    });
-    $(function () {
-      $(".footer-container").load("/html/footer.html");
-    });
-    //--------------------------------------------------for drop-button hover-------------------------------------------------
-
-    $(document).ready(function () {
-      $(".dropbtn").click(function () {
-        $(".dropdown-content").slideToggle(500);
-      });
-      $(".dropdown-content").focusout(function () {
-        $(this).css("display", "none");
-      });
-    });
-
-
-    // function rotate() {
-    //   let rot = document.getElementsByClassName(".dropdown-content");
-    //   rot.style.transform = "rotate(180deg)";
-    // } class="add-cart"
-  </script>
 </html>
