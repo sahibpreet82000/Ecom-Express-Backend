@@ -1,3 +1,9 @@
+/*Things TO DO:
+1. Remove product from Shopping cart See Code from 300 to 318
+2. update cart value in shopping cart as well as local storage value of that item only. see code from 161 to 182 and 321 to 371.
+3. Tax Calculation logic error see code from 185 to 197
+4, ik var changes krke likh di niche ki ki changes kitiyan.
+*/
 let cart = document.querySelectorAll(".add-cart");
 //--------------------------------------------------for adding products --------------------------------------------------
 
