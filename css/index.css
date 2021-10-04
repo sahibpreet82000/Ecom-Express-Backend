@@ -616,6 +616,9 @@ p39 {
   .header {
     margin: 5px;
   }
+  .home-index {
+    padding: 1em 0;
+  }
   .dropbtn2 a span,
   .dropbtn2 a span::after,
   .dropbtn2 a span:before {
