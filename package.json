@@ -1,0 +1,25 @@
+{
+  "name": "ddd",
+  "version": "1.0.0",
+  "description": "my package",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sahibpreet82000/Ecom-Express.git"
+  },
+  "keywords": [
+    "sahib"
+  ],
+  "author": "sabby",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sahibpreet82000/Ecom-Express/issues"
+  },
+  "homepage": "https://github.com/sahibpreet82000/Ecom-Express#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
