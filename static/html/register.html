@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>E-COM EXPRESS | A Shopping Website</title>
+    <style></style>
+    <link rel="stylesheet" href="/static/css/index.css" />
+    <link rel="stylesheet" href="/static/css/register.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Hind:wght@300;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/f0ea9c1e03.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link
+    rel="shortcut icon"
+    type="image/png"
+    href="/static/images/shopping-bag.png"
+  />
+  </head>
+  <body>
+    <div class="nav-container"></div>
+    <!-- LOGIN BOX -->
+    <div>
+      <ul class="breadcrumb home-index">    
+            <li><i class="fas fa-home" id="home-iconset"></i></li>
+        <li class="breadcrumb-item"><a href="/static/homepage.html">Home</a></li>
+        <li class="breadcrumb-item"><p39>New-Registration</p39></li>
+        <li class="breadcrumb-item active"></li>
+      </ul>
+    </div>
+    <div class="loginpage">
+      <div class="login-logo">
+        <p6>__________________</p6>
+        <span id="login-heading1">Register Here</span>
+        <p6>__________________</p6>
+      </div>
+
+      <p1>
+        Lorem, psum dolor sit amet consectetur adipisicing elit. Aspernatur,
+        optio!
+      </p1>
+    </div>
+    <div class="form-box2">
+      <div class="set-form2">
+        <form action="/register" method="post">
+          <div class="register-profile"><p8>PROFILE INFORMATION</p8></div>
+
+          <i class="fas fa-user" id="register-icons"></i>
+          <input
+            class="register-form-set register-icon-set"
+            type="name"
+            name="firstname"
+            placeholder="Enter your first name"
+          />
+
+          <i class="fas fa-users" id="register-icons"></i>
+          <input
+            class="register-form-set register-icon-set"
+            type="text"
+            name="lastname"
+            placeholder="Enter your last name"
+          />
+          <div class="register-profile"><p8>LOGIN INFORMATION</p8></div>
+          <i class="fas fa-envelope-open" id="register-icons"></i>
+          <input
+            class="register-form-set register-icon-set"
+            type="email"
+            name="email"
+            placeholder="Enter your e-mail"
+          />
+          <i class="fas fa-user-lock" id="register-icons"></i>
+          <input
+            class="register-form-set register-icon-set"
+            type="text"
+            name="password"
+            placeholder="New password"
+          />
+          <i class="fas fa-user-lock" id="register-icons"></i>
+          <input
+            class="register-form-set register-icon-set"
+            type="text"
+            name="confirmpassword"
+            placeholder="Confirm password"
+          />
+          <div class="terms-accept-box">
+            <input type="checkbox" name="checked" id="checkbox" />
+            <label for="checkbox" id="checkbox"
+              >I have read the Terms And Conditions</label
+            >
+          </div>
+          <div>
+            <button class="button-set2" type="submit" id="submit">
+              Register
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- FOOTER BOX -->
+    <div class="footer-container"></div>
+    <script>
+      $(function () {
+        $(".nav-container").load("/static/html/navbar.html");
+      });
+      $(function () {
+        $(".footer-container").load("/static/html/footer.html");
+      });
+    </script>
+  </body>
+</html>

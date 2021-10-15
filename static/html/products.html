@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>E-COM EXPRESS | A Shopping Website</title>
+    <style></style>
+    <!-- <link rel="stylesheet" href="index.css" /> -->
+    <link rel="stylesheet" href="/css/products.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Hind:wght@300;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/f0ea9c1e03.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="/images/shopping-bag.png"
+    />
+  </head>
+  <body>
+    <div class="nav-container"></div>
+    <!-- <div class="price-bar">FILTER BY PRICE</div> -->
+
+    <!-- main content -->
+    <div class="home-index slide-left-animate">
+      <i class="fas fa-home" id="home-iconset"></i>
+      <a href="/homepage.html">Home</a> / <p39>Product-Catelogue</p39>
+      <span id="welcome"></span>
+    </div>
+    <div class="product-grid">
+      <div class="grid-box slide-up" id="category-border">
+        <p80>CATEGORIES</p80>
+        <div class="catelog-set slide-left-animate">
+          <ul>
+            <li>
+              <img src="/images/next.png" alt="" /><a href="#"> Best Selling</a>
+            </li>
+            <li>
+              <img src="/images/next.png" alt="" /><a href="#"> Man</a>
+              <ul>
+                <li>
+                  <img src="/images/next.png" alt="" />
+                  <a href="#"> Accessories</a>
+                </li>
+                <li>
+                  <img src="/images/next.png" alt="" />
+                  <a href="#"> Coats & Jackets </a>
+                </li>
+                <li>
+                  <img src="/images/next.png" alt="" /> <a href="#"> Jeans </a>
+                </li>
+                <li>
+                  <img src="/images/next.png" alt="" />
+                  <a href="#"> New Arrival</a>
+                </li>
+              </ul>
+            </li>
+            <li><img src="/images/next.png" alt="" /><a href="#"> Sales</a></li>
+            <li>
+              <img src="/images/next.png" alt="" /><a href="#"> Woman</a>
+              <ul>
+                <li>
+                  <img src="/images/next.png" alt="" />
+                  <a href="#">Accessories </a>
+                </li>
+                <li>
+                  <img src="/images/next.png" alt="" />
+                  <a href="#"> Dresses </a>
+                </li>
+                <li>
+                  <img src="/images/next.png" alt="" />
+                  <a href="#"> Shorts </a>
+                </li>
+                <li>
+                  <img src="/images/next.png" alt="" />
+                  <a href="#"> New Arrival </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="grid-box" id="section">
+        <div class="main-img-set slide-animate">
+          <img id="main-img" src="/images/18.jpg" alt="" />
+          <div class="section-box">
+            <p2>
+              2021 NEW COLLECTION <br />
+              <p3>
+                Temporibus autem quibusdam et aut officiis debitis aut rerum
+                necessitatibus saepe eveniet ut et voluptates repudiandae sint
+                et molestiae non recusandae.
+              </p3>
+            </p2>
+          </div>
+        </div>
+        <div class="dropdown slide-left-animate">
+          <button class="dropbtn">Default Sorting</button>
+          <i class="fas fa-angle-down" id="dropbtn-arrow"></i>
+          <div class="dropdown-content">
+            <a href="#" class="sorting" onclick="setting()">Low to High</a>
+            <a href="#" class="sorting2" onclick="setting2()">High to Low</a>
+            <a href="#" class="sorting3">Popularity</a>
+          </div>
+        </div>
+      </div>
+      <div class="grid-box slide-up">
+        <div id="content-border">
+          <p80>NEW ARRIVAL</p80>
+          <div class="slide-left-animate">
+            <div class="newitem-box">
+              <img src="/images/6.jpg" alt="" />
+              <span>
+                OCCAECAT CUPIDATA <br />$180
+                <button type="menu" class="add-cart">ADD TO CART</button>
+              </span>
+            </div>
+            <div class="newitem-box">
+              <img src="/images/26.jpg" alt="" />
+              <span>
+                EMU FUGIAT QUO <br />$250
+                <button type="menu" class="add-cart">ADD TO CART</button>
+              </span>
+            </div>
+            <div class="newitem-box">
+              <img src="/images/11.jpg" alt="" />
+              <span>
+                OFFICIA DESERUNT <br />$259
+                <button type="menu" class="add-cart">ADD TO CART</button>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="newitem-img">
+          <img id="catelog-img" src="/images/27.jpg" alt="img" />
+          <div id="border-box">
+            <p50>SUMMER COLLECTION</p50>
+          </div>
+        </div>
+      </div>
+      <div class="grid-box">
+        <div class="product-section section-background2 slide-up"></div>
+        <div class="product-section2 section-background3 slide-up"></div>
+        <div class="section-background slide-up">
+          <div class="section-content" style="visibility: hidden">
+            <div class="product-images">
+              <img src="/images/19.jpg" alt="" />
+              <a href="/html/display.html">
+                FORMAL SHIRT <br />
+                <div id="submit">$280</div>
+              </a>
+              <button type="submit" class="add-cart">ADD TO CART</button>
+            </div>
+            <div class="product-images">
+              <img src="/images/7.jpg" alt="" />
+              <a href="/html/display.html">
+                FORMAL SHIRT <br />
+                <div>$280</div></a
+              >
+              <button type="submit" class="add-cart">ADD TO CART</button>
+            </div>
+            <div class="product-images">
+              <img src="/images/20.jpg" alt="" />
+              <a href="#">
+                FORMAL SHIRT <br />
+                <div>$380</div>
+              </a>
+              <button type="submit" class="add-cart">ADD TO CART</button>
+            </div>
+            <div class="product-images">
+              <img src="/images/21.jpg" alt="" />
+              <a href="/html/display.html">
+                CASUAL SHOES <br />
+                <div>$180</div>
+              </a>
+              <button type="submit" class="add-cart">ADD TO CART</button>
+            </div>
+            <div class="product-images">
+              <img src="/images/22.jpg" alt="" />
+              <a href="/html/display.html">
+                CASUAL SHOES <br />
+                <div>$200</div>
+              </a>
+              <button type="submit" class="add-cart">ADD TO CART</button>
+            </div>
+            <div class="product-images">
+              <img src="/images/23.jpg" alt="" />
+              <a href="#">
+                CASUAL SHOES <br />
+                <div>$250</div>
+              </a>
+              <button type="submit" class="add-cart">ADD TO CART</button>
+            </div>
+            <div class="product-images">
+              <img src="/images/24.jpg" alt="" /><a href="/html/display.html">
+                BLAZER <br />
+                <div>$500</div></a
+              >
+              <button type="submit" class="add-cart">ADD TO CART</button>
+            </div>
+            <div class="product-images">
+              <img src="/images/26.jpg" alt="" />
+              <a href="/html/display.html">
+                BLAZER <br />
+                <div>$450</div>
+              </a>
+              <button type="submit" class="add-cart">ADD TO CART</button>
+            </div>
+            <div class="product-images">
+              <img src="/images/34.jpg" alt="" />
+              <a href="/html/display.html">
+                CLOCK <br />
+                <div>$150</div>
+              </a>
+              <button type="submit" class="add-cart">ADD TO CART</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="next-page slide-animate">
+          <table>
+            <tr>
+              <td>
+                <i
+                  class="fas fa-angle-left"
+                  id="left-button-product"
+                  onclick="location.href='/html/products.html'"
+                ></i>
+              </td>
+              <td><a href="#">1</a></td>
+              <td><a href="/html/product2.html">2</a></td>
+              <td><a href="#">3</a></td>
+              <td>
+                <i
+                  class="fas fa-angle-right"
+                  id="right-button-product"
+                  onclick="location.href='/html/product2.html'"
+                ></i>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <!-- <div class="product-catalog-content"></div> -->
+    </div>
+
+    <div class="footer-container"></div>
+    <script src="/javascript/scriptfile.js"></script>
+    <script src="/javascript/temporary.js"></script>
+    <script src="/javascript/product.js"></script>
+    <script>
+      $(function () {
+        $(".nav-container").load("/html/navbar.html");
+      });
+      $(function () {
+        $(".footer-container").load("/html/footer.html");
+      });
+      //--------------------------------------------------for drop-button hover-------------------------------------------------
+      $(document).ready(function () {
+        $(".dropbtn").click(function () {
+          $(".dropdown-content").slideToggle(500);
+        });
+        $(".dropdown-content").focusout(function () {
+          $(this).css("display", "none");
+        });
+        $(".dropbtn").click(function () {
+          $("#dropbtn-arrow").toggleClass("dropbtn-arrow2");
+        });
+      });
+
+      // function rotate() {
+      //   let rot = document.getElementsByClassName(".dropdown-content");
+      //   rot.style.transform = "rotate(180deg)";
+      // } class="add-cart"
+    </script>
+  </body>
+</html>

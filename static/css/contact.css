@@ -1,0 +1,17 @@
+@media(max-width:764px){
+    .map{
+        padding: 16px;
+        width: 94%;
+        margin: auto;
+        margin-bottom: 32px;
+    }
+    input[type=text]{
+        width: 99%;
+    }
+    .submit-btn{
+        padding: 0px;
+    }
+    textarea{
+        width: 99%;
+    }
+}
