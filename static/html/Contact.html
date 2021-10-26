@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>E-COM EXPRESS | A Shopping Website</title>
     <style></style>
-    <link rel="stylesheet" href="/css/index.css" />
-    <link rel="stylesheet" href="/css/mail.css" />
-    <link rel="stylesheet" href="/css/contact.css" />
+    <link rel="stylesheet" href="/static/css/index.css" />
+    <link rel="stylesheet" href="/static/css/mail.css" />
+    <link rel="stylesheet" href="/static/css/contact.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link
       rel="stylesheet"
@@ -26,13 +26,18 @@
       crossorigin="anonymous"
     ></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link
+    rel="shortcut icon"
+    type="image/png"
+    href="/static/images/shopping-bag.png"
+  />
   </head>
   <body>
     <div class="nav-container"></div>
     <div>
       <ul class="breadcrumb home-index">
         <li><i class="fas fa-home" id="home-iconset"></i></li>
-        <li class="breadcrumb-item"><a href="/index.html">Home</a></li>
+        <li class="breadcrumb-item"><a href="/static/homepage.html">Home</a></li>
         <li class="breadcrumb-item"><p39>Contact Us</p39></li>
         <li class="breadcrumb-item active"></li>
       </ul>
@@ -90,10 +95,10 @@
   </body>
   <script>
     $(function () {
-      $(".nav-container").load("/html/navbar.html");
+      $(".nav-container").load("/static/html/navbar.html");
     });
     $(function () {
-      $(".footer-container").load("/html/footer.html");
+      $(".footer-container").load("/static/html/footer.html");
     });
   </script>
 </html>

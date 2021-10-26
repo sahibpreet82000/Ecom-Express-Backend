@@ -38,6 +38,9 @@ hr {
   float: right;
   margin: -5px 5px;
 }
+#logout{
+  display: none;
+}
 h1 {
   color: black;
 }

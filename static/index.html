@@ -115,10 +115,11 @@
     $(function () {
       $(".footer-container").load("/static/html/footer.html");
     });
-    // $(document).ready(function () {
-    //   $(".button-set").click(function () {
-    //     alert("Welcome " + $("#register-icon-set").val());
-    //   });
-    // });
+    $(document).ready(function () {
+      $(".button-set").click(function () {
+        $('#logout').css("display","block");
+      });
+    });
+
   </script>
 </html>

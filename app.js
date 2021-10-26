@@ -49,6 +49,13 @@ app.get("/index", (req, res) => {
 
 app.get("/logout", auth ,async(req, res) => {
   try{
+    //for single logout
+    // req.user.tokens = req.user.tokens.filter((currentElem)=>{
+    //        return currentElem.token != req.token
+    // })
+
+       // logout for all devices
+       req.user.tokens = [];
     res.clearCookie("jwt");
     await req.user.save();
     res.sendFile(path.join(__dirname + "/static/index.html"));
@@ -57,6 +64,7 @@ app.get("/logout", auth ,async(req, res) => {
     res.status(404).send(error);
   }
 });
+
 
 // To post Registred Form
 
@@ -103,12 +111,12 @@ app.post("/login", async (req, res) => {
   // Storing cookie
 
     res.cookie("jwt",token, {
-      expires: new Date(Date.now()+50000),
+      expires: new Date(Date.now()+500000),
       httpOnly:true 
     })
 
     if (compare) {
-      res.status(201).sendFile(path.join(__dirname + "/static/html/logout.html"));
+      res.status(201).sendFile(path.join(__dirname + "/static/homepage.html"));
     } else {
       res.send("Username or Password invalid");
     }
