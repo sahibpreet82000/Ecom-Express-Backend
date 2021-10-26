@@ -1,12 +1,14 @@
+require('dotenv').config();
 const express = require("express");
 const path = require("path");
 const app = express();
-const port = 80;
+const port = process.env.PORT || 80;
 const mongoose = require("mongoose");
 const Registers = require("./db/models/register");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
-
+const cookie = require("cookie-parser");
+const auth = require("./middleware/auth")
 // Initializing Mongoose
 
 main().catch((err) => console.log(err));
@@ -15,12 +17,11 @@ async function main() {
   await mongoose.connect("mongodb://localhost:27017/registeration");
 }
 
-
 // EXPRESS FILES
 
 app.use("/static", express.static("static"));
 app.use(express.urlencoded());
-
+app.use(cookie());
 // PUG SPECIFIC STUFF
 
 // app.set('view engine','pug') //Set the template engine as pug
@@ -41,58 +42,79 @@ app.get("/register", (req, res) => {
 // To get Login page
 
 app.get("/index", (req, res) => {
-  res.sendFile(path.join(__dirname + "/static/index.html"));
+  res.sendFile(path.join(__dirname + "/static/html/index.html"));
+});
+
+// logout page
+
+app.get("/logout", auth ,async(req, res) => {
+  try{
+    res.clearCookie("jwt");
+    await req.user.save();
+    res.sendFile(path.join(__dirname + "/static/index.html"));
+  }
+  catch(error){
+    res.status(404).send(error);
+  }
 });
 
 // To post Registred Form
 
 app.post("/register", async (req, res) => {
- try{
-  const password = req.body.password;
-  const cpassword = req.body.confirmpassword;
+  try {
+    const password = req.body.password;
+    const cpassword = req.body.confirmpassword;
 
-  if(password === cpassword){
-  const registerNewUser = new  Registers({
-    firstname : req.body.firstname,
-    lastname : req.body.lastname,
-    email : req.body.email,
-    password : password,
-    confirmpassword : cpassword
-  })
-  // Hashing password 
-  
+    if (password === cpassword) {
+      const registerNewUser = new Registers({
+        firstname: req.body.firstname,
+        lastname: req.body.lastname,
+        email: req.body.email,
+        password: password,
+        confirmpassword: cpassword,
+      });
+      // Hashing password
 
-
-  const registered = await registerNewUser.save();
-  res.status(201).sendFile(path.join(__dirname + "/static/homepage.html"));
+      const token = await registerNewUser.generateAuthToken();
+      res.cookie("jwt",token, {
+        expires: new Date(Date.now()+30000),
+        httpOnly:true 
+      })
+      const registered = await registerNewUser.save();
+      res.status(201).sendFile(path.join(__dirname + "/static/homepage.html"));
+    } else {
+      res.send("passsword are not matching");
+    }
+  } catch (error) {
+    res.status(404).send(error);
   }
-  else{
-    res.send("passsword are not matching");
-  }
-
- } catch (error){
-   res.status(404).send(error);
- }
 });
 
 // To post Login Form
 
 app.post("/login", async (req, res) => {
- try{
+  try {
     const email = req.body.email;
     const password = req.body.password;
-   const UserEmail = await Registers.findOne({email:email});
-   const compare = await bcrypt.compare(password, UserEmail.password);
-   if(compare){
-    res.status(201).sendFile(path.join(__dirname + "/static/homepage.html"));
-   }
-   else{
-    res.send("Username or Password invalid");
-   }
- }
- catch(error){
-   res.status(400).send("invalid Details");
- }
+    const UserEmail = await Registers.findOne({ email: email });
+    const compare = await bcrypt.compare(password, UserEmail.password);
+    const token = await UserEmail.generateAuthToken();
+
+  // Storing cookie
+
+    res.cookie("jwt",token, {
+      expires: new Date(Date.now()+50000),
+      httpOnly:true 
+    })
+
+    if (compare) {
+      res.status(201).sendFile(path.join(__dirname + "/static/html/logout.html"));
+    } else {
+      res.send("Username or Password invalid");
+    }
+  } catch (error) {
+    res.status(400).send(error);
+  }
 });
 
 // Start the Server
