@@ -1,2 +1,3 @@
-/javascript/temp.js
+/static/javascript/server.js
 /.env
+/views/index.pug
