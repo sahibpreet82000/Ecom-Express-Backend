@@ -79,8 +79,8 @@ function setting() {
     elem.innerHTML = `
     
       <div class="product-images">
-        <img src="/images/${item.tag}.jpg" alt="" />
-        <a href="/html/display.html">
+        <img src="/static/images/${item.tag}.jpg" alt="" />
+        <a href="/static/html/display.html">
           ${item.name.toUpperCase()} <br />
           <div id="submit"> $${item.price}</div>
         </a>
@@ -109,8 +109,8 @@ function setting2() {
     var elem = document.createElement("div");
     elem.innerHTML = `
               <div class="product-images">
-                <img src="/images/${item.tag}.jpg" alt="" />
-                <a href="/html/display.html">
+                <img src="/static/images/${item.tag}.jpg" alt="" />
+                <a href="/static/html/display.html">
                   ${item.name.toUpperCase()} <br />
                   <div id="submit">$${item.price}</div>
                 </a>

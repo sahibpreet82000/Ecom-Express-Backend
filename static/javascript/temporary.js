@@ -1,3 +1,4 @@
+//--------------------------------------for Products scroll animation-------------------------------------------------
 window.addEventListener("scroll", function () {
   var element = document.querySelector(".section-content");
   var position = element.getBoundingClientRect();
