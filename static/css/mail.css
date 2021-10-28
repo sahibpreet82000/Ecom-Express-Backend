@@ -85,8 +85,9 @@ textarea {
 .submit-btn {
     float: right;
     margin-bottom: 22px;
-    padding: 7px 35px;
+    padding: 7px 45px;
     border-radius: 60px;
+    border: none;
     display: inline-block;
     background-color: #999;
     color: white;
@@ -132,7 +133,7 @@ iframe{
     position: relative;
     width:80%;
     min-height: 300px;
-    margin: 72px;
-    margin-left: 125px;
+    margin: auto;
+    margin-bottom: 40px;
    
 }

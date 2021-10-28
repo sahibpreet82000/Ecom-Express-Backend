@@ -46,35 +46,37 @@
       <div id="login-heading">Contact Us</div>
     </div>
     <div class="container2">
+      <form action="/contact" method="post">
       <div class="row2 input-container">
         <div class="col-xs-12">
           <div class="styled-input wide">
-            <input type="text" required />
+            <input type="text" required  name="name"/>
             <label>Name</label>
           </div>
         </div>
         <div class="col-md-6 col-sm-12" style="padding: 0px;">
           <div class="styled-input">
-            <input type="text" required />
+            <input type="text" required name="email"/>
             <label>Email</label>
           </div>
         </div>
         <div class="col-md-6 col-sm-12" style="padding: 0px;">
           <div class="styled-input" style="float: right">
-            <input type="text" required />
+            <input type="text" required name="phone"/>
             <label>Phone Number</label>
           </div>
         </div>
         <div class="col-xs-12">
           <div class="styled-input wide">
-            <textarea required></textarea>
-            <label>Message</label>
+            <textarea required name="message"></textarea>
+            <label name="message">Message</label>
           </div>
         </div>
         <div class="col-xs-12">
-          <div class="btn-lrg submit-btn">Send Message</div>
+          <button type="submit" class="btn-lrg submit-btn">Send Message</button> 
         </div>
       </div>
+      </form>
       <div>
         <iframe
           class="map"

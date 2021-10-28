@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="/static/css/register.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+
+    <%- include('../partials/head'); %>
+  </head>
+  <body>
+    <header><%- include('../partials/header'); %></header>
+    <div>
+      <ul class="breadcrumb home-index">
+        <li><i class="fas fa-home" id="home-iconset"></i></li>
+        <li class="breadcrumb-item">
+          <a href="/static/homepage.html">Home</a>
+        </li>
+        <li class="breadcrumb-item"><p39>Login Page</p39></li>
+        <li class="breadcrumb-item active"></li>
+      </ul>
+    </div>
+
+
+
+    <!-- LOGIN BOX -->
+
+    <div class="loginpage">
+      <div class="login-logo">
+        <p6>__________________</p6>
+        <span id="login-heading1">Login Here</span>
+        <p6>__________________</p6>
+      </div>
+
+      <p1>
+        Lorem, psum dolor sit amet consectetur adipisicing elit. Aspernatur,
+        optio!
+      </p1>
+    </div>
+    <div class="form-box">
+      <div class="set-form">
+        <form action="/login" method="post">
+          <i class="fas fa-envelope-open" id="register-icons"></i>
+          <input
+            class="form-set"
+            id="register-icon-set"
+            type="email"
+            placeholder="Enter your e-mail"
+          />
+          <i class="fas fa-user-lock" id="register-icons"></i>
+          <input
+            class="form-set"
+            id="register-icon-set2"
+            type="password"
+            placeholder="New password"
+          />
+          <i class="fas fa-eye" id="set-eye-button" onclick="change()"></i>
+          <i
+            class="fas fa-eye-slash"
+            id="set-eye-button2"
+            onclick="change()"
+          ></i>
+          <div class="forgot-pass-set">
+            <a href="/static/html/Forgetpassword.html"> Forgot Password?</a>
+          </div>
+          <div>
+            <button class="button-set" type="submit" id="submit">Login</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <p id="heading-newuser">For New User</p>
+    <div class="signin-newuser" style="font-size: 20px">
+      <a href="/static/html/register.html"> Regiser Here</a> &nbsp; or Go Back
+      to &nbsp;
+      <a href="/static/html/products.html"> Home</a>
+    </div>
+
+    <!-- FOOTER BOX -->
+    <footer><%- include('../partials/footer'); %></footer>
+  </body>
+  <!-- JAVA SCRIPT -->
+  <script src="/static/javascript/scriptfile.js"></script>
+
+  <script>
+    // $(document).ready(function () {
+    //   $(".button-set").click(function () {
+    //     alert("Welcome " + $("#register-icon-set").val());
+    //   });
+    // });
+  </script>
+</html>

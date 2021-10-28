@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="/static/css/mail.css" />
+    <link rel="stylesheet" href="/static/css/contact.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <%- include('../partials/head'); %>
+  </head>
+  <body>
+    <header>
+        <%- include('../partials/header'); %>
+      </header>  
+          <div>
+      <ul class="breadcrumb home-index">
+        <li><i class="fas fa-home" id="home-iconset"></i></li>
+        <li class="breadcrumb-item"><a href="/static/homepage.html">Home</a></li>
+        <li class="breadcrumb-item"><p39>Contact Us</p39></li>
+        <li class="breadcrumb-item active"></li>
+      </ul>
+    </div>
+
+    <% if(typeof alert != 'undefined') { %>
+        <% alert.forEach(function(error) { %>
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <%= error.msg %>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">×</span>
+                </button>
+              </div>
+        <% }) %>
+    <% } %>
+  
+    <div class="loginpage">
+      <div id="login-heading">Contact Us</div>
+    </div>
+    <div class="container2">
+      <form action="/contact" method="post">
+      <div class="row2 input-container">
+        <div class="col-xs-12">
+          <div class="styled-input wide">
+            <input type="text" required  name="name"/>
+            <label>Name</label>
+          </div>
+        </div>
+        <div class="col-md-6 col-sm-12" style="padding: 0px;">
+          <div class="styled-input">
+            <input type="text" required name="email"/>
+            <label>Email</label>
+          </div>
+        </div>
+        <div class="col-md-6 col-sm-12" style="padding: 0px;">
+          <div class="styled-input" style="float: right">
+            <input type="text" required name="phone"/>
+            <label>Phone Number</label>
+          </div>
+        </div>
+        <div class="col-xs-12">
+          <div class="styled-input wide">
+            <textarea required name="message"></textarea>
+            <label name="message">Message</label>
+          </div>
+        </div>
+        <div class="col-xs-12">
+          <button type="submit" class="btn-lrg submit-btn">Send Message</button> 
+        </div>
+      </div>
+      </form>
+      <div>
+        <iframe
+          class="map"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3098.7638135888296!2d-77.47669308468912!3d39.04350424592369!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b63eb3bc8da92b%3A0x78c8e09ab1cabc90!2sShopping+Plaza%2C+Ashburn%2C+VA+20147%2C+USA!5e0!3m2!1sen!2sin!4v1457602090579"
+          frameborder="0"
+          style="
+            border: 0px;
+            visibility: visible;
+            animation-delay: 0.5s;
+            animation-name: slideInLeft;
+          "
+          allowfullscreen=""
+        >
+        </iframe>
+      </div>
+    </div>
+    <footer>
+        <%- include('../partials/footer'); %>
+      </footer>
+  </body>
+</html>
