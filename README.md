@@ -4,4 +4,4 @@ I added a little bit of bootstrap in it to enhance this website .
 Moreover, in this website, user can enjoy some dynamic things
 Such as adding products to cart and login as well as Register as a New 
 User.
-![](images/main.jpg)
+![](/static/images/main.jpg)
