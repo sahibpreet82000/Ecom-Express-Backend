@@ -1,17 +1,15 @@
 const mongoose = require("mongoose");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
-const validator = require("validator");
+
 const registerationSchema = new mongoose.Schema({
   firstname: {
     type: String,
     required: true,
-    minlength:3,
   },
   lastname: {
     type: String,
     required: true,
-    minlength:3,
   },
   email: {
     type: String,
@@ -21,12 +19,10 @@ const registerationSchema = new mongoose.Schema({
   password: {
     type: String,
     required: true,
-    minlength: 8,
   },
   confirmpassword: {
     type: String,
     required: true,
-    minlength: 8,
   },
   tokens: [
     {

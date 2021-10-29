@@ -12,6 +12,7 @@ const jwt = require("jsonwebtoken");
 const cookie = require("cookie-parser");
 var  bodyParser = require("body-parser");
 var session = require("express-session");
+var expressValidator = require("express-validator");
 const auth = require("./middleware/auth")
 
 // Initializing Mongoose
@@ -27,6 +28,7 @@ async function main() {
 app.use("/static", express.static("static"));
 app.use(express.urlencoded({extended:false}));
 app.use(cookie());
+app.use(expressValidator());  // validator added
 // Ejs SPECIFIC STUFF
 
 app.set('view engine','ejs') //Set the template engine as pug
@@ -68,30 +70,30 @@ app.use(function (req, res, next) {
 
 // to get login form
 
-app.get("/index", (req, res) => {
-res.render('pages/index');
+app.get("/register", (req, res) => {
+  res.sendFile(path.join(__dirname + "/static/html/register.html"));
 });
 
 // logout page
 
 app.get("/logout", auth ,async(req, res) => {
   try{
-    //for single logout
-    // req.user.tokens = req.user.tokens.filter((currentElem)=>{
-    //        return currentElem.token != req.token
-    // })
+    // for single logout
+    req.user.tokens = req.user.tokens.filter((currentElem)=>{
+           return currentElem.token != req.token
+    })
+   // logout for all devices
 
-       // logout for all devices
-       req.user.tokens = [];
+      //  req.user.tokens = [];
+
     res.clearCookie("jwt");
     await req.user.save();
-    res.sendFile(path.join(__dirname + "/static/index.html"));
+    res.render("pages/index");
   }
   catch(error){
     res.status(404).send(error);
   }
 });
-
 
 // To post Registred Form
 
@@ -115,7 +117,7 @@ app.post("/register", async (req, res) => {
         expires: new Date(Date.now()+30000),
         httpOnly:true 
       })
-      const registered = await registerNewUser.save();
+      await registerNewUser.save();
 
       res.render("pages/homepage");
     } else {
@@ -135,7 +137,6 @@ app.post("/login", async (req, res) => {
     const UserEmail = await Registers.findOne({ email: email });
     const compare = await bcrypt.compare(password, UserEmail.password);
     const token = await UserEmail.generateAuthToken();
-
   // Storing cookie
 
     res.cookie("jwt",token, {
@@ -147,7 +148,7 @@ app.post("/login", async (req, res) => {
     res.render('pages/homepage');
     } else {
       res.send("Username or Password invalid");
-    }
+    }   
   } catch (error) {
     res.status(400).send(error);
   }
@@ -157,15 +158,32 @@ app.post("/login", async (req, res) => {
 
 app.post("/contact", async(req,res)=>{
   try{
-    const UserData = new contactForm(req.body);
-    await UserData.save();
+    req.checkBody('name', 'Name mush have a value.').notEmpty();
+    req.checkBody('email', 'Email mush have a value.').notEmpty();
+    req.checkBody('phone', 'Phone mush have a value.').notEmpty();
   
-      res.status(201).send("thanks for your valuable feedback");
+    var name = req.body.name;
+    var email = req.body.email;
+    var phone = req.body.phone;
     
-  }
-  catch(error){
-    res.status(500).send(error);
-  }
+      const UserData = new contactForm(req.body);
+      await UserData.save();
+      var errors = req.validationErrors();
+      if(errors){
+        res.render('pages/contact',{
+          errors: errors,
+          name : name,
+          email : email,
+          phone :phone
+        })
+      }
+      else{
+        res.status(201).send("thanks for your valuable feedback");
+      }
+    }
+    catch(error){
+      res.status(500).send(error);
+    }
 })
 
 // Start the Server
