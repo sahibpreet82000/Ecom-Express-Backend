@@ -53,7 +53,6 @@ $(document).ready(function () {
       localStorage.clear();
       document.getElementById("cart-set").textContent = "0";
       document.querySelector(".cart-total span").textContent = "0";
-      location.reload();
     });
   });
 

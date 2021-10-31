@@ -82,7 +82,8 @@ let products = [
   },
 ];
 for (let i = 0; i < cart.length; i++) {
-  cart[i].addEventListener("click", () => {
+  cart[i].addEventListener("click", (event) => {
+    event.preventDefault();
     cartnumber(products[i]);
     totalCost(products[i]);
   });
@@ -229,7 +230,7 @@ Your Shopping-Cart Contains: <span> ${getNum} </span> items
 <div class="basket">
 <ul>
 <li>
-    <img id="cart-image-set" src="/images/${item.tag}.jpg" alt="image" />
+    <img id="cart-image-set" src="/static/images/${item.tag}.jpg" alt="image" />
     </li>
     <li>
           <i
@@ -277,18 +278,16 @@ Your Shopping-Cart Contains: <span> ${getNum} </span> items
 <div class="buttons">
 <button class="cart-button"><a href="#">Continue to Basket</a></button>
 <button class="cart-button2" type="menu" id="menu">
-<a href="/html/products.html">Back to Home</a>
+<a href="/products">Back to Home</a>
 </button>
 </div>
 `;
   } else {
-    productcontainer.innerHTML = `<div class="cart-empty">
+    productcontainer.innerHTML = `
+    <div class="cart-empty">
     <p>your cart is empty :(</p>
       <div class="buttons">
-          <button class="cart-button"><a href="#">Continue to Basket</a></button>
-<button class="cart-button2">
-<a href="/html/products.html">Back to Home</a>
-</button>
+<button class="cart-button2"><a href="/products">Back to Home</a></button>
 </div>
     </div>`;
   }
@@ -307,8 +306,7 @@ remove.forEach((e) => {
     let cartitem = localStorage.getItem("productsCart");
     cartitem = JSON.parse(cartitem);
     // cartitem.push(product);
-    console.log(cartitem);
-
+    //  cartitem.splice("<% item.tag %>",1);
     // el.target.parentElement.parentElement.parentElement.classList.add("remove");
     // console.log(b);
 
@@ -340,7 +338,6 @@ inc.forEach((i) => {
     gettex = JSON.parse(gettex);
     let cartHeading = document.querySelector("#cart-set");
     let cartHeadingValue = document.querySelector(".cart-total span");
-    console.log(typeof cartHeading.innerHTML);
     tax = parseInt(tax);
     l = parseInt(l);
     b = parseInt(b);
@@ -417,3 +414,17 @@ dec.forEach((i) => {
   });
 });
 
+// //
+// var stripeHandler = StripeCheckout.configure({
+//   key: stripePublicKey,
+//   locate: "en",
+//   token: function (token) {},
+// });
+
+// //
+
+// function purchased() {
+//   stripeHandler.open({
+//     amount: price,
+//   });
+// }

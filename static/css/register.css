@@ -72,7 +72,10 @@ input#checkbox {
   width: 20px;
   height: 20px;
 }
-
+#imgPreview{
+margin: 20px;
+z-index: 2;
+}
 @media (max-width: 900px) {
   .form-box2 {
     margin: 20px;

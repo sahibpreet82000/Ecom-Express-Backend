@@ -206,7 +206,7 @@ Your Shopping-Cart Contains: <span> ${getNum} </span> items
 <div class="basket">
 <ul>
 <li>
-    <img id="cart-image-set" src="/images/${item.tag}.jpg" alt="image" />
+    <img id="cart-image-set" src="/static/images/${item.tag}.jpg" alt="image" />
     </li>
     <li>
           <i
@@ -254,7 +254,7 @@ Your Shopping-Cart Contains: <span> ${getNum} </span> items
 <div class="buttons">
 <button class="cart-button"><a href="#">Continue to Basket</a></button>
 <button class="cart-button2" type="menu" id="menu">
-<a href="/html/products.html">Back to Home</a>
+<a href="/static/html/products.html">Back to Home</a>
 </button>
 </div>
 `;
@@ -264,7 +264,7 @@ Your Shopping-Cart Contains: <span> ${getNum} </span> items
       <div class="buttons">
           <button class="cart-button"><a href="#">Continue to Basket</a></button>
 <button class="cart-button2">
-<a href="/html/products.html">Back to Home</a>
+<a href="/static/html/products.html">Back to Home</a>
 </button>
 </div>
     </div>`;

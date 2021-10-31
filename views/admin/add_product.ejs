@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="/static/css/register.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+
+    <%- include('../partials/head'); %>
+  </head>
+  <body>
+    <header><%- include('../partials/header'); %></header>
+    <div>
+      <ul class="breadcrumb home-index">
+        <li><i class="fas fa-home" id="home-iconset"></i></li>
+        <li class="breadcrumb-item">
+          <a href="/home">Home</a>
+        </li>
+        <li class="breadcrumb-item"><p39>Login Page</p39></li>
+        <li class="breadcrumb-item active"></li>
+      </ul>
+    </div>
+
+    <!-- LOGIN BOX -->
+
+    <div class="loginpage">
+      <div class="login-logo">
+        <p6>__________________</p6>
+        <span id="login-heading1">Add Product</span>
+        <p6>__________________</p6>
+      </div>
+
+      <p1>
+        Lorem, psum dolor sit amet consectetur adipisicing elit. Aspernatur,
+        optio!
+      </p1>
+    </div>
+    <div class="form-box">
+      <div class="set-form">
+        <form
+          action="/products/add-new-product"
+          method="post"
+          enctype="multipart/form-data"
+        >
+          Name:
+          <input
+            class="form-set"
+            id="register-icon-set"
+            type="text"
+            name="name"
+            value="<% name %> "
+            placeholder="Enter product name"
+          />
+          Image:
+          <input
+            class="form-set"
+            id="img"
+            type="file"
+            name="image"
+            placeholder="Enter Product image"
+          />
+          Price:
+          <input
+            class="form-set"
+            type="text"
+            name="price"
+            value="<% price %> "
+            placeholder="Enter product price"
+          />
+          <img src="#" id="imgPreview" alt="img" />
+          <div>
+            <button class="button-set" type="submit" id="submit">
+              Add product
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- FOOTER BOX -->
+    <footer><%- include('../partials/footer'); %></footer>
+    <script>
+      function readURL(input) {
+        if (input.files && input.files[0]) {
+          var reader = new FileReader();
+
+          reader.onload = function (e) {
+            $("#imgPreview").attr("src", e.target.result).height(200);
+          };
+          reader.readAsDataURL(input.files[0]);
+        }
+      }
+
+      $("#img").change(function () {
+        readURL(this);
+      });
+    </script>
+  </body>
+</html>
