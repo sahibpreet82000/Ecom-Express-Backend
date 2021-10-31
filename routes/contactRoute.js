@@ -30,7 +30,7 @@ router.post("/contact", async(req,res)=>{
 
   var name = req.body.name;
   var email = req.body.email;
-  var phone = req.body.phone;f
+  var phone = req.body.phone;
   
     const UserData = new contactForm(req.body);
     await UserData.save();

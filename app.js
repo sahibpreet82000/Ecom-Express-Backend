@@ -6,7 +6,6 @@ const port = process.env.PORT || 80;
 const mongoose = require("mongoose");
 const config = require("./config/database");
 const Registers = require("./db/models/register");
-const contactForm = require("./db/models/contact");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const cookie = require("cookie-parser");
@@ -19,6 +18,7 @@ var fileUpload = require("express-fileupload");
 const stripeSecretKey = process.env.STRIPE_SECRET_KEY;
 const stripePublicKey = process.env.STRIPE_PUBLIC_KEY;
 const stripe = require("stripe")(stripeSecretKey);
+
 // Initializing Mongoose
 
 main().catch((err) => console.log(err));
@@ -32,7 +32,6 @@ async function main() {
 app.use("/static", express.static("static"));
 app.use(express.urlencoded({ extended: false }));
 app.use(cookie());
-app.use(expressValidator()); // validator added
 // Ejs SPECIFIC STUFF
 
 app.set("view engine", "ejs"); //Set the template engine as pug
@@ -45,13 +44,12 @@ app.use(bodyParser.json());
 
 // Express Session middleware
 
-app.use(
-  session({
-    secret: "keyboard cat",
-    resave: false,
-    saveUninitialized: true,
-    cookie: { secure: true },
-  })
+app.use(session({
+  secret: "keyboard cat",
+  resave: false,
+  saveUninitialized: true,
+  cookie: { secure: true },
+})
 );
 
 // Express messages middleware
@@ -63,27 +61,25 @@ app.use(function (req, res, next) {
 });
 
 // Express Validator middleware
-app.use(
-  expressValidator({
-    customValidators: {
-      isImage: function (value, filename) {
-        var extension = path.extname(filename).toLowerCase();
-        switch (extension) {
-          case ".jpg":
-            return ".jpg";
-          case ".jpeg":
-            return ".jpeg";
-          case ".png":
-            return ".png";
-          case "":
-            return ".jpg";
-          default:
-            return false;
-        }
-      },
+app.use(expressValidator({
+  customValidators: {
+    isImage: function (value, filename) {
+      var extension = (path.extname(filename)).toLowerCase();
+      switch (extension) {
+        case ".jpg":
+          return ".jpg";
+        case ".jpeg":
+          return ".jpeg";
+        case ".png":
+          return ".png";
+        case "":
+          return ".jpg";
+        default:
+          return false;
+      }
     },
-  })
-);
+  },
+}));
 // Express file upload
 app.use(fileUpload());
 
@@ -135,7 +131,6 @@ app.post("/login", async (req, res) => {
     const UserEmail = await Registers.findOne({ email: email });
     const compare = await bcrypt.compare(password, UserEmail.password);
     const token = await UserEmail.generateAuthToken();
-
     // Storing cookie
 
     res.cookie("jwt", token, {

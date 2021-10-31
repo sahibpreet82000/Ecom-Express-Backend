@@ -11,6 +11,7 @@
 
     <%- include('../partials/head'); %>
   </head>
+
   <body>
     <header><%- include('../partials/header'); %></header>
     <div>
@@ -19,7 +20,9 @@
         <li class="breadcrumb-item">
           <a href="/home">Home</a>
         </li>
-        <li class="breadcrumb-item"><p39>Login Page</p39></li>
+        <li class="breadcrumb-item">
+          <p39>Login Page</p39>
+        </li>
         <li class="breadcrumb-item active"></li>
       </ul>
     </div>
@@ -51,7 +54,7 @@
             id="register-icon-set"
             type="text"
             name="name"
-            value="<% name %> "
+            value="<% name %>"
             placeholder="Enter product name"
           />
           Image:
@@ -70,7 +73,7 @@
             value="<% price %> "
             placeholder="Enter product price"
           />
-          <img src="#" id="imgPreview" alt="img" />
+          <img src="#" id="imgPreview" alt="" />
           <div>
             <button class="button-set" type="submit" id="submit">
               Add product
