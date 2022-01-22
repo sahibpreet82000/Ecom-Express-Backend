@@ -19,6 +19,22 @@ router.get("/add-product", (req, res) => {
   });
 });
 
+router.get("/", (req, res) => {
+  var count;
+
+  productForm.count(function (err, c) {
+    count = c;
+  });
+  productForm.find(function (err, products) {
+    if (err) console.log(err);
+
+    res.render("admin/products", {
+      products: products,
+      count: count,
+    });
+  });
+});
+
 // post add-product
 
 router.post("/add-new-product", async (req, res) => {
@@ -27,14 +43,14 @@ router.post("/add-new-product", async (req, res) => {
       typeof req.files.image !== "undefined" ? req.files.image.name : "";
     req.checkBody("name", "Name mush have a value.").notEmpty();
     req.checkBody("image", "image mush have a value.").isImage(imgFile);
-    req.checkBody("price", "Phone mush have a value.").isDecimal();
+    req.checkBody("price", "Phone mush have a value.").notEmpty();
 
     var name = req.body.name;
     var price = req.body.price;
     var errors = req.validationErrors();
     if (errors) {
       console.log(errors);
-    res.status(404).send(errors);
+      res.status(404).send(errors);
     } else {
       productForm.findOne({ name: name }, function (err, product) {
         if (product) {
@@ -44,22 +60,22 @@ router.post("/add-new-product", async (req, res) => {
           var product = new productForm({
             name: name,
             price: price2,
-            image: imgFile
+            image: imgFile,
           });
+          
           product.save(function (err) {
-            if (err) 
-            return console.log(err);
+            if (err) return console.log(err);
 
-            mkdirp("static/images/" + product._id, function (err) {
+            mkdirp("public/product_images/" + product._id, function (err) {
               return console.log(err);
             });
 
-            mkdirp("static/images/" + product._id + "/gallery", function (err) {
+            mkdirp("public/product_images/" + product._id + "/gallery", function (err) {
               return console.log(err);
             });
 
             mkdirp(
-              "static/images/" + product._id + "/gallery/thumbs",
+              "public/product_images/" + product._id + "/gallery/thumbs",
               function (err) {
                 return console.log(err);
               }
@@ -67,14 +83,14 @@ router.post("/add-new-product", async (req, res) => {
 
             if (imgFile != "") {
               var productImage = req.files.image;
-              var path = "static/images" + product._id + "/" + imgFile;
+              var path = "public/product_images/" + product._id + "/" + imgFile;
 
               productImage.mv(path, function (err) {
                 return console.log(err);
               });
             }
-            req.flash("success", "product added");
           });
+          res.redirect("/admin/newproducts");
         }
       });
     }

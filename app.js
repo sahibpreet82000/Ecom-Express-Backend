@@ -99,6 +99,9 @@ app.use("/contact", contactpage);
 var productpage = require("./routes/productRoute");
 app.use("/admin", productpage);
 
+// to get admin product index
+var productpage = require("./routes/allproducts");
+app.use("/admin/newproducts", productpage);
 
 // to get login form
 
@@ -111,9 +114,7 @@ app.get("/home", (req, res) => {
   res.render("pages/homepage");
 });
 
-// to get admin product index
-var productpage = require("./routes/allproducts");
-app.use("/admin/newproducts", productpage);
+
 
 // to get product page
 
