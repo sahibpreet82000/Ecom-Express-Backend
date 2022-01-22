@@ -44,12 +44,13 @@ app.use(bodyParser.json());
 
 // Express Session middleware
 
-app.use(session({
-  secret: "keyboard cat",
-  resave: false,
-  saveUninitialized: true,
-  cookie: { secure: true },
-})
+app.use(
+  session({
+    secret: "keyboard cat",
+    resave: false,
+    saveUninitialized: true,
+    cookie: { secure: true },
+  })
 );
 
 // Express messages middleware
@@ -62,24 +63,25 @@ app.use(function (req, res, next) {
 
 // Express Validator middleware
 app.use(expressValidator({
-  customValidators: {
-    isImage: function (value, filename) {
-      var extension = (path.extname(filename)).toLowerCase();
-      switch (extension) {
-        case ".jpg":
-          return ".jpg";
-        case ".jpeg":
-          return ".jpeg";
-        case ".png":
-          return ".png";
-        case "":
-          return ".jpg";
-        default:
-          return false;
-      }
+    customValidators: {
+      isImage: function (value, filename) {
+        var extension = path.extname(filename).toLowerCase();
+        switch (extension) {
+          case ".jpg":
+            return ".jpg";
+          case ".jpeg":
+            return ".jpeg";
+          case ".png":
+            return ".png";
+          case "":
+            return ".jpg";
+          default:
+            return false;
+        }
+      },
     },
-  },
-}));
+  })
+);
 // Express file upload
 app.use(fileUpload());
 
@@ -95,7 +97,8 @@ var contactpage = require("./routes/contactRoute");
 app.use("/contact", contactpage);
 
 var productpage = require("./routes/productRoute");
-app.use("/products", productpage);
+app.use("/admin", productpage);
+
 
 // to get login form
 
@@ -108,9 +111,26 @@ app.get("/home", (req, res) => {
   res.render("pages/homepage");
 });
 
+// to get admin product index
+var productpage = require("./routes/allproducts");
+app.use("/admin/newproducts", productpage);
+
 // to get product page
 
-app.get("/product2", (req, res) => {
+app.get("/product", (req, res) => {
+  fs.readFile("items.json", function (error, data) {
+    if (error) {
+      res.status(500).end();
+    } else {
+      res.render("pages/product", {
+        items: JSON.parse(data),
+      });
+    }
+  });
+});
+// to get furniture page
+
+app.get("/furniture", (req, res) => {
   fs.readFile("items.json", function (error, data) {
     if (error) {
       res.status(500).end();
@@ -120,6 +140,12 @@ app.get("/product2", (req, res) => {
       });
     }
   });
+});
+
+//testing 
+
+app.get("/display", (req,res)=>{
+res.render("pages/display");
 });
 
 // To post Login Form

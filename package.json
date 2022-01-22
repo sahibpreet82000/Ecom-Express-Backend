@@ -37,7 +37,7 @@
     "jsonwebtoken": "^8.5.1",
     "mkdirp": "^1.0.4",
     "mongoose": "^6.0.11",
-    "nodemon": "^2.0.14",
+    "nodemon": "^2.0.15",
     "pug": "^3.0.2",
     "resize-img": "^2.0.0",
     "stripe": "^8.184.0",

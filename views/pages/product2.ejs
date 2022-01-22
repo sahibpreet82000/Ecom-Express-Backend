@@ -143,7 +143,7 @@
             <% items.product2.forEach(function(item){ %>
             <div class="product-images" data-item-id="<%= item.id %> ">
               <img src="/static/images/<%= item.tag %>.jpg" alt="" />
-              <a href="/static/html/display.html">
+              <a href="/display">
                 <%= item.name %> <br />
                 <div id="submit"><%= item.price %></div>
               </a>
@@ -160,7 +160,7 @@
                 <i
                   class="fas fa-angle-left"
                   id="left-button-product"
-                  onclick="location.href='/static/html/products.html'"
+                  onclick="location.href='/product'"
                 ></i>
               </td>
               <td><a href="#">1</a></td>
@@ -170,7 +170,7 @@
                 <i
                   class="fas fa-angle-right"
                   id="right-button-product"
-                  onclick="location.href='/static/html/product2.html'"
+                  onclick="location.href='/product2'"
                 ></i>
               </td>
             </tr>

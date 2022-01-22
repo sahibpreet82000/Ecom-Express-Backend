@@ -1,3 +1,7 @@
 /static/javascript/server.js
 /.env
 /views/index.pug
+/items.json
+/index.html
+/homepage.html
+/static/html

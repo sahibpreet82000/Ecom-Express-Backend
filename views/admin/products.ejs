@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="/static/css/admin-product.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+
+    <%- include('../partials/head'); %>
+  </head>
+  <body>
+    <header><%- include('../partials/header'); %></header>
+    <div>
+      <ul class="breadcrumb home-index">
+        <li><i class="fas fa-home" id="home-iconset"></i></li>
+        <li class="breadcrumb-item">
+          <a href="/home">Home</a>
+        </li>
+        <li class="breadcrumb-item"><p39>Admin Panel</p39></li>
+        <li class="breadcrumb-item active"></li>
+      </ul>
+    </div>
+    <% if(count>0){ %>
+
+    <!-- LOGIN BOX -->
+    <div>
+      <div class="loginpage">
+        <div class="login-logo">
+          <p6>__________________</p6>
+          <span id="login-heading1">Products</span>
+          <p6>__________________</p6>
+        </div>
+      </div>
+      <a href="/admin/add-product" class="btn btn-primary">Add New Product</a>
+      <br />
+    </div>
+
+    <table class="table table-striped">
+      <thead>
+        <tr class="home">
+          <th>Product</th>
+          <th>Price</th>
+          <th>Product Image</th>
+          <th>Edit</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% products.forEach(function(product) { %>
+        <tr>
+          <td><%= product.name %></td>
+          <td><%= parseFloat(product.price).toFixed(2) %></td>
+          <td>
+            <% if (product.image == "") { %>
+            <img src="" alt="No image" />
+            <% }else { %>
+            <img
+              src="/static/images/<%= product._id %>/<%= product.image %>  "
+              alt="No image"
+            />
+            <% } %>
+          </td>
+          <td><a href="/admin/edit-product/<%= product._id %> ">Edit</a></td>
+          <td>
+            <a href="/admin/delete-product/<%= product._id %> ">Delete</a>
+          </td>
+        </tr>
+        <% }); %>
+      </tbody>
+    </table>
+
+    <% } else { %>
+    <h3 class="text-center">There are No Products</h3>
+    <% } %>
+    <!-- FOOTER BOX -->
+    <footer><%- include('../partials/footer'); %></footer>
+  </body>
+</html>

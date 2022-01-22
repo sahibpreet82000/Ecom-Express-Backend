@@ -11,7 +11,6 @@
 
     <%- include('../partials/head'); %>
   </head>
-
   <body>
     <header><%- include('../partials/header'); %></header>
     <div>
@@ -21,7 +20,10 @@
           <a href="/home">Home</a>
         </li>
         <li class="breadcrumb-item">
-          <p39>Login Page</p39>
+          <p39>Admin Panel</p39>
+        </li>
+        <li class="breadcrumb-item">
+          <p39>Add Product Page</p39>
         </li>
         <li class="breadcrumb-item active"></li>
       </ul>
@@ -36,15 +38,12 @@
         <p6>__________________</p6>
       </div>
 
-      <p1>
-        Lorem, psum dolor sit amet consectetur adipisicing elit. Aspernatur,
-        optio!
-      </p1>
+      <p1> Add products into your gallery </p1>
     </div>
     <div class="form-box">
       <div class="set-form">
         <form
-          action="/products/add-new-product"
+          action="/admin/add-new-product"
           method="post"
           enctype="multipart/form-data"
         >
@@ -60,9 +59,9 @@
           Image:
           <input
             class="form-set"
-            id="img"
             type="file"
             name="image"
+            id="img"
             placeholder="Enter Product image"
           />
           Price:
