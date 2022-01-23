@@ -39,11 +39,10 @@ router.get("/", (req, res) => {
 
 router.post("/add-new-product", async (req, res) => {
   try {
-    var imgFile =
-      typeof req.files.image !== "undefined" ? req.files.image.name : "";
+    var imgFile = typeof req.files.image !== "undefined" ? req.files.image.name : "";
     req.checkBody("name", "Name mush have a value.").notEmpty();
     req.checkBody("image", "image mush have a value.").isImage(imgFile);
-    req.checkBody("price", "Phone mush have a value.").notEmpty();
+    req.checkBody("price", "Price mush have a value.").notEmpty();
 
     var name = req.body.name;
     var price = req.body.price;
@@ -51,7 +50,8 @@ router.post("/add-new-product", async (req, res) => {
     if (errors) {
       console.log(errors);
       res.status(404).send(errors);
-    } else {
+    } else
+     {
       productForm.findOne({ name: name }, function (err, product) {
         if (product) {
           res.status(500).send("Name Already Exists");
@@ -82,7 +82,7 @@ router.post("/add-new-product", async (req, res) => {
             );
 
             if (imgFile != "") {
-              var productImage = req.files.image;
+              var productImage = req.file.image;
               var path = "public/product_images/" + product._id + "/" + imgFile;
 
               productImage.mv(path, function (err) {
@@ -94,7 +94,8 @@ router.post("/add-new-product", async (req, res) => {
         }
       });
     }
-  } catch (error) {
+  } 
+  catch (error) {
     res.status(500).send(error);
   }
 });

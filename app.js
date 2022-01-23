@@ -10,8 +10,10 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const cookie = require("cookie-parser");
 var bodyParser = require("body-parser");
+var multer = require("multer");
 var session = require("express-session");
 var expressValidator = require("express-validator");
+var expressMessage = require("express-messages");
 const auth = require("./middleware/auth");
 const fs = require("fs");
 var fileUpload = require("express-fileupload");
@@ -62,6 +64,7 @@ app.use(function (req, res, next) {
 });
 
 // Express Validator middleware
+
 app.use(expressValidator({
     customValidators: {
       isImage: function (value, filename) {
@@ -82,8 +85,12 @@ app.use(expressValidator({
     },
   })
 );
+
 // Express file upload
 app.use(fileUpload());
+
+// Express Multer for image upload
+app.use(multer().single('image'));
 
 // Set Global Routers
 app.locals.errors = null;
