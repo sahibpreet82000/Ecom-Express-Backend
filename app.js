@@ -4,6 +4,7 @@ const path = require("path");
 const app = express();
 const port = process.env.PORT || 80;
 const mongoose = require("mongoose");
+const mongoConnect = require("./db/models/database").mongoConnect;
 const config = require("./config/database");
 const Registers = require("./db/models/register");
 const bcrypt = require("bcryptjs");
@@ -65,7 +66,8 @@ app.use(function (req, res, next) {
 
 // Express Validator middleware
 
-app.use(expressValidator({
+app.use(
+  expressValidator({
     customValidators: {
       isImage: function (value, filename) {
         var extension = path.extname(filename).toLowerCase();
@@ -90,7 +92,7 @@ app.use(expressValidator({
 app.use(fileUpload());
 
 // Express Multer for image upload
-app.use(multer().single('image'));
+app.use(multer().single("image"));
 
 // Set Global Routers
 app.locals.errors = null;
@@ -121,8 +123,6 @@ app.get("/home", (req, res) => {
   res.render("pages/homepage");
 });
 
-
-
 // to get product page
 
 app.get("/product", (req, res) => {
@@ -150,10 +150,10 @@ app.get("/furniture", (req, res) => {
   });
 });
 
-//testing 
+//testing
 
-app.get("/display", (req,res)=>{
-res.render("pages/display");
+app.get("/display", (req, res) => {
+  res.render("pages/display");
 });
 
 // To post Login Form
@@ -202,8 +202,13 @@ app.get("/logout", auth, async (req, res) => {
   }
 });
 
-// Start the Server
+// database connection
 
-app.listen(port, () => {
-  console.log("the app is running");
+mongoConnect((client) => {
+  console.log(client);
+
+  // Start the Server
+  app.listen(port, () => {
+    console.log("the app is running");
+  });
 });

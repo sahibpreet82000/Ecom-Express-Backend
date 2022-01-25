@@ -3,6 +3,8 @@ const router = express.Router();
 const fsextra = require("fs-extra");
 const mkdirp = require("mkdirp");
 const resize = require("resize-img");
+const multer = require("multer");
+const mongoose = require("mongoose");
 
 // contact model
 const productForm = require("../db/models/product");
@@ -12,19 +14,17 @@ const productForm = require("../db/models/product");
 router.get("/add-product", (req, res) => {
   var name = "";
   var price = "";
-
+  var image = "";
   res.render("admin/add_product", {
     name: name,
     price: price,
+    image: image,
   });
 });
 
 router.get("/", (req, res) => {
   var count;
 
-  productForm.count(function (err, c) {
-    count = c;
-  });
   productForm.find(function (err, products) {
     if (err) console.log(err);
 
@@ -38,66 +38,16 @@ router.get("/", (req, res) => {
 // post add-product
 
 router.post("/add-new-product", async (req, res) => {
-  try {
-    var imgFile = typeof req.files.image !== "undefined" ? req.files.image.name : "";
-    req.checkBody("name", "Name mush have a value.").notEmpty();
-    req.checkBody("image", "image mush have a value.").isImage(imgFile);
-    req.checkBody("price", "Price mush have a value.").notEmpty();
-
-    var name = req.body.name;
-    var price = req.body.price;
-    var errors = req.validationErrors();
-    if (errors) {
-      console.log(errors);
-      res.status(404).send(errors);
-    } else
-     {
-      productForm.findOne({ name: name }, function (err, product) {
-        if (product) {
-          res.status(500).send("Name Already Exists");
-        } else {
-          var price2 = parseFloat(price).toFixed(2);
-          var product = new productForm({
-            name: name,
-            price: price2,
-            image: imgFile,
-          });
-          
-          product.save(function (err) {
-            if (err) return console.log(err);
-
-            mkdirp("public/product_images/" + product._id, function (err) {
-              return console.log(err);
-            });
-
-            mkdirp("public/product_images/" + product._id + "/gallery", function (err) {
-              return console.log(err);
-            });
-
-            mkdirp(
-              "public/product_images/" + product._id + "/gallery/thumbs",
-              function (err) {
-                return console.log(err);
-              }
-            );
-
-            if (imgFile != "") {
-              var productImage = req.file.image;
-              var path = "public/product_images/" + product._id + "/" + imgFile;
-
-              productImage.mv(path, function (err) {
-                return console.log(err);
-              });
-            }
-          });
-          res.redirect("/admin/newproducts");
-        }
-      });
-    }
-  } 
-  catch (error) {
-    res.status(500).send(error);
-  }
+  var name = req.body.name;
+  var image = req.file;
+  var price = req.body.price;
+  var product = new productForm({
+    name,
+    price,
+    image,
+  });
+  product.save();
+  res.redirect("/admin/newproducts");
 });
 
 module.exports = router;
