@@ -1,7 +1,6 @@
 require("dotenv").config();
 const express = require("express");
 const path = require("path");
-const app = express();
 const port = process.env.PORT || 80;
 const mongoose = require("mongoose");
 const mongoConnect = require("./db/models/database").mongoConnect;
@@ -21,6 +20,7 @@ var fileUpload = require("express-fileupload");
 const stripeSecretKey = process.env.STRIPE_SECRET_KEY;
 const stripePublicKey = process.env.STRIPE_PUBLIC_KEY;
 const stripe = require("stripe")(stripeSecretKey);
+const app = express();
 
 // Initializing Mongoose
 
@@ -168,7 +168,7 @@ app.post("/login", async (req, res) => {
     // Storing cookie
 
     res.cookie("jwt", token, {
-      expires: new Date(Date.now() + 500000),
+      expires: new Date(Date.now() + 5000000),
       httpOnly: true,
     });
 
@@ -211,4 +211,19 @@ mongoConnect((client) => {
   app.listen(port, () => {
     console.log("the app is running");
   });
+});
+
+//testing
+app.post("/add-new-product", async (req, res) => {
+  try {
+    var name = req.body.name;
+    var image = req.file;
+    var price = req.body.price;
+
+    console.log(name);
+    console.log(price);
+    console.log(image);
+  } catch (error) {
+    console.log(error);
+  }
 });

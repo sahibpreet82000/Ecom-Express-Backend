@@ -39,15 +39,25 @@ router.get("/", (req, res) => {
 
 router.post("/add-new-product", async (req, res) => {
   var name = req.body.name;
-  var image = req.file;
+  var image = req.body.image;
   var price = req.body.price;
-  var product = new productForm({
-    name,
-    price,
-    image,
-  });
-  product.save();
-  res.redirect("/admin/newproducts");
+
+  console.log(name);
+  console.log(price);
+  console.log(image);
+
+  // var product = new productForm({
+  //   name: name,
+  //   price: price,
+  //   image: image,
+  // });
+  // product.save().catch((err) => {
+
+  //   const error = new Error(err);
+  //   error.httpStatusCode = 500;
+  //   return next(error);
+  // });
+  // res.redirect("/admin/newproducts");
 });
 
 module.exports = router;

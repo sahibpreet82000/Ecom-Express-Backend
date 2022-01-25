@@ -5,3 +5,5 @@
 /index.html
 /homepage.html
 /static/html
+/config/database.js
+/db/models/database.js

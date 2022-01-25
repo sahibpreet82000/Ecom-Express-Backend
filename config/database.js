@@ -1,3 +1,3 @@
 module.exports = {
-    database : "mongodb://localhost:27017/registeration"
+    database : "mongodb+srv://sabbydB:dBsabby@cluster0.chmew.mongodb.net/test"
 }

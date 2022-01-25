@@ -38,7 +38,7 @@ hr {
   float: right;
   margin: -5px 5px;
 }
-#logout{
+#logout {
   display: none;
 }
 h1 {
@@ -272,7 +272,7 @@ h1 {
   vertical-align: super;
 }
 form {
-  padding: 25px 0px;
+  padding: 25px 15px;
 }
 .form-box {
   transition: all 1.4s ease-in-out;
