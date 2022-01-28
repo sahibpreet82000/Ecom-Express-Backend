@@ -17,7 +17,7 @@
       <ul class="breadcrumb home-index">
         <li><i class="fas fa-home" id="home-iconset"></i></li>
         <li class="breadcrumb-item">
-          <a href="/home">Home</a>
+          <a href="/">Home</a>
         </li>
         <li class="breadcrumb-item">
           <p39>Admin Panel</p39>
@@ -43,7 +43,7 @@
     <div class="form-box">
       <div class="set-form">
         <form
-          action="/add-new-product"
+          action="/admin/add-new-product"
           method="post"
           enctype="multipart/form-data"
         >
@@ -52,6 +52,7 @@
             class="form-set"
             id="register-icon-set"
             type="text"
+            required
             name="name"
             value="<% name %>"
             placeholder="Enter product name"
@@ -60,6 +61,9 @@
           <input
             class="form-set"
             type="file"
+            required
+            multiple
+            accept="image/*"
             name="image"
             id="img"
             placeholder="Enter Product image"
@@ -67,8 +71,9 @@
           Price:
           <input
             class="form-set"
-            type="text"
+            type="number"
             name="price"
+            required
             value="<% price %> "
             placeholder="Enter product price"
           />

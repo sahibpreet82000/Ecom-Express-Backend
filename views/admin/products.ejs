@@ -17,13 +17,12 @@
       <ul class="breadcrumb home-index">
         <li><i class="fas fa-home" id="home-iconset"></i></li>
         <li class="breadcrumb-item">
-          <a href="/home">Home</a>
+          <a href="/">Home</a>
         </li>
         <li class="breadcrumb-item"><p39>Admin Panel</p39></li>
         <li class="breadcrumb-item active"></li>
       </ul>
     </div>
-    <% if(count>0){ %>
 
     <!-- LOGIN BOX -->
     <div>
@@ -54,28 +53,25 @@
           <td><%= product.name %></td>
           <td><%= parseFloat(product.price).toFixed(2) %></td>
           <td>
-            <% if (product.image == "") { %>
-            <img id="noimage" src="" alt="No image" />
-            <% }else { %>
-            <img
-              src="/product_images/<%= product._id %>/<%= product.image %>  "
-              alt="No image"
-            />
-            <% } %>
+            <% product.image.forEach(img => { %>
+            <img src="/<%= img %>" alt="product image" />
+            <% }) %>
           </td>
           <td>
-            <a href="/admin/edit-product/<%= product._id %> ">Edit</a></td>
+            <a href="/admin/edit-product/<%= product._id %> ">Edit</a>
+          </td>
           <td>
-            <a href="/admin/delete-product/<%= product._id %> " class="confirmdeletion">Delete</a>
+            <a
+              href="/admin/delete-product/<%= product._id %> "
+              class="confirmdeletion"
+              >Delete</a
+            >
           </td>
         </tr>
         <% }); %>
       </tbody>
     </table>
 
-    <% } else { %>
-    <h3 class="text-center">There are No Products</h3>
-    <% } %>
     <!-- FOOTER BOX -->
     <footer><%- include('../partials/footer'); %></footer>
   </body>

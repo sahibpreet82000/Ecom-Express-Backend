@@ -13,15 +13,20 @@
           <i id="remove-header-content" class="fas fa-phone-alt"></i>
           <span id="remove-header-content">+91 984666483</span>
         </a>
+        <% if (isLoggedIn) { %>
+
+        <a class="header slide-left-animate" href="/logout">
+          <i class="fas fa-sign-in-alt"></i> Logout
+        </a>
+        <% } else { %>
         <a class="header slide-left-animate" href="/login">
           <i class="fas fa-sign-in-alt"></i> Login
         </a>
         <a class="header slide-left-animate" href="/register">
           <i class="fas fa-book"></i> Register
         </a>
-        <a class="header slide-left-animate" href="/logout">
-          <i class="fas fa-sign-in-alt"></i> Logout
-        </a>
+
+        <% } %>
         <a class="icon slide-animate" id="media-icons" href="#"
           ><i class="fab fa-facebook-f"></i>
         </a>
@@ -74,7 +79,7 @@
       <div class="dropdown-content2">
         <ul>
           <li>
-            <a href="/home" target="blank">HOME</a>
+            <a href="/" target="blank">HOME</a>
           </li>
           <li class="product-hover" id="nav">
             <a class="product-click" href="#home"

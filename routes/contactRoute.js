@@ -3,55 +3,44 @@ const router = express.Router();
 
 // contact model
 const contactForm = require("../db/models/contact");
+const isLoggedIn = require("../helpers/isLoggedIn");
 
-// To get registration page
+// To get contact page
 
 router.get("/", (req, res) => {
-    var name = "";
-    var email = "";
-    var phone = "";
-    
-    res.render('pages/contact',{
-      name: name,
-      email: email,
-      phone : phone
-    })
-  });
+  var name = "";
+  var email = "";
+  var phone = "";
 
+  res.render("pages/contact", {
+    name: name,
+    email: email,
+    phone: phone,
+    isLoggedIn: isLoggedIn(req.cookies.jwt),
+  });
+});
 
 // For contact form submission
 
+router.post("/contact", async (req, res) => {
+  try {
 
-router.post("/contact", async(req,res)=>{
-  try{
-  req.checkBody('name', 'Name mush have a value.').notEmpty();
-  req.checkBody('email', 'Email mush have a value.').notEmpty();
-  req.checkBody('phone', 'Phone mush have a value.').notEmpty();
+    var name = req.body.name;
+    var email = req.body.email;
+    var phone = req.body.phone;
+    var message = req.body.message;
 
-  var name = req.body.name;
-  var email = req.body.email;
-  var phone = req.body.phone;
-  
-    const UserData = new contactForm(req.body);
-    await UserData.save();
-    var errors = req.validationErrors();
-    if(errors){
-      res.render('pages/contact',{
-        errors: errors,
-        name : name,
-        email : email,
-        phone :phone
-      })
-    }
-    else{
+    const UserData = contactForm.create({
+      name: name,
+      email: email,
+      phone: phone,
+      message: message,
+    });
       res.status(201).send("thanks for your valuable feedback");
-    }
-  }
-  catch(error){
+  } catch (error) {
     res.status(500).send(error);
   }
-})
-
+});
 
 //Export
 

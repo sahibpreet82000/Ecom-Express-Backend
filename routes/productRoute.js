@@ -1,13 +1,10 @@
 const express = require("express");
 const router = express.Router();
-const fsextra = require("fs-extra");
-const mkdirp = require("mkdirp");
-const resize = require("resize-img");
-const multer = require("multer");
-const mongoose = require("mongoose");
 
-// contact model
-const productForm = require("../db/models/product");
+// product model
+const Product = require("../db/models/product");
+const isLoggedIn = require("../helpers/isLoggedIn");
+
 
 // add new product
 
@@ -19,18 +16,20 @@ router.get("/add-product", (req, res) => {
     name: name,
     price: price,
     image: image,
+		isLoggedIn: isLoggedIn(req.cookies.jwt),
   });
 });
 
 router.get("/", (req, res) => {
   var count;
 
-  productForm.find(function (err, products) {
+  Product.find(function (err, products) {
     if (err) console.log(err);
 
     res.render("admin/products", {
       products: products,
       count: count,
+			isLoggedIn: isLoggedIn(req.cookies.jwt),
     });
   });
 });
@@ -38,26 +37,34 @@ router.get("/", (req, res) => {
 // post add-product
 
 router.post("/add-new-product", async (req, res) => {
-  var name = req.body.name;
-  var image = req.body.image;
-  var price = req.body.price;
+  try {
+    const name = req.body.name;
+    const price = req.body.price;
+    const images = [];
 
-  console.log(name);
-  console.log(price);
-  console.log(image);
+    req.files.forEach((img) => {
+      images.push(img.path);
+    });
 
-  // var product = new productForm({
-  //   name: name,
-  //   price: price,
-  //   image: image,
-  // });
-  // product.save().catch((err) => {
+    const product = await Product.create({
+      name: name,
+      price: price,
+      image: images,
+    });
 
-  //   const error = new Error(err);
-  //   error.httpStatusCode = 500;
-  //   return next(error);
-  // });
-  // res.redirect("/admin/newproducts");
+    res.redirect("/admin/all-products");
+  } catch (error) {
+    console.log(error);
+  }
+});
+
+router.get("/all-products", async (req, res) => {
+  const allProducts = await Product.find();
+
+  res.render("admin/products", {
+    products: allProducts,
+		isLoggedIn: isLoggedIn(req.cookies.jwt),
+  });
 });
 
 module.exports = router;

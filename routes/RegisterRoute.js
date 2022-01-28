@@ -3,11 +3,15 @@ const router = express.Router();
 
 // database model
 const Registers = require("../db/models/register");
+const isLoggedIn = require("../helpers/isLoggedIn");
+
 
 // To get registration page
 
 router.get("/", (req, res) => {
-    res.render("pages/register");
+    res.render("pages/register",{
+      isLoggedIn: isLoggedIn(req.cookies.jwt),
+    });
   });
 
 // To post Registred Form
@@ -33,8 +37,9 @@ router.post("/register", async (req, res) => {
         httpOnly:true 
       })
       await registerNewUser.save();
-
-      res.render("pages/homepage");
+      res.render("pages/homepage",{
+        isLoggedIn: isLoggedIn(req.cookies.jwt),
+      });
     } else {
       res.send("passsword are not matching");
     }
