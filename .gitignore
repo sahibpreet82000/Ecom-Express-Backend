@@ -9,5 +9,6 @@
 /db/models/database.js
 uploads
 /static/images
-node_modules/
 .vercel
+node_modules/
+node_modules
