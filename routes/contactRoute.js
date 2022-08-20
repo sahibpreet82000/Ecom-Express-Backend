@@ -24,7 +24,6 @@ router.get("/", (req, res) => {
 
 router.post("/contact", async (req, res) => {
   try {
-
     var name = req.body.name;
     var email = req.body.email;
     var phone = req.body.phone;
@@ -36,7 +35,7 @@ router.post("/contact", async (req, res) => {
       phone: phone,
       message: message,
     });
-      res.status(201).send("thanks for your valuable feedback");
+    res.status(201).send("thanks for your valuable feedback");
   } catch (error) {
     res.status(500).send(error);
   }

@@ -5,14 +5,13 @@ const router = express.Router();
 const Registers = require("../db/models/register");
 const isLoggedIn = require("../helpers/isLoggedIn");
 
-
 // To get registration page
 
 router.get("/", (req, res) => {
-    res.render("pages/register",{
-      isLoggedIn: isLoggedIn(req.cookies.jwt),
-    });
+  res.render("pages/register", {
+    isLoggedIn: isLoggedIn(req.cookies.jwt),
   });
+});
 
 // To post Registred Form
 
@@ -32,12 +31,12 @@ router.post("/register", async (req, res) => {
       // Hashing password
 
       const token = await registerNewUser.generateAuthToken();
-      res.cookie("jwt",token, {
-        expires: new Date(Date.now()+30000),
-        httpOnly:true 
-      })
+      res.cookie("jwt", token, {
+        expires: new Date(Date.now() + 30000),
+        httpOnly: true,
+      });
       await registerNewUser.save();
-      res.render("pages/homepage",{
+      res.render("pages/homepage", {
         isLoggedIn: isLoggedIn(req.cookies.jwt),
       });
     } else {
@@ -47,6 +46,5 @@ router.post("/register", async (req, res) => {
     res.status(404).send(error);
   }
 });
-
 
 module.exports = router;

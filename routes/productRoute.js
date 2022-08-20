@@ -5,7 +5,6 @@ const router = express.Router();
 const Product = require("../db/models/product");
 const isLoggedIn = require("../helpers/isLoggedIn");
 
-
 // add new product
 
 router.get("/add-product", (req, res) => {
@@ -16,7 +15,7 @@ router.get("/add-product", (req, res) => {
     name: name,
     price: price,
     image: image,
-		isLoggedIn: isLoggedIn(req.cookies.jwt),
+    isLoggedIn: isLoggedIn(req.cookies.jwt),
   });
 });
 
@@ -29,7 +28,7 @@ router.get("/", (req, res) => {
     res.render("admin/products", {
       products: products,
       count: count,
-			isLoggedIn: isLoggedIn(req.cookies.jwt),
+      isLoggedIn: isLoggedIn(req.cookies.jwt),
     });
   });
 });
@@ -63,7 +62,7 @@ router.get("/all-products", async (req, res) => {
 
   res.render("admin/products", {
     products: allProducts,
-		isLoggedIn: isLoggedIn(req.cookies.jwt),
+    isLoggedIn: isLoggedIn(req.cookies.jwt),
   });
 });
 

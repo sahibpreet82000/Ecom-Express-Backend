@@ -170,7 +170,7 @@ app.get("/logout", auth, async (req, res) => {
     req.user.tokens = req.user.tokens.filter((currentElem) => {
       return currentElem.token != req.token;
     });
-   // logout for all devices
+    // logout for all devices
 
     //  req.user.tokens = [];
 
